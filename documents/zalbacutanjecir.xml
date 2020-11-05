@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zalba>
+    <zaglavlje>
+        ЖАЛБА КАДА ОРГАН ВЛАСТИ НИЈЕ ПОСТУПИО/ није поступио у целости/ ПО ЗАХТЕВУ
+        ТРАЖИОЦА У ЗАКОНСКОМ  РОКУ  (ЋУТАЊЕ УПРАВЕ)
+        
+        Повереникy за информације од јавног значаја и заштиту података о личности
+        Адреса за пошту:  Београд, Булевар краља Александрa бр. 15
+    </zaglavlje>
+    
+    <telo_zalbe>
+        <paragraf>
+            У складу са чланом 22. Закона о слободном приступу информацијама од јавног значаја подносим:
+        </paragraf>        
+        
+        <naslov>Ж А Л Б У</naslov>
+        против
+        <informacije_organa_vlasti></informacije_organa_vlasti>
+        ( навести назив органа)
+        
+        због тога што орган власти: 
+        <razlog_zalbe></razlog_zalbe>
+        није поступио / није поступио у целости /  у законском року
+        (подвући  због чега се изјављује жалба)
+        
+        <paragraf>
+            по мом захтеву  за слободан приступ информацијама од јавног значаја
+            који сам поднео  том органу  дана <datum_zahteva></datum_zahteva>
+            године, а којим сам тражио/ла да ми се у складу са Законом о слободном приступу
+            информацијама од јавног значаја омогући увид- копија документа који
+            садржи информације  о /у вези са :
+        </paragraf>
+        
+        <podaci_zahteva></podaci_zahteva>
+        (навести податке о захтеву и информацији/ама)
+        
+        <paragraf>
+            На основу изнетог, предлажем да Повереник уважи моју жалбу и
+            омогући ми приступ траженој/им  информацији/ма.
+        </paragraf>
+        <paragraf>
+            Као доказ , уз жалбу достављам копију захтева са доказом о предаји органу власти.
+        </paragraf>
+        
+        <napomena>Напомена: Код жалбе  због непоступању по захтеву у целости,
+            треба приложити и добијени одговор органа власти.</napomena>
+        
+        <informacije_o_podnosiocu_zalbe>
+            <ime_podnosioca></ime_podnosioca>
+            <prezime_podnosioca></prezime_podnosioca>
+            Подносилац жалбе / Име и презиме
+            <potpis></potpis>
+            потпис
+            <adresa_podnosioca></adresa_podnosioca>
+            адреса
+            <dodatni_kontakt></dodatni_kontakt>
+            други подаци за контакт
+            <potpis></potpis>
+            Потпис
+        </informacije_o_podnosiocu_zalbe>
+        
+        <informacije_o_zalbi>
+            У
+            <mesto_podnosenja_zalbe></mesto_podnosenja_zalbe>
+            , дана<dan_podnosenja_zalbe></dan_podnosenja_zalbe>
+            201<godina_podnosenja_zalbe></godina_podnosenja_zalbe>
+            године
+        </informacije_o_zalbi>
+        
+    </telo_zalbe>
+
+</zalba>
