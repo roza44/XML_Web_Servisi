@@ -2,4 +2,6 @@
 2. Da li za taj jedan organ vlasti (ili njih vise) imamo samo jednog sluzbenika po organu ili vise sluzbenika?
 3. Da nakon sto poverenik odobri zalbu da li ima potreba slati nalog sluzbeniku ili on podatke salje direktno traziocu?
 4. Kojim dokumentima poverenik ima pristup?
+	
 5. Kako je poverenik svestan da je gradjanin koji je podneo zalbu u medjuvremenu dobio odgovor od sluzbenika?
+	preko mail servisa salje se xml dokument povereniku
