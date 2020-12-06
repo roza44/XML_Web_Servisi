@@ -1,61 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zahtev>
-    <zaglavlje>
+    <primalac>
         <organ>
             <naziv></naziv>
-            <sediste></sediste>
+            <adresaOrgana>
+                <mesto></mesto>
+                <ulica></ulica>
+                <broj></broj>
+            </adresaOrgana>
         </organ>
         Назив и седиште органа коме се захтев упућује
-    </zaglavlje>
+    </primalac>
     
     <sadrzaj>
         <naslov>
             Захтев за приступ информацији од јавног значаја
         </naslov>
         
-        <paragrafi>
+        <telo>
             <paragraf>
-                На основу члана 15. ст. 1. Закона о слободном приступу информацијама од јавног значаја
-                („Службени гласник РС“, бр. 120/04, 54/07, 104/09 и 36/10), од горе наведеног органа захтевам:<f refID="1"></f>
-                <izbori>
-                    <izbor broj="1">обавештење да ли поседује тражену информацију;</izbor>
-                    <izbor broj="2">увид у документ који садржи тражену информацију;</izbor>
-                    <izbor broj="3">копију документа који садржи тражену информацију;</izbor>
-                    <izbor broj="4">достављање копије документа који садржи тражену информацију:<f refID="2"></f>
-                        <izbori>
-                            <izbor broj="1">поштом</izbor>
-                            <izbor broj="2">електронском поштом</izbor>
-                            <izbor broj="3">факсом</izbor>
-                            <izbor broj="4">на други начин:<f refID="3"></f></izbor>
-                        </izbori>
-                    </izbor>
-                </izbori>
+                На основу члана 
+                <zakon>
+                    <clan>15</clan>. ст. 
+                    <stav>1</stav>. 
+                    <naziv>Закона о слободном приступу информацијама од јавног значаја</naziv>
+                </zakon>
+                (<sluzbeniGlasnik>
+                    <naziv>Службени гласник РС</naziv>, бр.
+                    <brojevi>
+                        <broj>120/04</broj>
+                        <broj>54/07</broj>
+                        <broj>104/09</broj>
+                        <broj>36/10</broj>
+                    </brojevi>
+                </sluzbeniGlasnik>), од горе наведеног органа захтевам:<f fRefID="1"></f>
+            </paragraf>
+            <izboriZahteva>
+                <izbor broj="1" odabran="false">обавештење да ли поседује тражену информацију;</izbor>
+                <izbor broj="2" odabran="false">увид у документ који садржи тражену информацију;</izbor>
+                <izbor broj="3" odabran="false">копију документа који садржи тражену информацију;</izbor>
+                <izboriDostave>достављање копије документа који садржи тражену информацију:<f fRefID="2"></f>
+                        <izbor broj="1" odabran="false">поштом</izbor>
+                        <izbor broj="2" odabran="false">електронском поштом</izbor>
+                        <izbor broj="3" odabran="false">факсом</izbor>
+                        <izbor broj="4" odabran="false" nacin="">на други начин:<f fEefID="3"></f></izbor>
+                </izboriDostave>
+            </izboriZahteva>
+            
+            Овај захтев се односи на следеће информације:
+            <informacije></informacije>
+            <uputstvo>
+                (навести што прецизнији опис информације која се тражи као и 
+                друге податке који олакшавају проналажење тражене информације)
+            </uputstvo>
+            
+            <podaciOZahtevu>
+                У <mesto></mesto>,
+                <datum>
+                    дана <dan></dan>
+                    <mesec></mesec>
+                    године <godina></godina>
+                </datum>
                 
-                Овај захтев се односи на следеће информације:
-                <uputstvo>
-                    (навести што прецизнији опис информације која се тражи као и 
-                    друге податке који олакшавају проналажење тражене информације)
-                </uputstvo>
-                
-                <informacijeOTrazilacu>
-                    У <mesto></mesto>,
-                    дана <danZalbe></danZalbe> <godinaZalbe></godinaZalbe> године
-                    
-                    <imeTrazilaca></imeTrazilaca>
-                    <prezimeTrazilaca></prezimeTrazilaca>
+                <trazioc>
+                    <ime></ime>
+                    <prezime></prezime>
                     Тражилац информације/Име и презиме
                     
-                    <adresa></adresa>
+                    <adresa>
+                        <mesto></mesto>
+                        <ulica></ulica>
+                        <broj></broj>
+                    </adresa>
                     адреса
                     
-                    <ostaliPodaci></ostaliPodaci>
+                    <kontakt></kontakt>
                     други подаци за контакт
                     
                     <potpis></potpis>
                     Потпис
-                </informacijeOTrazilacu>
-            </paragraf>
-        </paragrafi>
+                </trazioc>
+            </podaciOZahtevu>
+        </telo>
+        
         
         <fusnote>
             <fusnota id="1">У кућици означити која законска права на приступ информацијама желите да остварите.</fusnota>

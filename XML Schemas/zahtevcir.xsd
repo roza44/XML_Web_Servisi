@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.1" targetNamespace="zahtev" xmlns:za="zahtev">
+    <xs:element name="zahtevcir">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="primalac">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="organ">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="naziv">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:minLength value="1"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="adresaOrgana" type="za:CTAdresa"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="sadrzaj" type="za:CTSadrzaj"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="CTSadrzaj">
+        <xs:sequence>
+            <xs:element fixed="З А Х Т Е В за приступ информацији од јавног значаја " name="naslov"
+                type="xs:string"/>
+            <xs:element name="telo">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="paragraf">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="zakon" type="za:CTZakon"/>
+                                    <xs:element name="sluzbeniGlasnik" type="za:CTSluzbeniGlasnik"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="izboriZahteva" type="za:CTIzboriZahteva"/>
+                        <xs:element name="informacije">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                        <xs:element name="podaciOZahtevu" type="za:CTPodaciOZahtevu"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CTZakon">
+        <xs:sequence>
+            <xs:element name="clan" type="xs:positiveInteger"/>
+            <xs:element name="stav" type="xs:positiveInteger"/>
+            <xs:element name="naziv">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CTSluzbeniGlasnik">
+        <xs:sequence>
+            <xs:element name="naziv">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="brojevi">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="broj">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="1"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CTIzboriZahteva">
+        <xs:sequence>
+            <xs:element maxOccurs="3" minOccurs="3" name="izbor" type="za:CTIzbor"/>
+            <xs:element name="izboriDostave" type="za:CTIzboriDostave"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CTIzboriDostave">
+        <xs:sequence>
+            <xs:element maxOccurs="4" minOccurs="4" name="izbor"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CTIzbor">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="broj" type="xs:positiveInteger" use="required"/>
+                <xs:attribute name="odabran" type="xs:boolean" use="required"/>
+                <xs:attribute name="nacin" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="CTPodaciOZahtevu">
+        <xs:sequence>
+            <xs:element name="mesto">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:pattern value="[A-Z][A-Za-z ]+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="datum" type="za:CTDatum"/>
+            <xs:element name="trazioc" type="za:CTLice"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CTDatum">
+        <xs:sequence>
+            <xs:element name="dan">
+                <xs:simpleType>
+                    <xs:restriction base="xs:positiveInteger">
+                        <xs:maxInclusive value="31"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="mesec">
+                <xs:simpleType>
+                    <xs:restriction base="xs:positiveInteger">
+                        <xs:maxInclusive value="12"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="godina">
+                <xs:simpleType>
+                    <xs:restriction base="xs:positiveInteger">
+                        <xs:minInclusive value="2015"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CTLice">
+        <xs:sequence>
+            <xs:element name="ime">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:pattern value="[A-Z][a-z]+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="prezime">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:pattern value="[A-Z][a-z]+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="adresa" type="za:CTAdresa"/>
+            <xs:element name="kontakt">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="[0-9]{5,15}"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CTAdresa">
+        <xs:sequence>
+            <xs:element name="mesto">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:pattern value="[A-Z][A-Za-z ]+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="ulica">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:pattern value="[A-Z][A-Za-z ]+"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="broj" type="xs:positiveInteger"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
