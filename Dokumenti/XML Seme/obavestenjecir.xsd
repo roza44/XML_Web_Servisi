@@ -6,111 +6,116 @@
     <xs:element name="Obavestenje">
         <xs:complexType>
             <xs:sequence>
-                <xs:element maxOccurs="1" name="Podaci_o_organu">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Naziv">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:minLength value="1"/>
-                                        <xs:maxLength value="100"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="Sediste">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:minLength value="1"/>
-                                        <xs:maxLength value="100"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element ref="ftn:Organ"/>
                 <xs:element name="Datum" type="xs:date"/>
                 <xs:element name="Broj_predmeta" type="xs:string"/>
                 <xs:element name="Podnosioc_zahteva" type="ftn:TLice"/>
-                <xs:element name="Trazena_informacija">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Godina_zahteva">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:int">
-                                        <xs:minInclusive value="-2147483648"/>
-                                        <xs:totalDigits value="4"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="Opis_informacije">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:minLength value="1"/>
-                                        <xs:maxLength value="100"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="Podaci_o_uvidu">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Datum" type="xs:date"/>
-                            <xs:element name="Satnica" type="xs:time"/>
-                            <xs:element name="Satnica_od" type="xs:time"/>
-                            <xs:element name="Satnica_do" type="xs:time"/>
-                            <xs:element name="Broj_kancelarije">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:int">
-                                        <xs:minInclusive value="1"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element ref="ftn:Adresa"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="Troskovi">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element fixed="3.0" name="A4_Cena" type="xs:decimal"/>
-                            <xs:element fixed="6.0" name="A3_Cena" type="xs:decimal"/>
-                            <xs:element fixed="35.0" name="CD_Cena" type="xs:decimal"/>
-                            <xs:element fixed="20.0" name="Disketa_Cena" type="xs:decimal"/>
-                            <xs:element fixed="40.0" name="DVD_Cena" type="xs:decimal"/>
-                            <xs:element fixed="150.0" name="Audio_Kaseta_Cena" type="xs:decimal"/>
-                            <xs:element fixed="300.0" name="Video_Kaseta_Cena" type="xs:decimal"/>
-                            <xs:element fixed="30.0" name="EDokumenta_Cena" type="xs:decimal"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="Podaci_o_uplati">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Ukupni_troskovi" type="xs:decimal"/>
-                            <xs:element name="Ziro_racun">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:pattern value="\d{3}-\d{13}-\d{2}"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="Broj_modela">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:pattern value="\d{2}"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
+                <xs:element ref="ftn:Trazena_informacija"/>
+                <xs:element ref="ftn:Uvid"/>
+                <xs:element ref="ftn:Troskovi"/>
+                <xs:element ref="ftn:Uplata"/>
                 <xs:element name="Dostavljeno">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
                             <xs:enumeration value="Imenovanom"/>
                             <xs:enumeration value="Arhivi"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Organ">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Naziv">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Sediste">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Trazena_informacija">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Godina_zahteva">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:minInclusive value="-2147483648"/>
+                            <xs:totalDigits value="4"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Opis_informacije">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:minLength value="1"/>
+                            <xs:maxLength value="100"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Uvid">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Datum" type="xs:date"/>
+                <xs:element name="Satnica" type="xs:time"/>
+                <xs:element name="Satnica_od" type="xs:time"/>
+                <xs:element name="Satnica_do" type="xs:time"/>
+                <xs:element name="Broj_kancelarije">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:minInclusive value="1"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element ref="ftn:Adresa"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Troskovi">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element fixed="3.0" name="A4_Cena" type="xs:decimal"/>
+                <xs:element fixed="6.0" name="A3_Cena" type="xs:decimal"/>
+                <xs:element fixed="35.0" name="CD_Cena" type="xs:decimal"/>
+                <xs:element fixed="20.0" name="Disketa_Cena" type="xs:decimal"/>
+                <xs:element fixed="40.0" name="DVD_Cena" type="xs:decimal"/>
+                <xs:element fixed="150.0" name="Audio_Kaseta_Cena" type="xs:decimal"/>
+                <xs:element fixed="300.0" name="Video_Kaseta_Cena" type="xs:decimal"/>
+                <xs:element fixed="30.0" name="EDokumenta_Cena" type="xs:decimal"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Uplata">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Ukupni_troskovi" type="xs:decimal"/>
+                <xs:element name="Ziro_racun">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\d{3}-\d{13}-\d{2}"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Broj_modela">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\d{2}"/>
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
