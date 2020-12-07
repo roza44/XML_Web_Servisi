@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.ftn.uns.ac.rs/resenje" xmlns:r="http://www.ftn.uns.ac.rs/resenje">
+
+    <xs:element name="Resenje">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Odluka_resenja" type="xs:string"/>
+                <xs:element name="Br_resenja">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\d{3}-\d{2}-\d{4}/\d{4}-\d{2}"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Datum_resenja" type="xs:date"/>
+                <xs:element ref="r:Uvod"/>
+                <xs:element name="Ishod" type="xs:string"/>
+                <xs:element ref="r:Obrazlozenje"/>
+                <xs:element ref="r:Poverenik"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Poverenik">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Ime" type="xs:string"/>
+                <xs:element name="Prezime" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Uvod">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" ref="r:Poverenik"/>
+                <xs:element name="Podnosilac_zalbe">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[A-Z][A-Z]"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Razlog">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="protiv resenja"/>
+                            <xs:enumeration value="zbog nepostupanja"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Organ_vlasti" type="xs:string"/>
+                <xs:element name="Datum_zahteva" type="xs:date"/>
+                <xs:element ref="r:Osnova_resenja"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Obrazlozenje">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Datum_zalbe" type="xs:date"/>
+                <xs:element name="Datum_prosledjivanja_zalbe" type="xs:date"/>
+                <xs:element maxOccurs="unbounded" name="Razlog" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Osnova_resenja">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="1" ref="r:Zakon"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Zakon">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Clan" type="xs:positiveInteger"/>
+                <xs:element name="Stav" type="xs:positiveInteger"/>
+                <xs:element name="Tacka" type="xs:positiveInteger"/>
+                <xs:element name="Naziv" type="xs:string"/>
+                <xs:element name="Broj_glasnika">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[1-9]\d*/\d*"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Adresa">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Mesto">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string"/>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element minOccurs="1" name="Ulica" type="xs:string"/>
+                <xs:element name="Broj" type="xs:positiveInteger"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

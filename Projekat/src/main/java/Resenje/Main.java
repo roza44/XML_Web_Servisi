@@ -1,7 +1,6 @@
-package Obavestenje;
+package Resenje;
 
-import Obavestenje.model.Obavestenje;
-import ZalbaNaOdluku.model.Zalba;
+import Resenje.model.Resenje;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
@@ -19,13 +18,13 @@ import java.nio.charset.StandardCharsets;
 
 public class Main {
 
-    private static final String SCHEMA_URL = "./../Dokumenti/XML Seme/obavestenjecir.xsd";
-    private static final String IN_URL = "./../Dokumenti/XML Dokumenti/Ulaz/Obavestenje1.xml";
-    private static final String OUT_URL = "./../Dokumenti/XML Dokumenti/Izlaz/Obavestenje1.xml";
+    private static final String SCHEMA_URL = "./../Dokumenti/XML Seme/resenje.xsd";
+    private static final String IN_URL = "./../Dokumenti/XML Dokumenti/Ulaz/Resenje1.xml";
+    private static final String OUT_URL = "./../Dokumenti/XML Dokumenti/Izlaz/Resenje1.xml";
 
     public static void main(String[] args) throws JAXBException, FileNotFoundException, SAXException {
 
-        JAXBContext context = JAXBContext.newInstance(Obavestenje.class);
+        JAXBContext context = JAXBContext.newInstance(Resenje.class);
         Unmarshaller um = context.createUnmarshaller();
 
         //Setup schema validator
@@ -33,16 +32,16 @@ public class Main {
         Schema employeeSchema = sf.newSchema(new File(SCHEMA_URL));
         um.setSchema(employeeSchema);
 
-        Obavestenje obavestenje = (Obavestenje) um.unmarshal(new InputStreamReader(
+        Resenje resenje = (Resenje) um.unmarshal(new InputStreamReader(
                 new FileInputStream(IN_URL), StandardCharsets.UTF_8));
 
-        System.out.println("\nISPIS OBAVESTENJA:\n");
-        System.out.println(obavestenje);
+        System.out.println("\nISPIS RESENJA:\n");
+        System.out.println(resenje);
 
         Marshaller m = context.createMarshaller();
 
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-        m.marshal(obavestenje, new File(OUT_URL));
+        m.marshal(resenje, new File(OUT_URL));
 
         System.out.println("\nFAJL USPESNO SACUVAN!\n");
     }

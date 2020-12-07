@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Resenje xmlns="http://www.ftn.uns.ac.rs/resenje">
+    <Odluka_resenja>Odluka_resenja0</Odluka_resenja>
+    <Br_resenja>123-00-0300/2000-00</Br_resenja>
+    <Datum_resenja>2006-05-04</Datum_resenja>
+    <Uvod>
+        <Podnosilac_zalbe>AA</Podnosilac_zalbe>
+        <Razlog>protiv resenja</Razlog>
+        <Organ_vlasti>Organ_vlasti1</Organ_vlasti>
+        <Datum_zahteva>2006-05-04</Datum_zahteva>
+        <Osnova_resenja>
+            <Zakon>
+                <Clan>50</Clan>
+                <Stav>50</Stav>
+                <Tacka>50</Tacka>
+                <Naziv>Naziv0</Naziv>
+                <Broj_glasnika>1/</Broj_glasnika>
+            </Zakon>
+        </Osnova_resenja>
+    </Uvod>
+    <Ishod>Ishod0</Ishod>
+    <Obrazlozenje>
+        <Datum_zalbe>2006-05-04</Datum_zalbe>
+        <Datum_prosledjivanja_zalbe>2006-05-04</Datum_prosledjivanja_zalbe>
+        <Razlog>Razlog1</Razlog>
+        <Razlog>Razlog2</Razlog>
+    </Obrazlozenje>
+    <Poverenik>
+        <Ime>Milan</Ime>
+        <Prezime>Milic</Prezime>
+    </Poverenik>
+</Resenje>
