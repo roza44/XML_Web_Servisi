@@ -1,5 +1,5 @@
 
-package model;
+package ZalbaNaOdluku.model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -101,4 +101,11 @@ public class Resenje {
         this.godina = value;
     }
 
+    @Override
+    public String toString() {
+        return "Resenje:" + "\n" +
+                "\t" + "donosilacOdluke=" + donosilacOdluke + "\n" +
+                "\t" + ", broj=" + broj + "\n" +
+                "\t" + ", godina=" + godina + "\n";
+    }
 }

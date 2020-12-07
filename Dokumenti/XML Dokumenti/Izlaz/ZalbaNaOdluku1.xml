@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Zalba xmlns="http://www.ftn.uns.ac.rs/ZalbaNaOdluku"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.ftn.uns.ac.rs/ZalbaNaOdluku file:/C:/Faks/4.%20Godina/7.%20Semestar/XML/Project/XML_Web_Servisi/XML%20Schemas/zalbanaodlukucir.xsd">
-    <Zalilac xmlns:zno="http://www.ftn.uns.ac.rs/ZalbaNaOdluku" xsi:type="zno:TPravno_Lice">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Zalba xmlns="http://www.ftn.uns.ac.rs/ZalbaNaOdluku">
+    <Zalilac xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TPravno_Lice">
         <Adresa>
             <Mesto>Banatsko Arandjelovo</Mesto>
             <Postanski_broj>23332</Postanski_broj>
@@ -17,17 +15,16 @@
         <Godina>2020</Godina>
     </Resenje>
     <Datum_Zahteva>2020-05-04</Datum_Zahteva>
-    <Osnov_Zalbe>Odbija se zahtev za pristup racunima mesne zajednice</Osnov_Zalbe>
+    <Osnov_Zalbe>Pobija se zahtev za racunima mesne zajednice</Osnov_Zalbe>
     <Podnosilac>
         <Ime>Radovan</Ime>
         <Prezime>Bodroza</Prezime>
     </Podnosilac>
-    <Grad>Novi Knezevac</Grad>
     <Adresa>
         <Mesto>Novi Knezevac</Mesto>
         <Postanski_broj>23332</Postanski_broj>
         <Ulica>Vojvode Putnika</Ulica>
-        <Broj>30</Broj>
+        <Broj>20</Broj>
     </Adresa>
     <Datum_Zalbe>2006-06-06</Datum_Zalbe>
     <Kontakt>bodroza.joca@gmail.com</Kontakt>

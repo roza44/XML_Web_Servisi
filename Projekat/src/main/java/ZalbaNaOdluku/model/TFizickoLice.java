@@ -1,5 +1,5 @@
 
-package model;
+package ZalbaNaOdluku.model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -89,4 +89,11 @@ public class TFizickoLice
         this.prezime = value;
     }
 
+    @Override
+    public String toString() {
+        return "TFizickoLice:" + "\n" +
+                "\t" + "ime=" + ime + "\n" +
+                "\t" + ", prezime=" + prezime + "\n" +
+                "\t" + ", adresa=" + adresa + "\n";
+    }
 }
