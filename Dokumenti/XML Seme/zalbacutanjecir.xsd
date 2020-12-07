@@ -40,14 +40,12 @@
                         <xs:complexContent>
                             <xs:extension base="zlb:TFizicko_lice">
                                 <xs:sequence>
-                                    <xs:element name="Potpis"/>
                                     <xs:element name="Ostali_kontakt_podaci" type="xs:string"/>
                                 </xs:sequence>
                             </xs:extension>
                         </xs:complexContent>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="Potpis"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
