@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Obavestenje xmlns="http://www.ftn.uns.ac.rs/obavestenje">
+    <Organ>
+        <Naziv>Naziv organa</Naziv>
+        <Sediste>Vrsac</Sediste>
+    </Organ>
+    <Datum>2006-05-04</Datum>
+    <Broj_predmeta>26</Broj_predmeta>
+    <Podnosioc_zahteva xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TFizickoLice">
+        <Adresa>
+            <Mesto>Vrsac</Mesto>
+            <Postanski_broj>26300</Postanski_broj>
+            <Ulica>Blabla</Ulica>
+            <Broj>50</Broj>
+        </Adresa>
+        <Ime>Vukasin</Ime>
+        <Prezime>Jokic</Prezime>
+    </Podnosioc_zahteva>
+    <Trazena_informacija>
+        <Godina_zahteva>0</Godina_zahteva>
+        <Opis_informacije>Jako vazna informacija</Opis_informacije>
+    </Trazena_informacija>
+    <Uvid>
+        <Datum>2006-05-04</Datum>
+        <Satnica>01:01:01.001</Satnica>
+        <Satnica_od>01:01:01.001</Satnica_od>
+        <Satnica_do>02:01:01.001</Satnica_do>
+        <Broj_kancelarije>50</Broj_kancelarije>
+        <Adresa>
+            <Mesto>Vrsac</Mesto>
+            <Postanski_broj>26300</Postanski_broj>
+            <Ulica>Sterijina</Ulica>
+            <Broj>53</Broj>
+        </Adresa>
+    </Uvid>
+    <Troskovi>
+        <A4_Cena>3.0</A4_Cena>
+        <A3_Cena>6.0</A3_Cena>
+        <CD_Cena>35.0</CD_Cena>
+        <Disketa_Cena>20.0</Disketa_Cena>
+        <DVD_Cena>40.0</DVD_Cena>
+        <Audio_Kaseta_Cena>150.0</Audio_Kaseta_Cena>
+        <Video_Kaseta_Cena>300.0</Video_Kaseta_Cena>
+        <EDokumenta_Cena>30.0</EDokumenta_Cena>
+    </Troskovi>
+    <Uplata>
+        <Ukupni_troskovi>0</Ukupni_troskovi>
+        <Ziro_racun>123-0200000000400-10</Ziro_racun>
+        <Broj_modela>97</Broj_modela>
+    </Uplata>
+    <Dostavljeno>Imenovanom</Dostavljeno>
+</Obavestenje>
