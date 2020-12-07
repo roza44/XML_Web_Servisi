@@ -1,5 +1,5 @@
 
-package model;
+package ZalbaNaOdluku.model;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -76,5 +76,4 @@ public class ObjectFactory {
     public TPravnoLice createTPravnoLice() {
         return new TPravnoLice();
     }
-
 }

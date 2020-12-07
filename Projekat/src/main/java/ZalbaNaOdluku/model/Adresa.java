@@ -1,5 +1,5 @@
 
-package model;
+package ZalbaNaOdluku.model;
 
 import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -147,4 +147,12 @@ public class Adresa {
         this.broj = value;
     }
 
+    @Override
+    public String toString() {
+        return "Adresa:" + "\n" +
+                "\t" + "mesto=" + mesto + "\n" +
+                "\t" +", postanskiBroj=" + postanskiBroj + "\n" +
+                "\t" + ", ulica=" + ulica + "\n" +
+                "\t" + ", broj=" + broj + "\n";
+    }
 }

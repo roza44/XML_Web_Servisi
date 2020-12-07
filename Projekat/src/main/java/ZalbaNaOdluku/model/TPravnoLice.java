@@ -1,5 +1,5 @@
 
-package model;
+package ZalbaNaOdluku.model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -61,4 +61,10 @@ public class TPravnoLice
         this.naziv = value;
     }
 
+    @Override
+    public String toString() {
+        return "TPravnoLice:" + "\n" +
+                "\t" + "naziv=" + naziv + "\n" +
+                "\t" + ", adresa=" + adresa + "\n";
+    }
 }

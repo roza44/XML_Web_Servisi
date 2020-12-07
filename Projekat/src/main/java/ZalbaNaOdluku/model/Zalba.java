@@ -1,5 +1,5 @@
 
-package model;
+package ZalbaNaOdluku.model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="Datum_Zahteva" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
  *         &lt;element name="Osnov_Zalbe" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element ref="{http://www.ftn.uns.ac.rs/ZalbaNaOdluku}Podnosilac"/&gt;
- *         &lt;element name="Grad" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element ref="{http://www.ftn.uns.ac.rs/ZalbaNaOdluku}Adresa"/&gt;
  *         &lt;element name="Datum_Zalbe" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
  *         &lt;element name="Kontakt" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
@@ -44,7 +43,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "datumZahteva",
     "osnovZalbe",
     "podnosilac",
-    "grad",
     "adresa",
     "datumZalbe",
     "kontakt"
@@ -63,8 +61,6 @@ public class Zalba {
     protected String osnovZalbe;
     @XmlElement(name = "Podnosilac", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
     protected Podnosilac podnosilac;
-    @XmlElement(name = "Grad", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
-    protected String grad;
     @XmlElement(name = "Adresa", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
     protected Adresa adresa;
     @XmlElement(name = "Datum_Zalbe", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
@@ -194,30 +190,6 @@ public class Zalba {
     }
 
     /**
-     * Gets the value of the grad property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
-     */
-    public String getGrad() {
-        return grad;
-    }
-
-    /**
-     * Sets the value of the grad property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
-    public void setGrad(String value) {
-        this.grad = value;
-    }
-
-    /**
      * Gets the value of the adresa property.
      * 
      * @return
@@ -289,4 +261,16 @@ public class Zalba {
         this.kontakt = value;
     }
 
+    @Override
+    public String toString() {
+        return "Zalba:" + "\n" +
+                "\t" + "zalilac=" + zalilac + "\n" +
+                "\t" + ", resenje=" + resenje + "\n" +
+                "\t" + ", datumZahteva=" + datumZahteva + "\n" +
+                "\t" + ", osnovZalbe=" + osnovZalbe + "\n" +
+                "\t" + ", podnosilac=" + podnosilac + "\n" +
+                "\t" + ", adresa=" + adresa + "\n" +
+                "\t" + ", datumZalbe=" + datumZalbe + "\n" +
+                "\t" + ", kontakt=" + kontakt + '\'' + "\n";
+    }
 }
