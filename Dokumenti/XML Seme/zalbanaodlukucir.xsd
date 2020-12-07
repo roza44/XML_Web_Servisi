@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="http://www.ftn.uns.ac.rs/ZalbaNaOdluku"
+    xmlns:zno="http://www.ftn.uns.ac.rs/ZalbaNaOdluku">
+
+    <xs:element name="Zalba">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Zalilac" type="zno:TZalilac"/>
+                <xs:element ref="zno:Resenje"/>
+                <xs:element name="Datum_Zahteva" type="xs:date"/>
+                <xs:element name="Osnov_Zalbe" type="xs:string"/>
+                <xs:element ref="zno:Podnosilac"/>
+                <xs:element name="Grad" type="xs:string"/>
+                <xs:element ref="zno:Adresa"/>
+                <xs:element name="Datum_Zalbe" type="xs:date"/>
+                <xs:element name="Kontakt" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType abstract="true" name="TZalilac">
+        <xs:sequence>
+            <xs:element ref="zno:Adresa"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TFizicko_Lice">
+        <xs:complexContent>
+            <xs:extension base="zno:TZalilac">
+                <xs:sequence>
+                    <xs:element name="Ime" type="xs:string"/>
+                    <xs:element name="Prezime" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="TPravno_Lice">
+        <xs:complexContent>
+            <xs:extension base="zno:TZalilac">
+                <xs:sequence>
+                    <xs:element name="Naziv" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:element name="Adresa">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Mesto" type="xs:string"/>
+                <xs:element name="Postanski_broj">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:minInclusive value="11000"/>
+                            <xs:maxInclusive value="40000"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="Ulica" type="xs:string"/>
+                <xs:element name="Broj" type="xs:positiveInteger"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Resenje">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Donosilac_Odluke" type="xs:string"/>
+                <xs:element name="Broj" type="xs:int"/>
+                <xs:element name="Godina" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Podnosilac">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Ime" type="xs:string"/>
+                <xs:element name="Prezime" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

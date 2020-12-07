@@ -71,18 +71,17 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element maxOccurs="unbounded" minOccurs="0" name="Trosak">
+                <xs:element name="Troskovi">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="Naziv">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:minLength value="1"/>
-                                        <xs:maxLength value="30"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:element>
-                            <xs:element name="Iznos" type="xs:positiveInteger"/>
+                            <xs:element fixed="3.0" name="A4_Cena" type="xs:decimal"/>
+                            <xs:element fixed="6.0" name="A3_Cena" type="xs:decimal"/>
+                            <xs:element fixed="35.0" name="CD_Cena" type="xs:decimal"/>
+                            <xs:element fixed="20.0" name="Disketa_Cena" type="xs:decimal"/>
+                            <xs:element fixed="40.0" name="DVD_Cena" type="xs:decimal"/>
+                            <xs:element fixed="150.0" name="Audio_Kaseta_Cena" type="xs:decimal"/>
+                            <xs:element fixed="300.0" name="Video_Kaseta_Cena" type="xs:decimal"/>
+                            <xs:element fixed="30.0" name="EDokumenta_Cena" type="xs:decimal"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
