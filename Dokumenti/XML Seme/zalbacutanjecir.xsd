@@ -32,8 +32,8 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="Kopija_zahteva" type="xs:IDREF"/>
-                <xs:element name="Kopija_odgovora_na_zahtev" type="xs:IDREF"/>
+                <xs:element name="Kopija_zahteva" type="xs:IDREF" minOccurs="0"/>
+                <xs:element name="Kopija_odgovora_na_zahtev" type="xs:IDREF" minOccurs="0"/>
                 <xs:element name="Datum_podnosenja_zalbe" type="xs:date"/>
                 <xs:element name="Podnosilac_zalbe">
                     <xs:complexType>
@@ -60,7 +60,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <xs:element minOccurs="0" name="Postanski_broj">
+                <xs:element minOccurs="1" name="Postanski_broj">
                     <xs:simpleType>
                         <xs:restriction base="xs:int">
                             <xs:minInclusive value="11000"/>

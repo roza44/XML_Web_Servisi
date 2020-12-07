@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Zalba xmlns="http://www.ftn.uns.ac.rs/zalbacutanje">
+    <Poverenik>
+        <Adresa>
+            <Mesto>Beograd</Mesto>
+            <Postanski_broj>11000</Postanski_broj>
+            <Ulica>Bulevar kralja Aleksandra</Ulica>
+            <Broj>15</Broj>
+        </Adresa>
+        <Naziv>Poverenik za informacije od javnog znacaja i zastitu podataka o licnosti</Naziv>
+    </Poverenik>
+    <Naziv_organa>Ministarstvo finansija</Naziv_organa>
+    <Razlog_zalbe>Organ vlasti nije postupio u zakonskom roku</Razlog_zalbe>
+    <Trazene_informacije_o_zahtevu>
+        <Datum_podnosenja>2020-01-03</Datum_podnosenja>
+        <Podaci_o_zahtevu_i_informacijama>Zahtevane su informacije o realizaciji budzeta drzave Srbije</Podaci_o_zahtevu_i_informacijama>
+    </Trazene_informacije_o_zahtevu>
+    <Datum_podnosenja_zalbe>2020-05-04</Datum_podnosenja_zalbe>
+    <Podnosilac_zalbe>
+        <Adresa>
+            <Mesto>Subotica</Mesto>
+            <Postanski_broj>24000</Postanski_broj>
+            <Ulica>Josipa Krasa</Ulica>
+            <Broj>7</Broj>
+        </Adresa>
+        <Ime>Luka</Ime>
+        <Prezime>Nikolic</Prezime>
+        <Ostali_kontakt_podaci>kucni tel: 024/542-533</Ostali_kontakt_podaci>
+    </Podnosilac_zalbe>
+</Zalba>
