@@ -1,4 +1,4 @@
-package zahtev;
+package Zahtev;
 
 import Zahtev.model.Zahtev;
 import org.xml.sax.SAXException;
