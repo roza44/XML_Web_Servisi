@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:Zahtev xmlns:ns2="http://www.ftn.uns.ac.rs/zahtev">
+    <ns2:Primalac>
+        <ns2:Organ>
+            <ns2:Naziv>NEKI NOVI NAZIV ORGANA</ns2:Naziv>
+            <ns2:AdresaOrgana>
+                <ns2:Mesto>Novi Sad</ns2:Mesto>
+                <ns2:Ulica>Trg Dositeja Obradovica</ns2:Ulica>
+                <Broj>6</Broj>
+            </ns2:AdresaOrgana>
+        </ns2:Organ>
+    </ns2:Primalac>
+    <ns2:Sadrzaj>
+        <ns2:Naslov>Z A H T E V za pristup informaciji od javnog znacaja</ns2:Naslov>
+        <ns2:Telo>
+            <ns2:Paragraf>
+                <ns2:Zakon>
+                    <Clan>15</Clan>
+                    <Stav>1</Stav>
+                    <ns2:Naziv>Zakona o slobodnom pristupu informacijama od javnog znacaja</ns2:Naziv>
+                </ns2:Zakon>
+                <ns2:SluzbeniGlasnik>
+                    <ns2:Naziv>Sluzbeni glasnik RS</ns2:Naziv>
+                    <ns2:Brojevi>
+                        <ns2:Broj>120/04</ns2:Broj>
+                        <ns2:Broj>54/07</ns2:Broj>
+                        <ns2:Broj>104/09</ns2:Broj>
+                        <ns2:Broj>36/10</ns2:Broj>
+                    </ns2:Brojevi>
+                </ns2:SluzbeniGlasnik>
+            </ns2:Paragraf>
+            <ns2:IzboriZahteva>
+                <ns2:Izbor Broj="1" Odabran="true">obavestenje da li poseduje trazenu informaciju;</ns2:Izbor>
+                <ns2:Izbor Broj="2" Odabran="true">uvid u dokument koji sadrzi trazenu informaciju;</ns2:Izbor>
+                <ns2:Izbor Broj="3" Odabran="false">kopiju dokumenta koji sadrzi trazenu informaciju;</ns2:Izbor>
+                <ns2:IzboriDostave>
+                    <ns2:Izbor Broj="1" Odabran="false">postom</ns2:Izbor>
+                    <ns2:Izbor Broj="2" Odabran="true">elektronskom postom</ns2:Izbor>
+                    <ns2:Izbor Broj="3" Odabran="false">faksom</ns2:Izbor>
+                    <ns2:Izbor Broj="4" Odabran="false">na drugi nacin:___________</ns2:Izbor>
+                </ns2:IzboriDostave>
+            </ns2:IzboriZahteva>
+            <ns2:Informacije>Neke veoma bitne informacije</ns2:Informacije>
+            <ns2:PodaciOZahtevu>
+                <ns2:Mesto>Novi Sad</ns2:Mesto>
+                <Datum>2006-05-04</Datum>
+                <ns2:Trazioc>
+                    <ns2:Ime>Petar</ns2:Ime>
+                    <ns2:Prezime>Petrovic</ns2:Prezime>
+                    <ns2:Adresa>
+                        <ns2:Mesto>Novi Sad</ns2:Mesto>
+                        <ns2:Ulica>Sumadijska</ns2:Ulica>
+                        <Broj>6</Broj>
+                    </ns2:Adresa>
+                    <ns2:Kontakt>064123456</ns2:Kontakt>
+                </ns2:Trazioc>
+            </ns2:PodaciOZahtevu>
+        </ns2:Telo>
+    </ns2:Sadrzaj>
+</ns2:Zahtev>
