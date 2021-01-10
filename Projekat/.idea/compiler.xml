@@ -9,5 +9,10 @@
         <module name="Projekat" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="application" target="13" />
+      <module name="domain" target="13" />
+      <module name="rest" target="13" />
+    </bytecodeTargetLevel>
   </component>
 </project>
