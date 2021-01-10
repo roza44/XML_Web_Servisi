@@ -2,49 +2,159 @@ package ZalbaNaOdluku;
 
 import ZalbaNaOdluku.model.Zalba;
 import org.xml.sax.SAXException;
+import org.xmldb.api.DatabaseManager;
+import org.xmldb.api.base.Collection;
+import org.xmldb.api.base.Database;
+import org.xmldb.api.base.XMLDBException;
+import org.xmldb.api.modules.CollectionManagementService;
+import org.xmldb.api.modules.XMLResource;
+import util.AuthenticationUtilities;
 
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
-import javax.xml.validation.Validator;
-import javax.xml.validation.ValidatorHandler;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 public class Main {
 
     private static final String SCHEMA_URL = "./../Dokumenti/XML Seme/zalbanaodlukucir.xsd";
     private static final String IN_URL = "./../Dokumenti/XML Dokumenti/Ulaz/ZalbaNaOdluku1.xml";
-    private static final String OUT_URL = "./../Dokumenti/XML Dokumenti/Izlaz/ZalbaNaOdluku1.xml";
 
-    public static void main(String[] args) throws JAXBException, FileNotFoundException, SAXException {
+    public static AuthenticationUtilities.ConnectionProperties conn;
 
-        JAXBContext context = JAXBContext.newInstance(Zalba.class);
-        Unmarshaller um = context.createUnmarshaller();
-
-        //Setup schema validator
-        SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-        Schema employeeSchema = sf.newSchema(new File(SCHEMA_URL));
-        um.setSchema(employeeSchema);
-
-        Zalba zalba = (Zalba) um.unmarshal(new InputStreamReader(
-                new FileInputStream(IN_URL), StandardCharsets.UTF_8));
-
-        System.out.println("\nISPIS ZALBE:\n");
-        System.out.println(zalba);
-
-        Marshaller m = context.createMarshaller();
-
-        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-        m.marshal(zalba, new File(OUT_URL));
-
-        System.out.println("\nFAJL USPESNO SACUVAN!\n");
+    public static void main(String[] args) throws Exception {
+        run(conn = new AuthenticationUtilities.ConnectionProperties(null));
     }
+
+    public static void run(AuthenticationUtilities.ConnectionProperties conn) throws Exception {
+
+        // initialize collection and document identifiers
+        String collectionId = "ZalbaNaOdluku";
+        String documentId = "1.xml";
+
+        // initialize database driver
+        Class<?> cl = Class.forName(conn.driver);
+
+        // encapsulation of the database driver functionality
+        Database database = (Database) cl.newInstance();
+        database.setProperty("create-database", "true");
+
+        // entry point for the API which enables you to get the Collection reference
+        DatabaseManager.registerDatabase(database);
+
+        // a collection of Resources stored within an XML database
+        Collection col = null;
+        XMLResource res = null;
+        OutputStream os = new ByteArrayOutputStream();
+
+        try {
+            col = getOrCreateCollection(collectionId);
+
+            res = (XMLResource) col.createResource(documentId, XMLResource.RESOURCE_TYPE);
+
+            JAXBContext context = JAXBContext.newInstance(Zalba.class);
+            Unmarshaller um = context.createUnmarshaller();
+
+            //Setup schema validator
+            SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Schema employeeSchema = sf.newSchema(new File(SCHEMA_URL));
+            um.setSchema(employeeSchema);
+
+            Zalba zalba = (Zalba) um.unmarshal(new InputStreamReader(
+                    new FileInputStream(IN_URL), StandardCharsets.UTF_8));
+
+            System.out.println("\nISPIS ZALBE:\n");
+            System.out.println(zalba);
+
+            Marshaller m = context.createMarshaller();
+
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            m.marshal(zalba, os);
+
+            // link the stream to the XML resource
+            res.setContent(os);
+
+            col.storeResource(res);
+        } finally {
+
+            /*
+
+            //don't forget to cleanup
+            if(res != null) {
+                try {
+                    ((EXistResource)res).freeResources();
+                } catch (XMLDBException xe) {
+                    xe.printStackTrace();
+                }
+            }
+            
+             */
+
+            if(col != null) {
+                try {
+                    col.close();
+                } catch (XMLDBException xe) {
+                    xe.printStackTrace();
+                }
+            }
+        }
+
+    }
+
+    private static Collection getOrCreateCollection(String collectionUri) throws XMLDBException {
+        return getOrCreateCollection(collectionUri, 0);
+    }
+
+    private static Collection getOrCreateCollection(String collectionUri, int pathSegmentOffset) throws XMLDBException, XMLDBException {
+
+        Collection col = DatabaseManager.getCollection(conn.uri + collectionUri, conn.user, conn.password);
+
+        // create the collection if it does not exist
+        if(col == null) {
+
+            if(collectionUri.startsWith("/")) {
+                collectionUri = collectionUri.substring(1);
+            }
+
+            String pathSegments[] = collectionUri.split("/");
+
+            if(pathSegments.length > 0) {
+                StringBuilder path = new StringBuilder();
+
+                for(int i = 0; i <= pathSegmentOffset; i++) {
+                    path.append("/" + pathSegments[i]);
+                }
+
+                Collection startCol = DatabaseManager.getCollection(conn.uri + path, conn.user, conn.password);
+
+                if (startCol == null) {
+
+                    // child collection does not exist
+
+                    String parentPath = path.substring(0, path.lastIndexOf("/"));
+                    Collection parentCol = DatabaseManager.getCollection(conn.uri + parentPath, conn.user, conn.password);
+
+                    CollectionManagementService mgt = (CollectionManagementService) parentCol.getService("CollectionManagementService", "1.0");
+
+                    System.out.println("[INFO] Creating the collection: " + pathSegments[pathSegmentOffset]);
+                    col = mgt.createCollection(pathSegments[pathSegmentOffset]);
+
+                    col.close();
+                    parentCol.close();
+
+                } else {
+                    startCol.close();
+                }
+            }
+            return getOrCreateCollection(collectionUri, ++pathSegmentOffset);
+        } else {
+            return col;
+        }
+    }
+
+
 }
