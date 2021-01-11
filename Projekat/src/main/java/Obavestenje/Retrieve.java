@@ -2,6 +2,10 @@ package Obavestenje;
 
 import Obavestenje.model.Obavestenje;
 import ZalbaNaOdluku.model.Zalba;
+import org.apache.jena.query.QueryExecution;
+import org.apache.jena.query.QueryExecutionFactory;
+import org.apache.jena.query.ResultSet;
+import org.apache.jena.query.ResultSetFormatter;
 import org.exist.xmldb.EXistResource;
 import org.xmldb.api.DatabaseManager;
 import org.xmldb.api.base.Collection;
@@ -9,15 +13,18 @@ import org.xmldb.api.base.Database;
 import org.xmldb.api.base.XMLDBException;
 import org.xmldb.api.modules.XMLResource;
 import util.AuthenticationUtilities;
+import util.SparqlUtil;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.OutputKeys;
+import java.io.IOException;
 
 public class Retrieve {
 
     public static void main(String[] args) throws Exception {
         run(AuthenticationUtilities.loadExistProperties(), args);
+        retrieveRdf();
     }
 
     public static void run(AuthenticationUtilities.ExistProperties conn, String args[]) throws Exception {
@@ -91,5 +98,34 @@ public class Retrieve {
                 }
             }
         }
+    }
+
+    private static void retrieveRdf() throws IOException {
+
+        final String SPARQL_NAMED_GRAPH_URI = "/metadata";
+
+        AuthenticationUtilities.FusekiProperties properties =
+                AuthenticationUtilities.loadFusekiProperties();
+
+        // Read the triples from the named graph
+        System.out.println();
+        System.out.println("[INFO] Retrieving triples from RDF store.");
+        System.out.println("[INFO] Using \"" + SPARQL_NAMED_GRAPH_URI + "\" named graph.");
+
+        System.out.println("[INFO] Selecting the triples from the named graph \"" + SPARQL_NAMED_GRAPH_URI + "\".");
+        String sparqlQuery = SparqlUtil.selectData(properties.dataEndpoint + SPARQL_NAMED_GRAPH_URI,
+                "<http://Obavestenje/1> ?p ?o");
+
+        // Create a QueryExecution that will access a SPARQL service over HTTP
+        QueryExecution query = QueryExecutionFactory.sparqlService(properties.queryEndpoint, sparqlQuery);
+
+        // Query the collection, dump output response as XML
+        ResultSet results = query.execSelect();
+
+        ResultSetFormatter.out(System.out, results);
+
+        query.close() ;
+
+        System.out.println("[INFO] End.");
     }
 }

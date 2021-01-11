@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Resenje xmlns="http://www.ftn.uns.ac.rs/resenje"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.ftn.uns.ac.rs/resenje file:/E:/Faks/7.%20semestar/XML%20i%20veb%20servisi/XML_Web_Servisi/Dokumenti/XML%20Seme/resenje.xsd">
-    <Odluka_resenja>Odluka_resenja0</Odluka_resenja>
-    <Br_resenja>123-00-0300/2000-00</Br_resenja>
-    <Datum_resenja>2006-05-04</Datum_resenja>
+ xsi:schemaLocation="http://www.ftn.uns.ac.rs/resenje file:/E:/Faks/7.%20semestar/XML%20i%20veb%20servisi/XML_Web_Servisi/Dokumenti/XML%20Seme/resenje.xsd"
+xmlns:pred="http://examples/predicate/"
+ vocab="http://examples/predicate/"
+ about="http://Resenje/1"
+ >
+    <Odluka_resenja property="odlukaResenja">Odluka_resenja0</Odluka_resenja>
+    <Br_resenja property="brojResenja">123-00-0300/2000-00</Br_resenja>
+    <Datum_resenja property="datumResenja" datatype="xs:date">2006-05-04</Datum_resenja>
     <Uvod>
-        <Podnosilac_zalbe>AA</Podnosilac_zalbe>
-        <Razlog>protiv resenja</Razlog>
-        <Organ_vlasti>Organ_vlasti1</Organ_vlasti>
-        <Datum_zahteva>2006-05-04</Datum_zahteva>
+        <Podnosilac_zalbe property="podnosilacZalbe">AA</Podnosilac_zalbe>
+        <Razlog property="razlogResenja">protiv resenja</Razlog>
+        <Organ_vlasti property="organVlasti">Organ_vlasti1</Organ_vlasti>
+        <Datum_zahteva property="datumZahteva">2006-05-04</Datum_zahteva>
         <Osnova_resenja>
             <Zakon>
                 <Clan>50</Clan>
                 <Stav>50</Stav>
                 <Tacka>50</Tacka>
-                <Naziv>Naziv0</Naziv>
+                <Naziv property="osnovaResenja">Naziv0</Naziv>
                 <Broj_glasnika>1/</Broj_glasnika>
             </Zakon>
         </Osnova_resenja>
     </Uvod>
     <Ishod>Ishod0</Ishod>
     <Obrazlozenje>
-        <Datum_zalbe>2006-05-04</Datum_zalbe>
+        <Datum_zalbe property="datumZalbe" datatype="xs:date">2006-05-04</Datum_zalbe>
         <Datum_prosledjivanja_zalbe>2006-05-04</Datum_prosledjivanja_zalbe>
         <Razlog>Razlog1</Razlog>
         <Razlog>Razlog2</Razlog>
