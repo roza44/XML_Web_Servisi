@@ -1,0 +1,14 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:h="http://www.w3.org/1999/xhtml">
+  <rdf:Description rdf:about="http://Zahtev/1">
+    <pred:nazivOrgana xmlns:pred="http://examples/predicate/" rdf:datatype="string">Fakultet tehnickih nauka</pred:nazivOrgana>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://Zahtev/1">
+    <pred:mestoZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="string">Novi Sad</pred:mestoZahteva>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://Zahtev/1">
+    <pred:datumZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="date">2006-05-04</pred:datumZahteva>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://Zahtev/1">
+    <pred:traziocZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="string">Petar Petrovic</pred:traziocZahteva>
+  </rdf:Description>
+</rdf:RDF>

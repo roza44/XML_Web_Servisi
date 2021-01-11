@@ -2,10 +2,14 @@
 <Zahtev xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
  xmlns="http://www.ftn.uns.ac.rs/zahtev"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.ftn.uns.ac.rs/zahtev file:/C:/Users/Nemanja/Desktop/2.%20XMLParsers%20(JAXB)/data/zahtevcir.xsd">
+ xsi:schemaLocation="http://www.ftn.uns.ac.rs/zahtev file:/C:/Users/Nemanja/Desktop/2.%20XMLParsers%20(JAXB)/data/zahtevcir.xsd"
+ xmlns:pred="http://examples/predicate/"
+ vocab="http://examples/predicate/"
+ about="http://Zahtev/1"
+    >
     <Primalac>
         <Organ>
-            <Naziv>Fakultet tehnickih nauka</Naziv>
+            <Naziv property="pred:nazivOrgana" datatype="xs:string" content="Fakultet tehnickih nauka">Fakultet tehnickih nauka</Naziv>
             <AdresaOrgana>
                 <Mesto>Novi Sad</Mesto>
                 <Ulica>Trg Dositeja Obradovica</Ulica>
@@ -45,9 +49,9 @@
             </IzboriZahteva>
             <Informacije>Neke veoma bitne informacije</Informacije>
             <PodaciOZahtevu>
-                <Mesto>Novi Sad</Mesto>
-                <Datum>2006-05-04</Datum>
-                <Trazioc>
+                <Mesto property="pred:mestoZahteva" datatype="xs:string" content="Novi Sad">Novi Sad</Mesto>
+                <Datum property="pred:datumZahteva" datatype="xs:date" content="2006-05-04">2006-05-04</Datum>
+                <Trazioc property="pred:traziocZahteva" datatype="sx:string" content="Petar Petrovic">
                     <Ime>Petar</Ime>
                     <Prezime>Petrovic</Prezime>
                     <Adresa>
