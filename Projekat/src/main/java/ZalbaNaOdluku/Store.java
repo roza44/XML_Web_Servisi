@@ -19,7 +19,7 @@ import javax.xml.validation.SchemaFactory;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
-public class Main {
+public class Store {
 
     private static final String SCHEMA_URL = "./../Dokumenti/XML Seme/zalbanaodlukucir.xsd";
     private static final String IN_URL = "./../Dokumenti/XML Dokumenti/Ulaz/ZalbaNaOdluku1.xml";
@@ -32,9 +32,18 @@ public class Main {
 
     public static void run(AuthenticationUtilities.ConnectionProperties conn) throws Exception {
 
+        System.out.println("[INFO] " + Store.class.getSimpleName());
+
         // initialize collection and document identifiers
         String collectionId = "/db/sample/ZalbaNaOdluku";
         String documentId = "1.xml";
+
+        System.out.println("\t- collection ID: " + collectionId);
+        System.out.println("\t- document ID: " + documentId);
+        System.out.println("\t- file path: " + IN_URL + "\n");
+
+        // initialize database driver
+        System.out.println("[INFO] Loading driver class: " + conn.driver);
 
         // initialize database driver
         Class<?> cl = Class.forName(conn.driver);
@@ -52,10 +61,13 @@ public class Main {
         OutputStream os = new ByteArrayOutputStream();
 
         try {
+            System.out.println("[INFO] Retrieving the collection: " + collectionId);
             col = getOrCreateCollection(collectionId);
 
+            System.out.println("[INFO] Inserting the document: " + documentId);
             res = (XMLResource) col.createResource(documentId, XMLResource.RESOURCE_TYPE);
 
+            System.out.println("[INFO] Unmarshalling XML document to an JAXB instance: ");
             JAXBContext context = JAXBContext.newInstance(Zalba.class);
             Unmarshaller um = context.createUnmarshaller();
 
@@ -77,8 +89,10 @@ public class Main {
 
             // link the stream to the XML resource
             res.setContent(os);
+            System.out.println("[INFO] Storing the document: " + res.getId());
 
             col.storeResource(res);
+            System.out.println("[INFO] Done.");
         } finally {
 
 //            //don't forget to cleanup
