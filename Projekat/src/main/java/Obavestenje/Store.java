@@ -7,6 +7,7 @@ import org.apache.jena.update.UpdateExecutionFactory;
 import org.apache.jena.update.UpdateFactory;
 import org.apache.jena.update.UpdateProcessor;
 import org.apache.jena.update.UpdateRequest;
+import org.exist.xmldb.EXistResource;
 import org.xml.sax.SAXException;
 import org.xmldb.api.DatabaseManager;
 import org.xmldb.api.base.Collection;
@@ -106,14 +107,14 @@ public class Store {
             System.out.println("[INFO] Done.");
         } finally {
 
-//            //don't forget to cleanup
-//            if(res != null) {
-//                try {
-//                    ((EXistResource)res).freeResources();
-//                } catch (XMLDBException xe) {
-//                    xe.printStackTrace();
-//                }
-//            }
+            //don't forget to cleanup
+            if(res != null) {
+                try {
+                    ((EXistResource)res).freeResources();
+                } catch (XMLDBException xe) {
+                    xe.printStackTrace();
+                }
+            }
 
 
 

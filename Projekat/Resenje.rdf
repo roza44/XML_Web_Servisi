@@ -1,0 +1,29 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:h="http://www.w3.org/1999/xhtml">
+  <rdf:Description rdf:about="http://Resenje/1">
+    <ns0:odlukaResenja xmlns:ns0="http://www.ftn.uns.ac.rs/resenje" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Odluka_resenja0</ns0:odlukaResenja>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://Resenje/1">
+    <ns1:brojResenja xmlns:ns1="http://www.ftn.uns.ac.rs/resenje" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">123-00-0300/2000-00</ns1:brojResenja>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://Resenje/1">
+    <ns2:datumResenja xmlns:ns2="http://www.ftn.uns.ac.rs/resenje" rdf:datatype="date">2006-05-04</ns2:datumResenja>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://Resenje/1">
+    <ns3:podnosilacZalbe xmlns:ns3="http://www.ftn.uns.ac.rs/resenje" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">AA</ns3:podnosilacZalbe>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://Resenje/1">
+    <ns4:razlogResenja xmlns:ns4="http://www.ftn.uns.ac.rs/resenje" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">protiv resenja</ns4:razlogResenja>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://Resenje/1">
+    <ns5:organVlasti xmlns:ns5="http://www.ftn.uns.ac.rs/resenje" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Organ_vlasti1</ns5:organVlasti>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://Resenje/1">
+    <ns6:datumZahteva xmlns:ns6="http://www.ftn.uns.ac.rs/resenje" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">2006-05-04</ns6:datumZahteva>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://Resenje/1">
+    <ns7:osnovaResenja xmlns:ns7="http://www.ftn.uns.ac.rs/resenje" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Naziv0</ns7:osnovaResenja>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://Resenje/1">
+    <ns8:datumZalbe xmlns:ns8="http://www.ftn.uns.ac.rs/resenje" rdf:datatype="date">2006-05-04</ns8:datumZalbe>
+  </rdf:Description>
+</rdf:RDF>
