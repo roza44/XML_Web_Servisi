@@ -1,6 +1,7 @@
 package ZalbaNaOdluku;
 
 import ZalbaNaOdluku.model.Zalba;
+import org.exist.xmldb.EXistResource;
 import org.xmldb.api.DatabaseManager;
 import org.xmldb.api.base.Collection;
 import org.xmldb.api.base.Database;
@@ -15,10 +16,10 @@ import javax.xml.transform.OutputKeys;
 public class Retrieve {
 
     public static void main(String[] args) throws Exception {
-        run(AuthenticationUtilities.loadProperties(), args);
+        run(AuthenticationUtilities.loadExistProperties(), args);
     }
 
-    public static void run(AuthenticationUtilities.ConnectionProperties conn, String args[]) throws Exception {
+    public static void run(AuthenticationUtilities.ExistProperties conn, String args[]) throws Exception {
 
         System.out.println("[INFO] " + Retrieve.class.getSimpleName());
 
@@ -71,7 +72,7 @@ public class Retrieve {
         } finally {
             //don't forget to clean up!
 
-            /*
+
             if(res != null) {
                 try {
                     ((EXistResource)res).freeResources();
@@ -79,7 +80,7 @@ public class Retrieve {
                     xe.printStackTrace();
                 }
             }
-            */
+
 
             if(col != null) {
                 try {

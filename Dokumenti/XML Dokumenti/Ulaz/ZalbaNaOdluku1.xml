@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/grddl.xsl"?>
+
 <Zalba xmlns="http://www.ftn.uns.ac.rs/ZalbaNaOdluku"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.ftn.uns.ac.rs/ZalbaNaOdluku file:/C:/Faks/4.%20Godina/7.%20Semestar/XML/XML_Web_Servisi/Dokumenti/XML%20Seme/zalbanaodlukucir.xsd">
+ xsi:schemaLocation="http://www.ftn.uns.ac.rs/ZalbaNaOdluku file:/C:/Faks/4.%20Godina/7.%20Semestar/XML/XML_Web_Servisi/Dokumenti/XML%20Seme/zalbanaodlukucir.xsd"
+ xmlns:pred="http://examples/predicate/"
+ vocab="http://examples/predicate/"
+ about="http://ZalbaNaOdluku/1"
+    >
     <Zalilac xmlns:zno="http://www.ftn.uns.ac.rs/ZalbaNaOdluku" xsi:type="zno:TPravno_Lice">
         <Adresa>
             <Mesto>Banatsko Arandjelovo</Mesto>
@@ -9,16 +15,16 @@
             <Ulica>Vojvode Misica</Ulica>
             <Broj>22</Broj>
         </Adresa>
-        <Naziv>DOO Bodroza</Naziv>
+        <Naziv property="pred:nazivZalioca" content="DOO Bodroza">DOO Bodroza</Naziv>
     </Zalilac>
     <Resenje>
-        <Donosilac_Odluke>Rade Gojkovic</Donosilac_Odluke>
-        <Broj>13</Broj>
-        <Godina>2020</Godina>
+        <Donosilac_Odluke property="pred:donosilacOdluke">Rade Gojkovic</Donosilac_Odluke>
+        <Broj property="pred:brojResenja" datatype="xs:int" content="13">13</Broj>
+        <Godina property="pred:godinaResenja" datatype="xs:int" content="2020" >2020</Godina>
     </Resenje>
-    <Datum_Zahteva>2020-05-04</Datum_Zahteva>
+    <Datum_Zahteva property="pred:datumZahteva" datatype="xs:date" content="2020-05-04">2020-05-04</Datum_Zahteva>
     <Osnov_Zalbe>Pobija se zahtev za racunima mesne zajednice</Osnov_Zalbe>
-    <Podnosilac>
+    <Podnosilac property="pred:podnosilacZalbe" datatype="xs:string" content="Radovan Bodroza">
         <Ime>Radovan</Ime>
         <Prezime>Bodroza</Prezime>
     </Podnosilac>
@@ -28,6 +34,6 @@
         <Ulica>Vojvode Putnika</Ulica>
         <Broj>20</Broj>
     </Adresa>
-    <Datum_Zalbe>2006-06-06</Datum_Zalbe>
+    <Datum_Zalbe property="pred:datumZalbe">2006-06-06</Datum_Zalbe>
     <Kontakt>bodroza.joca@gmail.com</Kontakt>
 </Zalba>

@@ -1,6 +1,11 @@
 package ZalbaNaOdluku;
 
 import ZalbaNaOdluku.model.Zalba;
+import org.apache.jena.update.UpdateExecutionFactory;
+import org.apache.jena.update.UpdateFactory;
+import org.apache.jena.update.UpdateProcessor;
+import org.apache.jena.update.UpdateRequest;
+import org.exist.xmldb.EXistResource;
 import org.xml.sax.SAXException;
 import org.xmldb.api.DatabaseManager;
 import org.xmldb.api.base.Collection;
@@ -9,13 +14,13 @@ import org.xmldb.api.base.XMLDBException;
 import org.xmldb.api.modules.CollectionManagementService;
 import org.xmldb.api.modules.XMLResource;
 import util.AuthenticationUtilities;
+import util.MetadataExtractor;
+import util.SparqlUtil;
 
-import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
+import javax.xml.transform.TransformerException;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
@@ -24,13 +29,14 @@ public class Store {
     private static final String SCHEMA_URL = "./../Dokumenti/XML Seme/zalbanaodlukucir.xsd";
     private static final String IN_URL = "./../Dokumenti/XML Dokumenti/Ulaz/ZalbaNaOdluku1.xml";
 
-    public static AuthenticationUtilities.ConnectionProperties conn;
+    public static AuthenticationUtilities.ExistProperties conn;
 
     public static void main(String[] args) throws Exception {
-        run(conn = AuthenticationUtilities.loadProperties());
+        run(conn = AuthenticationUtilities.loadExistProperties());
+        storeRdf();
     }
 
-    public static void run(AuthenticationUtilities.ConnectionProperties conn) throws Exception {
+    public static void run(AuthenticationUtilities.ExistProperties conn) throws Exception {
 
         System.out.println("[INFO] " + Store.class.getSimpleName());
 
@@ -72,9 +78,9 @@ public class Store {
             Unmarshaller um = context.createUnmarshaller();
 
             //Setup schema validator
-            SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema employeeSchema = sf.newSchema(new File(SCHEMA_URL));
-            um.setSchema(employeeSchema);
+//            SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+//            Schema employeeSchema = sf.newSchema(new File(SCHEMA_URL));
+//            um.setSchema(employeeSchema);
 
             Zalba zalba = (Zalba) um.unmarshal(new InputStreamReader(
                     new FileInputStream(IN_URL), StandardCharsets.UTF_8));
@@ -95,14 +101,14 @@ public class Store {
             System.out.println("[INFO] Done.");
         } finally {
 
-//            //don't forget to cleanup
-//            if(res != null) {
-//                try {
-//                    ((EXistResource)res).freeResources();
-//                } catch (XMLDBException xe) {
-//                    xe.printStackTrace();
-//                }
-//            }
+            //don't forget to cleanup
+            if(res != null) {
+                try {
+                    ((EXistResource)res).freeResources();
+                } catch (XMLDBException xe) {
+                    xe.printStackTrace();
+                }
+            }
 
 
 
@@ -114,6 +120,36 @@ public class Store {
                 }
             }
         }
+
+    }
+
+    private static void storeRdf() throws IOException, TransformerException, SAXException {
+
+        final String SPARQL_NAMED_GRAPH_URI = "/metadata";
+
+        AuthenticationUtilities.FusekiProperties properties =
+                AuthenticationUtilities.loadFusekiProperties();
+
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+        // Automatic extraction of RDF triples from XML file
+        MetadataExtractor metadataExtractor = new MetadataExtractor();
+
+        System.out.println("[INFO] Extracting metadata from RDFa attributes...");
+        metadataExtractor.extractMetadata(
+                new FileInputStream(new File(IN_URL)),
+                out);
+
+        // Writing the named graph
+        System.out.println("[INFO] Populating named graph \"" + SPARQL_NAMED_GRAPH_URI + "\" with extracted metadata.");
+        String sparqlUpdate = SparqlUtil.insertData(properties.dataEndpoint + SPARQL_NAMED_GRAPH_URI, new String(out.toByteArray()));
+        System.out.println(sparqlUpdate);
+
+        // UpdateRequest represents a unit of execution
+        UpdateRequest update = UpdateFactory.create(sparqlUpdate);
+
+        UpdateProcessor processor = UpdateExecutionFactory.createRemote(update, properties.updateEndpoint);
+        processor.execute();
 
     }
 
