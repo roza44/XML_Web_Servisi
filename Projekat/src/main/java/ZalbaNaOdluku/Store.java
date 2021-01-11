@@ -1,6 +1,8 @@
 package ZalbaNaOdluku;
 
 import ZalbaNaOdluku.model.Zalba;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.update.UpdateExecutionFactory;
 import org.apache.jena.update.UpdateFactory;
 import org.apache.jena.update.UpdateProcessor;
@@ -130,15 +132,23 @@ public class Store {
         AuthenticationUtilities.FusekiProperties properties =
                 AuthenticationUtilities.loadFusekiProperties();
 
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-
         // Automatic extraction of RDF triples from XML file
         MetadataExtractor metadataExtractor = new MetadataExtractor();
+
+        String rdfFilePath = "ZalbaNaOdluku.rdf";
 
         System.out.println("[INFO] Extracting metadata from RDFa attributes...");
         metadataExtractor.extractMetadata(
                 new FileInputStream(new File(IN_URL)),
-                out);
+                new FileOutputStream(new File(rdfFilePath)));
+
+        // Loading a default model with extracted metadata
+        Model model = ModelFactory.createDefaultModel();
+        model.read(rdfFilePath);
+
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+        model.write(out, SparqlUtil.NTRIPLES);
 
         // Writing the named graph
         System.out.println("[INFO] Populating named graph \"" + SPARQL_NAMED_GRAPH_URI + "\" with extracted metadata.");

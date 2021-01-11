@@ -16,10 +16,10 @@ import javax.xml.transform.OutputKeys;
 public class Retrieve {
 
     public static void main(String[] args) throws Exception {
-        run(AuthenticationUtilities.loadProperties(), args);
+        run(AuthenticationUtilities.loadExistProperties(), args);
     }
 
-    public static void run(AuthenticationUtilities.ConnectionProperties conn, String args[]) throws Exception {
+    public static void run(AuthenticationUtilities.ExistProperties conn, String args[]) throws Exception {
 
         System.out.println("[INFO] " + ZalbaNaOdluku.Retrieve.class.getSimpleName());
 

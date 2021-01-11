@@ -24,13 +24,13 @@ public class Store {
     private static final String IN_URL = "./../Dokumenti/XML Dokumenti/Ulaz/Obavestenje1.xml";
     private static final String OUT_URL = "./../Dokumenti/XML Dokumenti/Izlaz/Obavestenje1.xml";
 
-    public static AuthenticationUtilities.ConnectionProperties conn;
+    public static AuthenticationUtilities.ExistProperties conn;
 
     public static void main(String[] args) throws Exception {
-        run(conn = AuthenticationUtilities.loadProperties());
+        run(conn = AuthenticationUtilities.loadExistProperties());
     }
 
-    public static void run(AuthenticationUtilities.ConnectionProperties conn) throws Exception {
+    public static void run(AuthenticationUtilities.ExistProperties conn) throws Exception {
 
         System.out.println("[INFO] " + ZalbaNaOdluku.Store.class.getSimpleName());
 
