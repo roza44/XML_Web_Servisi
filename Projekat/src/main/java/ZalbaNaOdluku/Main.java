@@ -27,13 +27,13 @@ public class Main {
     public static AuthenticationUtilities.ConnectionProperties conn;
 
     public static void main(String[] args) throws Exception {
-        run(conn = new AuthenticationUtilities.ConnectionProperties(null));
+        run(conn = AuthenticationUtilities.loadProperties());
     }
 
     public static void run(AuthenticationUtilities.ConnectionProperties conn) throws Exception {
 
         // initialize collection and document identifiers
-        String collectionId = "ZalbaNaOdluku";
+        String collectionId = "/db/sample/ZalbaNaOdluku";
         String documentId = "1.xml";
 
         // initialize database driver
@@ -81,18 +81,16 @@ public class Main {
             col.storeResource(res);
         } finally {
 
-            /*
+//            //don't forget to cleanup
+//            if(res != null) {
+//                try {
+//                    ((EXistResource)res).freeResources();
+//                } catch (XMLDBException xe) {
+//                    xe.printStackTrace();
+//                }
+//            }
 
-            //don't forget to cleanup
-            if(res != null) {
-                try {
-                    ((EXistResource)res).freeResources();
-                } catch (XMLDBException xe) {
-                    xe.printStackTrace();
-                }
-            }
-            
-             */
+
 
             if(col != null) {
                 try {
