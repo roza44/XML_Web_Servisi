@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Obavestenje xmlns="http://www.ftn.uns.ac.rs/obavestenje"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.ftn.uns.ac.rs/obavestenje file:/E:/Faks/7.%20semestar/XML%20i%20veb%20servisi/XML_Web_Servisi/Dokumenti/XML%20Seme/obavestenjecir.xsd">
+ xsi:schemaLocation="http://www.ftn.uns.ac.rs/obavestenje file:/E:/Faks/7.%20semestar/XML%20i%20veb%20servisi/XML_Web_Servisi/Dokumenti/XML%20Seme/obavestenjecir.xsd"
+ xmlns:pred="http://examples/predicate/"
+ vocab="http://examples/predicate/"
+ about="http://Obavestenje/1"
+ >
     <Organ>
-        <Naziv>Naziv organa</Naziv>
+        <Naziv property="pred:nazivOrgana">Naziv organa</Naziv>
         <Sediste>Vrsac</Sediste>
     </Organ>
-    <Datum>2006-05-04</Datum>
+    <Datum property="pred:datumObavestenja" datatype="xs:date">2006-05-04</Datum>
     <Broj_predmeta>26</Broj_predmeta>
-    <Podnosioc_zahteva xmlns:ob="http://www.ftn.uns.ac.rs/obavestenje" xsi:type="ob:TFizickoLice">
+    <Podnosioc_zahteva xmlns:ob="http://www.ftn.uns.ac.rs/obavestenje" xsi:type="ob:TFizickoLice"
+    >
         <Adresa>
             <Mesto>Vrsac</Mesto>
             <Postanski_broj>26300</Postanski_broj>
             <Ulica>Blabla</Ulica>
             <Broj>50</Broj>
         </Adresa>
-        <Ime>Vukasin</Ime>
-        <Prezime>Jokic</Prezime>
+        <Ime property="pred:imePodnosioca">Vukasin</Ime>
+        <Prezime property="pred:prezimePodnosioca">Jokic</Prezime>
     </Podnosioc_zahteva>
     <Trazena_informacija>
         <Godina_zahteva>0</Godina_zahteva>
         <Opis_informacije>Jako vazna informacija</Opis_informacije>
     </Trazena_informacija>
     <Uvid>
-        <Datum>2006-05-04</Datum>
+        <Datum property="pred:datumUvida" datatype="xs:date">2006-05-04</Datum>
         <Satnica>01:01:01.001</Satnica>
         <Satnica_od>01:01:01.001</Satnica_od>
         <Satnica_do>02:01:01.001</Satnica_do>

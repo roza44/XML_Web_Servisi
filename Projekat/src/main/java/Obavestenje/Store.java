@@ -1,6 +1,13 @@
 package Obavestenje;
 
 import Obavestenje.model.Obavestenje;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.update.UpdateExecutionFactory;
+import org.apache.jena.update.UpdateFactory;
+import org.apache.jena.update.UpdateProcessor;
+import org.apache.jena.update.UpdateRequest;
+import org.xml.sax.SAXException;
 import org.xmldb.api.DatabaseManager;
 import org.xmldb.api.base.Collection;
 import org.xmldb.api.base.Database;
@@ -8,11 +15,14 @@ import org.xmldb.api.base.XMLDBException;
 import org.xmldb.api.modules.CollectionManagementService;
 import org.xmldb.api.modules.XMLResource;
 import util.AuthenticationUtilities;
+import util.MetadataExtractor;
+import util.SparqlUtil;
 
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.transform.TransformerException;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import java.io.*;
@@ -28,6 +38,7 @@ public class Store {
 
     public static void main(String[] args) throws Exception {
         run(conn = AuthenticationUtilities.loadExistProperties());
+        storeRdf();
     }
 
     public static void run(AuthenticationUtilities.ExistProperties conn) throws Exception {
@@ -72,9 +83,9 @@ public class Store {
             Unmarshaller um = context.createUnmarshaller();
 
             //Setup schema validator
-            SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-            Schema employeeSchema = sf.newSchema(new File(SCHEMA_URL));
-            um.setSchema(employeeSchema);
+//            SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+//            Schema employeeSchema = sf.newSchema(new File(SCHEMA_URL));
+//            um.setSchema(employeeSchema);
 
             Obavestenje obavestenje = (Obavestenje) um.unmarshal(new InputStreamReader(
                     new FileInputStream(IN_URL), StandardCharsets.UTF_8));
@@ -114,6 +125,44 @@ public class Store {
                 }
             }
         }
+
+    }
+
+    private static void storeRdf() throws IOException, TransformerException, SAXException {
+
+        final String SPARQL_NAMED_GRAPH_URI = "/metadata";
+
+        AuthenticationUtilities.FusekiProperties properties =
+                AuthenticationUtilities.loadFusekiProperties();
+
+        // Automatic extraction of RDF triples from XML file
+        MetadataExtractor metadataExtractor = new MetadataExtractor();
+
+        String rdfFilePath = "Obavestenje.rdf";
+
+        System.out.println("[INFO] Extracting metadata from RDFa attributes...");
+        metadataExtractor.extractMetadata(
+                new FileInputStream(new File(IN_URL)),
+                new FileOutputStream(new File(rdfFilePath)));
+
+        // Loading a default model with extracted metadata
+        Model model = ModelFactory.createDefaultModel();
+        model.read(rdfFilePath);
+
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+        model.write(out, SparqlUtil.NTRIPLES);
+
+        // Writing the named graph
+        System.out.println("[INFO] Populating named graph \"" + SPARQL_NAMED_GRAPH_URI + "\" with extracted metadata.");
+        String sparqlUpdate = SparqlUtil.insertData(properties.dataEndpoint + SPARQL_NAMED_GRAPH_URI, new String(out.toByteArray()));
+        System.out.println(sparqlUpdate);
+
+        // UpdateRequest represents a unit of execution
+        UpdateRequest update = UpdateFactory.create(sparqlUpdate);
+
+        UpdateProcessor processor = UpdateExecutionFactory.createRemote(update, properties.updateEndpoint);
+        processor.execute();
 
     }
 
