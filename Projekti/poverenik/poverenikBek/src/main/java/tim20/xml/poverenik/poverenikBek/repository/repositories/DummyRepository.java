@@ -1,4 +1,4 @@
-package tim20.xml.poverenik.poverenikBek.repository;
+package tim20.xml.poverenik.poverenikBek.repository.repositories;
 
 import org.springframework.stereotype.Repository;
 import tim20.xml.poverenik.poverenikBek.model.Dummy;
