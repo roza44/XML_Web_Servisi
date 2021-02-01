@@ -3,7 +3,7 @@
     <pred:nazivOrgana xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Naziv organa</pred:nazivOrgana>
   </rdf:Description>
   <rdf:Description rdf:about="http://Obavestenje/1">
-    <pred:datumObavestenja xmlns:pred="http://examples/predicate/" rdf:datatype="date">2006-05-04</pred:datumObavestenja>
+    <pred:datumObavestenja xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">2006-05-04</pred:datumObavestenja>
   </rdf:Description>
   <rdf:Description rdf:about="http://Obavestenje/1">
     <pred:imePodnosioca xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Vukasin</pred:imePodnosioca>
@@ -12,6 +12,6 @@
     <pred:prezimePodnosioca xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Jokic</pred:prezimePodnosioca>
   </rdf:Description>
   <rdf:Description rdf:about="http://Obavestenje/1">
-    <pred:datumUvida xmlns:pred="http://examples/predicate/" rdf:datatype="date">2006-05-04</pred:datumUvida>
+    <pred:datumUvida xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">2006-05-04</pred:datumUvida>
   </rdf:Description>
 </rdf:RDF>

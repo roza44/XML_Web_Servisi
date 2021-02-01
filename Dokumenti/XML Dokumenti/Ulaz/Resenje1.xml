@@ -6,27 +6,30 @@ xmlns:pred="http://examples/predicate/"
  vocab="http://examples/predicate/"
  about="http://Resenje/1"
  >
-    <Odluka_resenja property="odlukaResenja">Odluka_resenja0</Odluka_resenja>
-    <Br_resenja property="brojResenja">123-00-0300/2000-00</Br_resenja>
-    <Datum_resenja property="datumResenja" datatype="xs:date">2006-05-04</Datum_resenja>
+    <Odluka_resenja property="pred:odlukaResenja">Odluka_resenja0</Odluka_resenja>
+    <Br_resenja property="pred:brojResenja">123-00-0300/2000-00</Br_resenja>
+    <Datum_resenja property="pred:datumResenja" >2006-05-04</Datum_resenja>
     <Uvod>
-        <Podnosilac_zalbe property="podnosilacZalbe">AA</Podnosilac_zalbe>
-        <Razlog property="razlogResenja">protiv resenja</Razlog>
-        <Organ_vlasti property="organVlasti">Organ_vlasti1</Organ_vlasti>
-        <Datum_zahteva property="datumZahteva">2006-05-04</Datum_zahteva>
+        <Podnosilac_zalbe >
+            <Ime property="pred:imePodnosilacaZalbe">Ime1</Ime>
+            <Prezime property="pred:prezimePodnosilacaZalbe">Prezime1</Prezime>
+        </Podnosilac_zalbe>
+        <Razlog property="pred:razlogResenja">protiv resenja</Razlog>
+        <Organ_vlasti property="pred:organVlasti">Organ_vlasti1</Organ_vlasti>
+        <Datum_zahteva property="pred:datumZahteva">2006-05-04</Datum_zahteva>
         <Osnova_resenja>
             <Zakon>
                 <Clan>50</Clan>
                 <Stav>50</Stav>
                 <Tacka>50</Tacka>
-                <Naziv property="osnovaResenja">Naziv0</Naziv>
+                <Naziv property="pred:osnovaResenja">Naziv0</Naziv>
                 <Broj_glasnika>1/</Broj_glasnika>
             </Zakon>
         </Osnova_resenja>
     </Uvod>
     <Ishod>Ishod0</Ishod>
     <Obrazlozenje>
-        <Datum_zalbe property="datumZalbe" datatype="xs:date">2006-05-04</Datum_zalbe>
+        <Datum_zalbe property="pred:datumZalbe">2006-05-04</Datum_zalbe>
         <Datum_prosledjivanja_zalbe>2006-05-04</Datum_prosledjivanja_zalbe>
         <Razlog>Razlog1</Razlog>
         <Razlog>Razlog2</Razlog>
