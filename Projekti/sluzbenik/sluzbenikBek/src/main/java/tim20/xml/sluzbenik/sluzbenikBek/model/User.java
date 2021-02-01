@@ -12,15 +12,20 @@ public class User implements UserDetails {
     private String lastName;
     private String email;
     private String password;
+    private UserType userType;
 
     private List<Authority> authorities;
 
-    public User(Long id, String firstName, String lastName, String email, String password, List<Authority> authorities) {
+    public User() {
+    }
+
+    public User(Long id, String firstName, String lastName, String email, String password, UserType userType, List<Authority> authorities) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.userType = userType;
         this.authorities = authorities;
     }
 
@@ -97,5 +102,13 @@ public class User implements UserDetails {
 
     public void setAuthorities(List<Authority> authorities) {
         this.authorities = authorities;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
     }
 }
