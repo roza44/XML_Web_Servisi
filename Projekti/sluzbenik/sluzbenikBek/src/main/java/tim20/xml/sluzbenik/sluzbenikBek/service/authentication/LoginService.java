@@ -1,11 +1,10 @@
-package tim20.xml.sluzbenik.sluzbenikBek.service;
+package tim20.xml.sluzbenik.sluzbenikBek.service.authentication;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tim20.xml.sluzbenik.sluzbenikBek.model.User;
 import tim20.xml.sluzbenik.sluzbenikBek.security.api.AuthenticationService;
 import tim20.xml.sluzbenik.sluzbenikBek.security.api.TokenService;
-import tim20.xml.sluzbenik.sluzbenikBek.useCase.user.command.LoginUseCase;
 
 @Service
 public class LoginService implements LoginUseCase {

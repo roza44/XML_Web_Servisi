@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import tim20.xml.sluzbenik.sluzbenikBek.core.exception.EmailTakenException;
 import tim20.xml.sluzbenik.sluzbenikBek.request.LoginRequest;
 import tim20.xml.sluzbenik.sluzbenikBek.request.RegisterRequest;
-import tim20.xml.sluzbenik.sluzbenikBek.useCase.user.command.LoginUseCase;
-import tim20.xml.sluzbenik.sluzbenikBek.useCase.user.command.RegisterGradjaninUseCase;
+import tim20.xml.sluzbenik.sluzbenikBek.service.authentication.LoginUseCase;
+import tim20.xml.sluzbenik.sluzbenikBek.service.authentication.RegisterGradjaninUseCase;
 
 @RestController
 @RequestMapping(value = "/api/auth", produces = MediaType.APPLICATION_XML_VALUE)

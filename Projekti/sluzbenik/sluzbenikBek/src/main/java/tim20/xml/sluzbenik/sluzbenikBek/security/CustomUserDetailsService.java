@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Gradjanin;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Sluzbenik;
-import tim20.xml.sluzbenik.sluzbenikBek.repository.api.UserRepository;
+import tim20.xml.sluzbenik.sluzbenikBek.repository.repositories.UserRepository;
 
 import java.util.Optional;
 

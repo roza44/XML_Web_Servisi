@@ -1,4 +1,4 @@
-package tim20.xml.sluzbenik.sluzbenikBek.repository.api;
+package tim20.xml.sluzbenik.sluzbenikBek.repository.repositories;
 
 import java.util.Optional;
 

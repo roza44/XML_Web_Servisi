@@ -1,9 +1,8 @@
-package tim20.xml.sluzbenik.sluzbenikBek.repository;
+package tim20.xml.sluzbenik.sluzbenikBek.repository.repositories;
 
 import org.springframework.stereotype.Repository;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Authority;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Gradjanin;
-import tim20.xml.sluzbenik.sluzbenikBek.repository.api.UserRepository;
 
 import java.util.HashMap;
 import java.util.List;

@@ -1,4 +1,4 @@
-package tim20.xml.sluzbenik.sluzbenikBek.service;
+package tim20.xml.sluzbenik.sluzbenikBek.service.authentication;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -7,8 +7,7 @@ import tim20.xml.sluzbenik.sluzbenikBek.core.exception.EmailTakenException;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Authority;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Gradjanin;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Sluzbenik;
-import tim20.xml.sluzbenik.sluzbenikBek.repository.api.UserRepository;
-import tim20.xml.sluzbenik.sluzbenikBek.useCase.user.command.RegisterGradjaninUseCase;
+import tim20.xml.sluzbenik.sluzbenikBek.repository.repositories.UserRepository;
 
 import java.util.List;
 import java.util.Optional;
