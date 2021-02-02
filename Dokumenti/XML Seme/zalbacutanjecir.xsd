@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:zlbc="http://www.ftn.uns.ac.rs/zalbacutanje"
+    xmlns:tipovi="http://tipovi"
     targetNamespace="http://www.ftn.uns.ac.rs/zalbacutanje" elementFormDefault="qualified">
-
-    <xs:simpleType name="NazivType">
+    <xs:import namespace="http://tipovi" schemaLocation="../tipovi.xsd"/>
+    <!-- <xs:simpleType name="NazivType">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
             <xs:maxLength value="100"/>
         </xs:restriction>
-    </xs:simpleType>
-    <xs:simpleType name="RazlogZalbeType">
+    </xs:simpleType> -->
+    <xs:simpleType name="TRazlogZalbe">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Organ vlasti nije postupio u zakonskom roku"/>
             <xs:enumeration
@@ -19,11 +20,11 @@
     <xs:element name="Zalba">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Poverenik" type="zlbc:TPravno_lice"/>
+                <xs:element name="Poverenik" type="tipovi:TPravno_lice"/>
                 <xs:element name="Naziv_organa">
                     <xs:complexType>
                         <xs:simpleContent>
-                            <xs:extension base="zlbc:NazivType">
+                            <xs:extension base="tipovi:TNaziv">
                                 <xs:attribute name="property" type="xs:string"> </xs:attribute>
                             </xs:extension>
                         </xs:simpleContent>
@@ -32,7 +33,7 @@
                 <xs:element name="Razlog_zalbe">
                     <xs:complexType>
                         <xs:simpleContent>
-                            <xs:extension base="zlbc:RazlogZalbeType">
+                            <xs:extension base="zlbc:TRazlogZalbe">
                                 <xs:attribute name="property" type="xs:string"> </xs:attribute>
                             </xs:extension>
                         </xs:simpleContent>
@@ -76,7 +77,7 @@
                 <xs:element name="Podnosilac_zalbe">
                     <xs:complexType>
                         <xs:complexContent>
-                            <xs:extension base="zlbc:TFizicko_lice">
+                            <xs:extension base="tipovi:TFizicko_lice">
                                 <xs:sequence>
                                     <xs:element name="Ostali_kontakt_podaci" type="xs:string"/>
                                 </xs:sequence>
@@ -89,7 +90,7 @@
             <xs:attribute name="about" type="xs:string"/>
         </xs:complexType>
     </xs:element>
-    <xs:element name="Adresa">
+    <!-- <xs:element name="Adresa">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="Mesto">
@@ -166,5 +167,5 @@
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
-    </xs:complexType>
+    </xs:complexType> -->
 </xs:schema>

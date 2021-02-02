@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Zalba xmlns="http://www.ftn.uns.ac.rs/zalbacutanje"
+<zlbc:Zalba xmlns:tipovi="http://tipovi"
+ xmlns:zlbc="http://www.ftn.uns.ac.rs/zalbacutanje"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.ftn.uns.ac.rs/zalbacutanje file:/C:/Users/Luka/Documents/Workspace/XML%20i%20web%20servisi/XML_Web_Servisi/Dokumenti/XML%20Seme/zalbacutanjecir.xsd"
+ xsi:schemaLocation="http://www.ftn.uns.ac.rs/zalbacutanje file:/E:/Faks/7.%20semestar/XML%20i%20veb%20servisi/XML_Web_Servisi/Dokumenti/XML%20Seme/zalbacutanjecir.xsd"
  xmlns:pred="http://examples/predicate/"
  vocab="http://examples/predicate/"
- about="http://ZalbaNaCutanje/1"
-    >
-    <Poverenik>
-        <Adresa>
-            <Mesto>Beograd</Mesto>
-            <Postanski_broj>11000</Postanski_broj>
-            <Ulica>Bulevar kralja Aleksandra</Ulica>
-            <Broj>15</Broj>
-        </Adresa>
-        <Naziv>Poverenik za informacije od javnog znacaja i zastitu podataka o licnosti</Naziv>
-    </Poverenik>
-    <Naziv_organa property="pred:nazivOrgana">Ministarstvo finansija</Naziv_organa>
-    <Razlog_zalbe property="pred:razlogZalbe">Organ vlasti nije postupio u zakonskom roku</Razlog_zalbe>
-    <Trazene_informacije_o_zahtevu>
-        <Datum_podnosenja property="pred:datumZahteva" >2020-01-03</Datum_podnosenja>
-        <Podaci_o_zahtevu_i_informacijama property="pred:tekstZahteva" >Zahtevane su informacije o realizaciji budzeta drzave Srbije</Podaci_o_zahtevu_i_informacijama>
-    </Trazene_informacije_o_zahtevu>
-    <Datum_podnosenja_zalbe property="pred:datumZalbe">2020-05-04</Datum_podnosenja_zalbe>
-    <Podnosilac_zalbe>
-        <Adresa>
-            <Mesto>Subotica</Mesto>
-            <Postanski_broj>24000</Postanski_broj>
-            <Ulica>Josipa Krasa</Ulica>
-            <Broj>7</Broj>
-        </Adresa>
-        <Ime property="pred:imeGradjanina">Luka</Ime>
-        <Prezime property="pred:prezimeGradjanina">Nikolic</Prezime>
-        <Ostali_kontakt_podaci>kucni tel: 024/542-533</Ostali_kontakt_podaci>
-    </Podnosilac_zalbe>
-</Zalba>
+ about="http://ZalbaNaCutanje/1">
+    <zlbc:Poverenik>
+        <tipovi:Adresa>
+            <tipovi:Mesto>Mesto0</tipovi:Mesto>
+            <tipovi:Postanski_broj>25500</tipovi:Postanski_broj>
+            <tipovi:Ulica>Ulica0</tipovi:Ulica>
+            <tipovi:Broj>50</tipovi:Broj>
+        </tipovi:Adresa>
+        <tipovi:Naziv>Naziv0</tipovi:Naziv>
+    </zlbc:Poverenik>
+    <zlbc:Naziv_organa property="pred:nazivOrgana">Naziv_organa0</zlbc:Naziv_organa>
+    <zlbc:Razlog_zalbe property="pred:razlogZalbe">Organ vlasti nije postupio u zakonskom roku</zlbc:Razlog_zalbe>
+    <zlbc:Trazene_informacije_o_zahtevu>
+        <zlbc:Datum_podnosenja property="pred:datumZahteva">2006-05-04</zlbc:Datum_podnosenja>
+        <zlbc:Podaci_o_zahtevu_i_informacijama property="pred:tekstZahteva" >Podaci_o_zahtevu_i_informacijama0</zlbc:Podaci_o_zahtevu_i_informacijama>
+    </zlbc:Trazene_informacije_o_zahtevu>
+    <zlbc:Datum_podnosenja_zalbe property="pred:datumZalbe">2006-05-04</zlbc:Datum_podnosenja_zalbe>
+    <zlbc:Podnosilac_zalbe>
+        <tipovi:Adresa>
+            <tipovi:Mesto>Mesto1</tipovi:Mesto>
+            <tipovi:Postanski_broj>25500</tipovi:Postanski_broj>
+            <tipovi:Ulica>Ulica1</tipovi:Ulica>
+            <tipovi:Broj>50</tipovi:Broj>
+        </tipovi:Adresa>
+        <tipovi:Ime property="pred:imeGradjanina">Ime0</tipovi:Ime>
+        <tipovi:Prezime property="pred:prezimeGradjanina">Prezime0</tipovi:Prezime>
+        <zlbc:Ostali_kontakt_podaci>Ostali_kontakt_podaci0</zlbc:Ostali_kontakt_podaci>
+    </zlbc:Podnosilac_zalbe>
+</zlbc:Zalba>

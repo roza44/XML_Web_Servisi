@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:tipovi="http://tipovi"
+    elementFormDefault="qualified"
     targetNamespace="http://www.ftn.uns.ac.rs/ZalbaNaOdluku"
     xmlns:zlbo="http://www.ftn.uns.ac.rs/ZalbaNaOdluku">
-    <xs:simpleType name="NazivType">
+    <xs:import namespace="http://tipovi" schemaLocation="../tipovi.xsd"/>
+    <!-- <xs:simpleType name="NazivType">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
             <xs:maxLength value="100"/>
         </xs:restriction>
-    </xs:simpleType>
+    </xs:simpleType> -->
     <xs:element name="Zalba">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Zalilac" type="zlbo:TLice"/>
+                <xs:element name="Zalilac" type="tipovi:TLice"/>
                 <xs:element ref="zlbo:Resenje"/>
                 <xs:element name="Datum_Zahteva" >
                     <xs:complexType>
@@ -32,7 +35,7 @@
                     </xs:complexType>
                 </xs:element>
                 <xs:element ref="zlbo:Podnosilac"/>
-                <xs:element ref="zlbo:Adresa"/>
+                <xs:element name="Adresa" type="tipovi:TAdresa"/>
                 <xs:element name="Datum_Zalbe">
                     <xs:complexType>
                         <xs:simpleContent>
@@ -57,7 +60,7 @@
             <xs:attribute name="about" type="xs:string"/>
         </xs:complexType>
     </xs:element>
-    <xs:element name="Adresa">
+    <!-- <xs:element name="Adresa">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="Mesto">
@@ -134,7 +137,7 @@
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
-    </xs:complexType>
+    </xs:complexType> -->
     <xs:element name="Resenje">
         <xs:complexType>
             <xs:sequence>

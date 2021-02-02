@@ -23,12 +23,12 @@ import java.nio.charset.StandardCharsets;
 @Repository
 public class DatabaseManager {
 
-    private static util.AuthenticationUtilities.ExistProperties conn;
+    private static AuthenticationUtilities.ExistProperties conn;
     private static Database database;
 
     static {
         try {
-            conn = util.AuthenticationUtilities.loadExistProperties();
+            conn = AuthenticationUtilities.loadExistProperties();
 
             // initialize database driver
             Class<?> cl = Class.forName(conn.driver);

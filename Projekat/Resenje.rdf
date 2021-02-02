@@ -3,22 +3,22 @@
     <pred:odlukaResenja xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Odluka_resenja0</pred:odlukaResenja>
   </rdf:Description>
   <rdf:Description rdf:about="http://Resenje/1">
-    <pred:brojResenja xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">123-00-0300/2000-00</pred:brojResenja>
+    <pred:brojResenja xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">000-00-0000/0000-00</pred:brojResenja>
   </rdf:Description>
   <rdf:Description rdf:about="http://Resenje/1">
     <pred:datumResenja xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">2006-05-04</pred:datumResenja>
   </rdf:Description>
   <rdf:Description rdf:about="http://Resenje/1">
-    <pred:imePodnosilacaZalbe xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Ime1</pred:imePodnosilacaZalbe>
+    <pred:imePodnosilacaZalbe xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Ime0</pred:imePodnosilacaZalbe>
   </rdf:Description>
   <rdf:Description rdf:about="http://Resenje/1">
-    <pred:prezimePodnosilacaZalbe xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Prezime1</pred:prezimePodnosilacaZalbe>
+    <pred:prezimePodnosilacaZalbe xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Prezime0</pred:prezimePodnosilacaZalbe>
   </rdf:Description>
   <rdf:Description rdf:about="http://Resenje/1">
     <pred:razlogResenja xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">protiv resenja</pred:razlogResenja>
   </rdf:Description>
   <rdf:Description rdf:about="http://Resenje/1">
-    <pred:organVlasti xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Organ_vlasti1</pred:organVlasti>
+    <pred:organVlasti xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Organ_vlasti0</pred:organVlasti>
   </rdf:Description>
   <rdf:Description rdf:about="http://Resenje/1">
     <pred:datumZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">2006-05-04</pred:datumZahteva>
