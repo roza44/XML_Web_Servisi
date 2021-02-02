@@ -91,9 +91,9 @@ public class Store {
             Unmarshaller um = context.createUnmarshaller();
 
             // Setup schema validator
-//            SchemaFactory sf = SchemaFactory.newInstance((XMLConstants.W3C_XML_SCHEMA_NS_URI));
-//            Schema zahtevSchema = sf.newSchema(new File(SCHEMA_URL));
-//            um.setSchema(zahtevSchema);
+            SchemaFactory sf = SchemaFactory.newInstance((XMLConstants.W3C_XML_SCHEMA_NS_URI));
+            Schema zahtevSchema = sf.newSchema(new File(SCHEMA_URL));
+            um.setSchema(zahtevSchema);
 
             Zahtev zahtev = (Zahtev) um.unmarshal(new InputStreamReader(
                     new FileInputStream(IN_URL),

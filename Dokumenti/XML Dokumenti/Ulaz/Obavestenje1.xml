@@ -10,7 +10,7 @@
         <Naziv property="pred:nazivOrgana">Naziv organa</Naziv>
         <Sediste>Vrsac</Sediste>
     </Organ>
-    <Datum property="pred:datumObavestenja" datatype="xs:date">2006-05-04</Datum>
+    <Datum property="pred:datumObavestenja">2006-05-04</Datum>
     <Broj_predmeta>26</Broj_predmeta>
     <Podnosioc_zahteva xmlns:ob="http://www.ftn.uns.ac.rs/obavestenje" xsi:type="ob:TFizickoLice"
     >
@@ -28,7 +28,7 @@
         <Opis_informacije>Jako vazna informacija</Opis_informacije>
     </Trazena_informacija>
     <Uvid>
-        <Datum property="pred:datumUvida" datatype="xs:date">2006-05-04</Datum>
+        <Datum property="pred:datumUvida">2006-05-04</Datum>
         <Satnica>01:01:01.001</Satnica>
         <Satnica_od>01:01:01.001</Satnica_od>
         <Satnica_do>02:01:01.001</Satnica_do>
