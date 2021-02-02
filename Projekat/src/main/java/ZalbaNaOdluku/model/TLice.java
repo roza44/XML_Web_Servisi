@@ -9,12 +9,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for TZalilac complex type.
+ * <p>Java class for TLice complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="TZalilac"&gt;
+ * &lt;complexType name="TLice"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
@@ -28,14 +28,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TZalilac", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", propOrder = {
+@XmlType(name = "TLice", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", propOrder = {
     "adresa"
 })
 @XmlSeeAlso({
     TFizickoLice.class,
     TPravnoLice.class
 })
-public abstract class TZalilac {
+public abstract class TLice {
 
     @XmlElement(name = "Adresa", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
     protected Adresa adresa;

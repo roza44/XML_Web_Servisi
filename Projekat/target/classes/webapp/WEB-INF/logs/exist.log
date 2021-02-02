@@ -12,3 +12,6 @@
 2021-01-12 12:31:25,971 [main] INFO  (TemporaryFileManager.java [<init>]:109) - Temporary folder is: C:\Users\Nemanja\AppData\Local\Temp\exist-db-temp-file-manager-2898401969027240855 
 2021-02-01 23:04:59,031 [main] INFO  (TemporaryFileManager.java [<init>]:109) - Temporary folder is: C:\Users\Korisnik\AppData\Local\Temp\exist-db-temp-file-manager-828734730911465818 
 2021-02-01 23:05:15,756 [main] INFO  (TemporaryFileManager.java [<init>]:109) - Temporary folder is: C:\Users\Korisnik\AppData\Local\Temp\exist-db-temp-file-manager-12393789835006186953 
+2021-02-02 13:43:46,350 [main] INFO  (TemporaryFileManager.java [<init>]:109) - Temporary folder is: C:\Users\Korisnik\AppData\Local\Temp\exist-db-temp-file-manager-11179839515875045450 
+2021-02-02 13:57:29,586 [main] INFO  (TemporaryFileManager.java [<init>]:109) - Temporary folder is: C:\Users\Korisnik\AppData\Local\Temp\exist-db-temp-file-manager-17378036591096778368 
+2021-02-02 14:54:57,776 [main] INFO  (TemporaryFileManager.java [<init>]:109) - Temporary folder is: C:\Users\Korisnik\AppData\Local\Temp\exist-db-temp-file-manager-10957435790364974940 

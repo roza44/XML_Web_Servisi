@@ -1,44 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:zlb="http://www.ftn.uns.ac.rs/zalbacutanje"
+    xmlns:zlbc="http://www.ftn.uns.ac.rs/zalbacutanje"
     targetNamespace="http://www.ftn.uns.ac.rs/zalbacutanje" elementFormDefault="qualified">
 
+    <xs:simpleType name="NazivType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="RazlogZalbeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Organ vlasti nije postupio u zakonskom roku"/>
+            <xs:enumeration
+                value="Organ vlasti nije postupio u celosti u zakonskom roku"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:element name="Zalba">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Poverenik" type="zlb:TPravno_lice"/>
+                <xs:element name="Poverenik" type="zlbc:TPravno_lice"/>
                 <xs:element name="Naziv_organa">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:minLength value="1"/>
-                            <xs:maxLength value="100"/>
-                        </xs:restriction>
-                    </xs:simpleType>
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="zlbc:NazivType">
+                                <xs:attribute name="property" type="xs:string"> </xs:attribute>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
                 </xs:element>
                 <xs:element name="Razlog_zalbe">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:enumeration value="Organ vlasti nije postupio u zakonskom roku"/>
-                            <xs:enumeration
-                                value="Organ vlasti nije postupio u celosti u zakonskom roku"/>
-                        </xs:restriction>
-                    </xs:simpleType>
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="zlbc:RazlogZalbeType">
+                                <xs:attribute name="property" type="xs:string"> </xs:attribute>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
                 </xs:element>
                 <xs:element name="Trazene_informacije_o_zahtevu">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="Datum_podnosenja" type="xs:date"/>
-                            <xs:element name="Podaci_o_zahtevu_i_informacijama" type="xs:string"/>
+                            <xs:element name="Datum_podnosenja">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:date">
+                                            <xs:attribute name="property" type="xs:string"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Podaci_o_zahtevu_i_informacijama">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="property" type="xs:string"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="Kopija_zahteva" type="xs:IDREF" minOccurs="0"/>
                 <xs:element name="Kopija_odgovora_na_zahtev" type="xs:IDREF" minOccurs="0"/>
-                <xs:element name="Datum_podnosenja_zalbe" type="xs:date"/>
+                <xs:element name="Datum_podnosenja_zalbe">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:date">
+                                <xs:attribute name="property" type="xs:string"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="Podnosilac_zalbe">
                     <xs:complexType>
                         <xs:complexContent>
-                            <xs:extension base="zlb:TFizicko_lice">
+                            <xs:extension base="zlbc:TFizicko_lice">
                                 <xs:sequence>
                                     <xs:element name="Ostali_kontakt_podaci" type="xs:string"/>
                                 </xs:sequence>
@@ -47,6 +85,8 @@
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
+            <xs:attribute name="vocab" type="xs:string"/>
+            <xs:attribute name="about" type="xs:string"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="Adresa">
@@ -81,20 +121,21 @@
     </xs:element>
     <xs:complexType abstract="true" name="TLice">
         <xs:sequence>
-            <xs:element ref="zlb:Adresa"/>
+            <xs:element ref="zlbc:Adresa"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="TPravno_lice">
         <xs:complexContent>
-            <xs:extension base="zlb:TLice">
+            <xs:extension base="zlbc:TLice">
                 <xs:sequence>
                     <xs:element name="Naziv">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:minLength value="1"/>
-                                <xs:maxLength value="100"/>
-                            </xs:restriction>
-                        </xs:simpleType>
+                        <xs:complexType>
+                            <xs:simpleContent>
+                                <xs:extension base="zlbc:NazivType">
+                                    <xs:attribute name="property" type="xs:string"> </xs:attribute>
+                                </xs:extension>
+                            </xs:simpleContent>
+                        </xs:complexType>
                     </xs:element>
                 </xs:sequence>
             </xs:extension>
@@ -102,23 +143,25 @@
     </xs:complexType>
     <xs:complexType name="TFizicko_lice">
         <xs:complexContent>
-            <xs:extension base="zlb:TLice">
+            <xs:extension base="zlbc:TLice">
                 <xs:sequence>
                     <xs:element name="Ime">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:minLength value="1"/>
-                                <xs:maxLength value="30"/>
-                            </xs:restriction>
-                        </xs:simpleType>
+                        <xs:complexType>
+                            <xs:simpleContent>
+                                <xs:extension base="zlbc:NazivType">
+                                    <xs:attribute name="property" type="xs:string"> </xs:attribute>
+                                </xs:extension>
+                            </xs:simpleContent>
+                        </xs:complexType>
                     </xs:element>
                     <xs:element name="Prezime">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:minLength value="1"/>
-                                <xs:maxLength value="30"/>
-                            </xs:restriction>
-                        </xs:simpleType>
+                        <xs:complexType>
+                            <xs:simpleContent>
+                                <xs:extension base="zlbc:NazivType">
+                                    <xs:attribute name="property" type="xs:string"> </xs:attribute>
+                                </xs:extension>
+                            </xs:simpleContent>
+                        </xs:complexType>
                     </xs:element>
                 </xs:sequence>
             </xs:extension>

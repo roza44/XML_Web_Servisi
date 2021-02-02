@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the model package. 
+ * generated in the rs.ac.uns.ftn.zalbanaodluku package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -23,10 +23,26 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: model
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: rs.ac.uns.ftn.zalbanaodluku
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link TPravnoLice }
+     * 
+     */
+    public TPravnoLice createTPravnoLice() {
+        return new TPravnoLice();
+    }
+
+    /**
+     * Create an instance of {@link TFizickoLice }
+     * 
+     */
+    public TFizickoLice createTFizickoLice() {
+        return new TFizickoLice();
     }
 
     /**
@@ -62,18 +78,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TFizickoLice }
+     * Create an instance of {@link TPravnoLice.Naziv }
      * 
      */
-    public TFizickoLice createTFizickoLice() {
-        return new TFizickoLice();
+    public TPravnoLice.Naziv createTPravnoLiceNaziv() {
+        return new TPravnoLice.Naziv();
     }
 
     /**
-     * Create an instance of {@link TPravnoLice }
+     * Create an instance of {@link TFizickoLice.Ime }
      * 
      */
-    public TPravnoLice createTPravnoLice() {
-        return new TPravnoLice();
+    public TFizickoLice.Ime createTFizickoLiceIme() {
+        return new TFizickoLice.Ime();
     }
+
+    /**
+     * Create an instance of {@link TFizickoLice.Prezime }
+     * 
+     */
+    public TFizickoLice.Prezime createTFizickoLicePrezime() {
+        return new TFizickoLice.Prezime();
+    }
+
 }

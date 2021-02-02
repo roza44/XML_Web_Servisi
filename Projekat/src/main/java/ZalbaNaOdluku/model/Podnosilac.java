@@ -89,10 +89,4 @@ public class Podnosilac {
         this.prezime = value;
     }
 
-    @Override
-    public String toString() {
-        return "Podnosilac:" + "\n" +
-                "\t" + "ime=" + ime + "\n" +
-                "\t" + ", prezime=" + prezime + "\n";
-    }
 }

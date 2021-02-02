@@ -3,6 +3,7 @@ package ZalbaNaOdluku.model;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
@@ -20,7 +21,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="Zalilac" type="{http://www.ftn.uns.ac.rs/ZalbaNaOdluku}TZalilac"/&gt;
+ *         &lt;element name="Zalilac" type="{http://www.ftn.uns.ac.rs/ZalbaNaOdluku}TLice"/&gt;
  *         &lt;element ref="{http://www.ftn.uns.ac.rs/ZalbaNaOdluku}Resenje"/&gt;
  *         &lt;element name="Datum_Zahteva" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
  *         &lt;element name="Osnov_Zalbe" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
@@ -29,6 +30,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="Datum_Zalbe" type="{http://www.w3.org/2001/XMLSchema}date"/&gt;
  *         &lt;element name="Kontakt" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
+ *       &lt;attribute name="vocab" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+ *       &lt;attribute name="about" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
@@ -51,7 +54,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 public class Zalba {
 
     @XmlElement(name = "Zalilac", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
-    protected TZalilac zalilac;
+    protected TLice zalilac;
     @XmlElement(name = "Resenje", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
     protected Resenje resenje;
     @XmlElement(name = "Datum_Zahteva", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
@@ -68,16 +71,20 @@ public class Zalba {
     protected XMLGregorianCalendar datumZalbe;
     @XmlElement(name = "Kontakt", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
     protected String kontakt;
+    @XmlAttribute(name = "vocab")
+    protected String vocab;
+    @XmlAttribute(name = "about")
+    protected String about;
 
     /**
      * Gets the value of the zalilac property.
      * 
      * @return
      *     possible object is
-     *     {@link TZalilac }
+     *     {@link TLice }
      *     
      */
-    public TZalilac getZalilac() {
+    public TLice getZalilac() {
         return zalilac;
     }
 
@@ -86,10 +93,10 @@ public class Zalba {
      * 
      * @param value
      *     allowed object is
-     *     {@link TZalilac }
+     *     {@link TLice }
      *     
      */
-    public void setZalilac(TZalilac value) {
+    public void setZalilac(TLice value) {
         this.zalilac = value;
     }
 
@@ -261,16 +268,52 @@ public class Zalba {
         this.kontakt = value;
     }
 
-    @Override
-    public String toString() {
-        return "Zalba:" + "\n" +
-                "\t" + "zalilac=" + zalilac + "\n" +
-                "\t" + ", resenje=" + resenje + "\n" +
-                "\t" + ", datumZahteva=" + datumZahteva + "\n" +
-                "\t" + ", osnovZalbe=" + osnovZalbe + "\n" +
-                "\t" + ", podnosilac=" + podnosilac + "\n" +
-                "\t" + ", adresa=" + adresa + "\n" +
-                "\t" + ", datumZalbe=" + datumZalbe + "\n" +
-                "\t" + ", kontakt=" + kontakt + '\'' + "\n";
+    /**
+     * Gets the value of the vocab property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getVocab() {
+        return vocab;
     }
+
+    /**
+     * Sets the value of the vocab property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setVocab(String value) {
+        this.vocab = value;
+    }
+
+    /**
+     * Gets the value of the about property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getAbout() {
+        return about;
+    }
+
+    /**
+     * Sets the value of the about property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setAbout(String value) {
+        this.about = value;
+    }
+
 }

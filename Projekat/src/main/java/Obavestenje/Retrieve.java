@@ -1,7 +1,6 @@
 package Obavestenje;
 
 import Obavestenje.model.Obavestenje;
-import ZalbaNaOdluku.model.Zalba;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
 import org.apache.jena.query.ResultSet;

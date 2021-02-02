@@ -101,11 +101,4 @@ public class Resenje {
         this.godina = value;
     }
 
-    @Override
-    public String toString() {
-        return "Resenje:" + "\n" +
-                "\t" + "donosilacOdluke=" + donosilacOdluke + "\n" +
-                "\t" + ", broj=" + broj + "\n" +
-                "\t" + ", godina=" + godina + "\n";
-    }
 }

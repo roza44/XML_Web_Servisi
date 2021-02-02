@@ -8,25 +8,25 @@
  vocab="http://examples/predicate/"
  about="http://ZalbaNaOdluku/1"
     >
-    <Zalilac xmlns:zno="http://www.ftn.uns.ac.rs/ZalbaNaOdluku" xsi:type="zno:TPravno_Lice">
+    <Zalilac xmlns:zlbo="http://www.ftn.uns.ac.rs/ZalbaNaOdluku" xsi:type="zlbo:TPravnoLice">
         <Adresa>
             <Mesto>Banatsko Arandjelovo</Mesto>
             <Postanski_broj>23332</Postanski_broj>
             <Ulica>Vojvode Misica</Ulica>
             <Broj>22</Broj>
         </Adresa>
-        <Naziv property="pred:nazivZalioca" content="DOO Bodroza">DOO Bodroza</Naziv>
+        <Naziv property="pred:nazivZalioca">DOO Bodroza</Naziv>
     </Zalilac>
     <Resenje>
         <Donosilac_Odluke property="pred:donosilacOdluke">Rade Gojkovic</Donosilac_Odluke>
-        <Broj property="pred:brojResenja" datatype="xs:int" content="13">13</Broj>
-        <Godina property="pred:godinaResenja" datatype="xs:int" content="2020" >2020</Godina>
+        <Broj property="pred:brojResenja">13</Broj>
+        <Godina property="pred:godinaResenja">2020</Godina>
     </Resenje>
-    <Datum_Zahteva property="pred:datumZahteva" datatype="xs:date" content="2020-05-04">2020-05-04</Datum_Zahteva>
+    <Datum_Zahteva property="pred:datumZahteva">2020-05-04</Datum_Zahteva>
     <Osnov_Zalbe>Pobija se zahtev za racunima mesne zajednice</Osnov_Zalbe>
-    <Podnosilac property="pred:podnosilacZalbe" datatype="xs:string" content="Radovan Bodroza">
-        <Ime>Radovan</Ime>
-        <Prezime>Bodroza</Prezime>
+    <Podnosilac >
+        <Ime property="pred:imePodnosilacaZalbe">Radovan</Ime>
+        <Prezime property="pred:prezimePodnosilacaZalbe">Bodroza</Prezime>
     </Podnosilac>
     <Adresa>
         <Mesto>Novi Knezevac</Mesto>

@@ -1,12 +1,10 @@
 
 package ZalbaNaOdluku.model;
 
-import java.math.BigInteger;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -20,7 +18,14 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="Mesto" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="Mesto"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;minLength value="1"/&gt;
+ *               &lt;maxLength value="30"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
  *         &lt;element name="Postanski_broj"&gt;
  *           &lt;simpleType&gt;
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
@@ -30,7 +35,13 @@ import javax.xml.bind.annotation.XmlType;
  *           &lt;/simpleType&gt;
  *         &lt;/element&gt;
  *         &lt;element name="Ulica" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
- *         &lt;element name="Broj" type="{http://www.w3.org/2001/XMLSchema}positiveInteger"/&gt;
+ *         &lt;element name="Broj"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *               &lt;minInclusive value="1"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -55,9 +66,8 @@ public class Adresa {
     protected int postanskiBroj;
     @XmlElement(name = "Ulica", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
     protected String ulica;
-    @XmlElement(name = "Broj", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
-    @XmlSchemaType(name = "positiveInteger")
-    protected BigInteger broj;
+    @XmlElement(name = "Broj", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku")
+    protected int broj;
 
     /**
      * Gets the value of the mesto property.
@@ -126,33 +136,17 @@ public class Adresa {
     /**
      * Gets the value of the broj property.
      * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
      */
-    public BigInteger getBroj() {
+    public int getBroj() {
         return broj;
     }
 
     /**
      * Sets the value of the broj property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
      */
-    public void setBroj(BigInteger value) {
+    public void setBroj(int value) {
         this.broj = value;
     }
 
-    @Override
-    public String toString() {
-        return "Adresa:" + "\n" +
-                "\t" + "mesto=" + mesto + "\n" +
-                "\t" +", postanskiBroj=" + postanskiBroj + "\n" +
-                "\t" + ", ulica=" + ulica + "\n" +
-                "\t" + ", broj=" + broj + "\n";
-    }
 }

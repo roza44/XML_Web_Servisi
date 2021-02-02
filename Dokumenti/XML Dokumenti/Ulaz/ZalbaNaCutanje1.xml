@@ -15,13 +15,13 @@
         </Adresa>
         <Naziv>Poverenik za informacije od javnog znacaja i zastitu podataka o licnosti</Naziv>
     </Poverenik>
-    <Naziv_organa property="pred:nazivOrgana" datatype="xs:string">Ministarstvo finansija</Naziv_organa>
-    <Razlog_zalbe property="pred:razlogZalbe" datatype="xs:string">Organ vlasti nije postupio u zakonskom roku</Razlog_zalbe>
+    <Naziv_organa property="pred:nazivOrgana">Ministarstvo finansija</Naziv_organa>
+    <Razlog_zalbe property="pred:razlogZalbe">Organ vlasti nije postupio u zakonskom roku</Razlog_zalbe>
     <Trazene_informacije_o_zahtevu>
-        <Datum_podnosenja property="pred:datumZahteva" datatype="xs:date" content="2020-01-03">2020-01-03</Datum_podnosenja>
-        <Podaci_o_zahtevu_i_informacijama property="pred:tekstZahteva" datatype="xs:string">Zahtevane su informacije o realizaciji budzeta drzave Srbije</Podaci_o_zahtevu_i_informacijama>
+        <Datum_podnosenja property="pred:datumZahteva" >2020-01-03</Datum_podnosenja>
+        <Podaci_o_zahtevu_i_informacijama property="pred:tekstZahteva" >Zahtevane su informacije o realizaciji budzeta drzave Srbije</Podaci_o_zahtevu_i_informacijama>
     </Trazene_informacije_o_zahtevu>
-    <Datum_podnosenja_zalbe property="pred:datumZalbe" datatype="xs:date" content="2020-05-04">2020-05-04</Datum_podnosenja_zalbe>
+    <Datum_podnosenja_zalbe property="pred:datumZalbe">2020-05-04</Datum_podnosenja_zalbe>
     <Podnosilac_zalbe>
         <Adresa>
             <Mesto>Subotica</Mesto>
@@ -29,8 +29,8 @@
             <Ulica>Josipa Krasa</Ulica>
             <Broj>7</Broj>
         </Adresa>
-        <Ime property="pred:imeGradjanina" datatype="xs:string" content="Luka">Luka</Ime>
-        <Prezime property="pred:prezimeGradjanina" datatype="xs:string" content="Nikolic">Nikolic</Prezime>
+        <Ime property="pred:imeGradjanina">Luka</Ime>
+        <Prezime property="pred:prezimeGradjanina">Nikolic</Prezime>
         <Ostali_kontakt_podaci>kucni tel: 024/542-533</Ostali_kontakt_podaci>
     </Podnosilac_zalbe>
 </Zalba>
