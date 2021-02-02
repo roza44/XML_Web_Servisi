@@ -1,12 +1,14 @@
 package tim20.xml.sluzbenik.sluzbenikBek.service.authentication;
 
+import org.xmldb.api.base.XMLDBException;
 import tim20.xml.sluzbenik.sluzbenikBek.core.exception.EmailTakenException;
 import tim20.xml.sluzbenik.sluzbenikBek.validation.SelfValidating;
 
 import javax.validation.constraints.NotBlank;
+import javax.xml.bind.JAXBException;
 
 public interface RegisterGradjaninUseCase {
-    void addGradjanin(RegisterGradjaninCommand command) throws EmailTakenException;
+    void addGradjanin(RegisterGradjaninCommand command) throws EmailTakenException, XMLDBException, JAXBException;
 
     class RegisterGradjaninCommand extends SelfValidating<RegisterGradjaninCommand> {
         @NotBlank

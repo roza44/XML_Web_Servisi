@@ -2,7 +2,7 @@ package tim20.xml.sluzbenik.sluzbenikBek.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import tim20.xml.sluzbenik.sluzbenikBek.model.User;
+import tim20.xml.sluzbenik.sluzbenikBek.model.user.User;
 import tim20.xml.sluzbenik.sluzbenikBek.security.api.TokenService;
 
 @Component

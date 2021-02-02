@@ -1,10 +1,10 @@
-package tim20.xml.poverenik.poverenikBek;
+package tim20.xml.sluzbenik.sluzbenikBek;
 
 import org.xmldb.api.base.XMLDBException;
-import tim20.xml.poverenik.poverenikBek.model.user.Authority;
-import tim20.xml.poverenik.poverenikBek.model.user.User;
-import tim20.xml.poverenik.poverenikBek.model.user.UserType;
-import tim20.xml.poverenik.poverenikBek.repository.util.DatabaseManager;
+import tim20.xml.sluzbenik.sluzbenikBek.model.user.Authority;
+import tim20.xml.sluzbenik.sluzbenikBek.model.user.User;
+import tim20.xml.sluzbenik.sluzbenikBek.model.user.UserType;
+import tim20.xml.sluzbenik.sluzbenikBek.repository.util.DatabaseManager;
 
 import javax.xml.bind.JAXBException;
 import java.util.List;
@@ -13,26 +13,26 @@ public class InitUserDatabase {
     private static final List<User> data = List.of(
             new User(
                     1L,
-                    "Goran",
-                    "Goric",
-                    "poverenik1@gmail.com",
+                    "Dragan",
+                    "Draganic",
+                    "sluzbenik1@gmail.com",
                     "$2y$12$l70Hm1zsnvBSncHlI4zsce5RXMORuhf5SWqoWmETxPLJkhNIYxOve",
                     UserType.POVERENIK,
-                    List.of(new Authority(1L, "ROLE_POVERENIK"))
+                    List.of(new Authority(1L, "ROLE_SLUZBENIK"))
             ),
             new User(
                     2L,
-                    "Zoran",
-                    "Zoric",
-                    "poverenik2@gmail.com",
+                    "Bojan",
+                    "Bojanic",
+                    "sluzbenik2@gmail.com",
                     "$2y$12$l70Hm1zsnvBSncHlI4zsce5RXMORuhf5SWqoWmETxPLJkhNIYxOve",
                     UserType.POVERENIK,
-                    List.of(new Authority(1L, "ROLE_POVERENIK"))
+                    List.of(new Authority(1L, "ROLE_SLUZBENIK"))
             ),
             new User(
                     3L,
-                    "Petar",
-                    "Petrovic",
+                    "Slobodan",
+                    "Slobodanic",
                     "gradjanin1@gmail.com",
                     "$2y$12$l70Hm1zsnvBSncHlI4zsce5RXMORuhf5SWqoWmETxPLJkhNIYxOve",
                     UserType.GRADJANIN,
@@ -40,8 +40,8 @@ public class InitUserDatabase {
             ),
             new User(
                     4L,
-                    "Ivan",
-                    "Ivanovic",
+                    "Dusan",
+                    "Dusanovic",
                     "gradjanin2@gmail.com",
                     "$2y$12$l70Hm1zsnvBSncHlI4zsce5RXMORuhf5SWqoWmETxPLJkhNIYxOve",
                     UserType.GRADJANIN,

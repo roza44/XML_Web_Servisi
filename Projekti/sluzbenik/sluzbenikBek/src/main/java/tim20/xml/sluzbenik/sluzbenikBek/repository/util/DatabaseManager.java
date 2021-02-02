@@ -1,4 +1,4 @@
-package tim20.xml.poverenik.poverenikBek.repository.util;
+package tim20.xml.sluzbenik.sluzbenikBek.repository.util;
 
 import org.exist.xmldb.EXistResource;
 import org.springframework.stereotype.Repository;
@@ -19,12 +19,12 @@ import java.io.OutputStream;
 @Repository
 public class DatabaseManager {
 
-    private static util.AuthenticationUtilities.ExistProperties conn;
+    private static AuthenticationUtilities.ExistProperties conn;
     private static Database database;
 
     static {
         try {
-            conn = util.AuthenticationUtilities.loadExistProperties();
+            conn = AuthenticationUtilities.loadExistProperties();
 
             // initialize database driver
             Class<?> cl = Class.forName(conn.driver);

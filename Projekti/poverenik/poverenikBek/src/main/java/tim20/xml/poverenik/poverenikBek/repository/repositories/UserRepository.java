@@ -2,15 +2,10 @@ package tim20.xml.poverenik.poverenikBek.repository.repositories;
 
 import org.springframework.stereotype.Repository;
 import org.xmldb.api.base.XMLDBException;
-import tim20.xml.poverenik.poverenikBek.model.user.Authority;
 import tim20.xml.poverenik.poverenikBek.model.user.User;
-import tim20.xml.poverenik.poverenikBek.model.user.UserType;
 import tim20.xml.poverenik.poverenikBek.repository.util.DatabaseManager;
 
 import javax.xml.bind.JAXBException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @Repository
