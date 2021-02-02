@@ -9,7 +9,7 @@
     >
     <Primalac>
         <Organ>
-            <Naziv property="pred:nazivOrgana" datatype="xs:string" content="Fakultet tehnickih nauka">Fakultet tehnickih nauka</Naziv>
+            <Naziv property="pred:nazivOrgana">Fakultet tehnickih nauka</Naziv>
             <AdresaOrgana>
                 <Mesto>Novi Sad</Mesto>
                 <Ulica>Trg Dositeja Obradovica</Ulica>
@@ -49,11 +49,11 @@
             </IzboriZahteva>
             <Informacije>Neke veoma bitne informacije</Informacije>
             <PodaciOZahtevu>
-                <Mesto property="pred:mestoZahteva" datatype="xs:string" content="Novi Sad">Novi Sad</Mesto>
-                <Datum property="pred:datumZahteva" datatype="xs:date" content="2006-05-04">2006-05-04</Datum>
-                <Trazioc property="pred:traziocZahteva" datatype="sx:string" content="Petar Petrovic">
-                    <Ime>Petar</Ime>
-                    <Prezime>Petrovic</Prezime>
+                <Mesto property="pred:mestoZahteva"  >Novi Sad</Mesto>
+                <Datum property="pred:datumZahteva" >2006-05-04</Datum>
+                <Trazioc>
+                    <Ime property="pred:imeTraziocaZahteva">Petar</Ime>
+                    <Prezime property="pred:prezimeTraziocaZahteva">Petrovic</Prezime>
                     <Adresa>
                         <Mesto>Novi Sad</Mesto>
                         <Ulica>Sumadijska</Ulica>

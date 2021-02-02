@@ -3,7 +3,7 @@ package tim20.xml.sluzbenik.sluzbenikBek.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Dummy;
-import tim20.xml.sluzbenik.sluzbenikBek.repository.DummyRepository;
+import tim20.xml.sluzbenik.sluzbenikBek.repository.repositories.DummyRepository;
 
 import java.util.Collection;
 

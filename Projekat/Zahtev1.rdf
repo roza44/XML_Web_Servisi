@@ -1,14 +1,17 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:h="http://www.w3.org/1999/xhtml">
   <rdf:Description rdf:about="http://Zahtev/1">
-    <pred:nazivOrgana xmlns:pred="http://examples/predicate/" rdf:datatype="string">Fakultet tehnickih nauka</pred:nazivOrgana>
+    <pred:nazivOrgana xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Fakultet tehnickih nauka</pred:nazivOrgana>
   </rdf:Description>
   <rdf:Description rdf:about="http://Zahtev/1">
-    <pred:mestoZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="string">Novi Sad</pred:mestoZahteva>
+    <pred:mestoZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Novi Sad</pred:mestoZahteva>
   </rdf:Description>
   <rdf:Description rdf:about="http://Zahtev/1">
-    <pred:datumZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="date">2006-05-04</pred:datumZahteva>
+    <pred:datumZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">2006-05-04</pred:datumZahteva>
   </rdf:Description>
   <rdf:Description rdf:about="http://Zahtev/1">
-    <pred:traziocZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="string">Petar Petrovic</pred:traziocZahteva>
+    <pred:imeTraziocaZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Petar</pred:imeTraziocaZahteva>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://Zahtev/1">
+    <pred:prezimeTraziocaZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Petrovic</pred:prezimeTraziocaZahteva>
   </rdf:Description>
 </rdf:RDF>

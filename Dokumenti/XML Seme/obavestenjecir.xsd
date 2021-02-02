@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
     targetNamespace="http://www.ftn.uns.ac.rs/obavestenje"
-    xmlns:ob="http://www.ftn.uns.ac.rs/obavestenje" xmlns:ftn="http://www.ftn.uns.ac.rs/obavestenje">
+    xmlns:ob="http://www.ftn.uns.ac.rs/obavestenje">
 
+    <xs:simpleType name="SedisteType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="NazivType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ImeType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="30"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:element name="Obavestenje">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="ftn:Organ"/>
-                <xs:element name="Datum" type="xs:date"/>
+                <xs:element ref="ob:Organ"/>
+                <xs:element name="Datum">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:date">
+                                <xs:attribute name="property" type="xs:string"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="Broj_predmeta" type="xs:string"/>
-                <xs:element name="Podnosioc_zahteva" type="ftn:TLice"/>
-                <xs:element ref="ftn:Trazena_informacija"/>
-                <xs:element ref="ftn:Uvid"/>
-                <xs:element ref="ftn:Troskovi"/>
-                <xs:element ref="ftn:Uplata"/>
+                <xs:element name="Podnosioc_zahteva" type="ob:TLice"/>
+                <xs:element ref="ob:Trazena_informacija"/>
+                <xs:element ref="ob:Uvid"/>
+                <xs:element ref="ob:Troskovi"/>
+                <xs:element ref="ob:Uplata"/>
                 <xs:element name="Dostavljeno">
                     <xs:simpleType>
                         <xs:restriction base="xs:string">
@@ -23,26 +49,30 @@
                     </xs:simpleType>
                 </xs:element>
             </xs:sequence>
+            <xs:attribute name="vocab" type="xs:string"/>
+            <xs:attribute name="about" type="xs:string"/>
         </xs:complexType>
     </xs:element>
     <xs:element name="Organ">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="Naziv">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:minLength value="1"/>
-                            <xs:maxLength value="100"/>
-                        </xs:restriction>
-                    </xs:simpleType>
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="ob:NazivType">
+                                <xs:attribute name="property" type="xs:string"> </xs:attribute>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
                 </xs:element>
                 <xs:element name="Sediste">
-                    <xs:simpleType>
-                        <xs:restriction base="xs:string">
-                            <xs:minLength value="1"/>
-                            <xs:maxLength value="100"/>
-                        </xs:restriction>
-                    </xs:simpleType>
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="ob:SedisteType">
+                                <xs:attribute name="property" type="xs:string"> </xs:attribute>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
@@ -72,7 +102,15 @@
     <xs:element name="Uvid">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Datum" type="xs:date"/>
+                <xs:element name="Datum">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:date">
+                                <xs:attribute name="property" type="xs:string"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="Satnica" type="xs:time"/>
                 <xs:element name="Satnica_od" type="xs:time"/>
                 <xs:element name="Satnica_do" type="xs:time"/>
@@ -83,7 +121,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <xs:element ref="ftn:Adresa"/>
+                <xs:element ref="ob:Adresa"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -161,28 +199,30 @@
     </xs:element>
     <xs:complexType abstract="true" name="TLice">
         <xs:sequence>
-            <xs:element ref="ftn:Adresa"/>
+            <xs:element ref="ob:Adresa"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="TFizickoLice">
         <xs:complexContent>
-            <xs:extension base="ftn:TLice">
+            <xs:extension base="ob:TLice">
                 <xs:sequence>
                     <xs:element name="Ime">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:minLength value="1"/>
-                                <xs:maxLength value="30"/>
-                            </xs:restriction>
-                        </xs:simpleType>
+                        <xs:complexType>
+                            <xs:simpleContent>
+                                <xs:extension base="ob:ImeType">
+                                    <xs:attribute name="property" type="xs:string"> </xs:attribute>
+                                </xs:extension>
+                            </xs:simpleContent>
+                        </xs:complexType>
                     </xs:element>
                     <xs:element name="Prezime">
-                        <xs:simpleType>
-                            <xs:restriction base="xs:string">
-                                <xs:minLength value="1"/>
-                                <xs:maxLength value="30"/>
-                            </xs:restriction>
-                        </xs:simpleType>
+                        <xs:complexType>
+                            <xs:simpleContent>
+                                <xs:extension base="ob:ImeType">
+                                    <xs:attribute name="property" type="xs:string"> </xs:attribute>
+                                </xs:extension>
+                            </xs:simpleContent>
+                        </xs:complexType>
                     </xs:element>
                 </xs:sequence>
             </xs:extension>
@@ -190,7 +230,7 @@
     </xs:complexType>
     <xs:complexType name="TPravnoLice">
         <xs:complexContent>
-            <xs:extension base="ftn:TLice">
+            <xs:extension base="ob:TLice">
                 <xs:sequence>
                     <xs:element name="Naziv">
                         <xs:simpleType>

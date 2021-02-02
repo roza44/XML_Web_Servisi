@@ -2,6 +2,25 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
     targetNamespace="http://www.ftn.uns.ac.rs/zahtev" xmlns:za="http://www.ftn.uns.ac.rs/zahtev">
+    
+    <xs:simpleType name="NazivType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="100"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="MestoType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:pattern value="[A-Z][A-Za-z ]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="ImeType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="30"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:element name="Zahtev">
         <xs:complexType>
             <xs:sequence>
@@ -12,11 +31,13 @@
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="Naziv">
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
-                                                  <xs:minLength value="1"/>
-                                                </xs:restriction>
-                                            </xs:simpleType>
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="za:NazivType">
+                                                        <xs:attribute name="property" type="xs:string"> </xs:attribute>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
                                         </xs:element>
                                         <xs:element name="AdresaOrgana" type="za:CTAdresa"/>
                                     </xs:sequence>
@@ -27,6 +48,8 @@
                 </xs:element>
                 <xs:element name="Sadrzaj" type="za:CTSadrzaj"/>
             </xs:sequence>
+            <xs:attribute name="vocab" type="xs:string"/>
+            <xs:attribute name="about" type="xs:string"/>
         </xs:complexType>
     </xs:element>
     <xs:complexType name="CTSadrzaj">
@@ -118,34 +141,45 @@
     <xs:complexType name="CTPodaciOZahtevu">
         <xs:sequence>
             <xs:element name="Mesto">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:minLength value="1"/>
-                        <xs:pattern value="[A-Z][A-Za-z ]+"/>
-                    </xs:restriction>
-                </xs:simpleType>
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="za:MestoType">
+                            <xs:attribute name="property" type="xs:string"> </xs:attribute>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
             </xs:element>
-            <xs:element name="Datum" type="xs:date"/>
+            <xs:element name="Datum">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:date">
+                            <xs:attribute name="property" type="xs:string"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="Trazioc" type="za:CTLice"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="CTLice">
         <xs:sequence>
             <xs:element name="Ime">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:minLength value="1"/>
-                        <xs:pattern value="[A-Z][a-z]+"/>
-                    </xs:restriction>
-                </xs:simpleType>
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="za:ImeType">
+                            <xs:attribute name="property" type="xs:string"> </xs:attribute>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
             </xs:element>
             <xs:element name="Prezime">
-                <xs:simpleType>
-                    <xs:restriction base="xs:string">
-                        <xs:minLength value="1"/>
-                        <xs:pattern value="[A-Z][a-z]+"/>
-                    </xs:restriction>
-                </xs:simpleType>
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="za:ImeType">
+                            <xs:attribute name="property" type="xs:string"> </xs:attribute>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
             </xs:element>
             <xs:element name="Adresa" type="za:CTAdresa"/>
             <xs:element name="Kontakt">
@@ -156,6 +190,7 @@
                 </xs:simpleType>
             </xs:element>
         </xs:sequence>
+        <xs:attribute name="property" type="xs:string"/>
     </xs:complexType>
     <xs:complexType name="CTAdresa">
         <xs:sequence>
