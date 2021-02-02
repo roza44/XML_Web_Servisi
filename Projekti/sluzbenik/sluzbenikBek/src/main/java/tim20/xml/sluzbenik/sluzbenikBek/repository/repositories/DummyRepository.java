@@ -1,4 +1,4 @@
-package tim20.xml.sluzbenik.sluzbenikBek.repository;
+package tim20.xml.sluzbenik.sluzbenikBek.repository.repositories;
 
 import org.springframework.stereotype.Repository;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Dummy;
