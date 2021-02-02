@@ -2,14 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthenticationRoutingModule } from './authentication-routing.module';
-import { LogInComponent } from './pages/log-in/log-in.component'
+import { LogInComponent } from './pages/log-in/log-in.component';
+import {InputTextModule} from 'primeng/inputtext';
+import {PasswordModule} from 'primeng/password';
+import {ButtonModule} from 'primeng/button';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 @NgModule({
-  declarations: [LogInComponent],
+  declarations: [LogInComponent, RegisterComponent],
   imports: [
     CommonModule,
-    AuthenticationRoutingModule
+    AuthenticationRoutingModule,
+    InputTextModule,
+    PasswordModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ButtonModule
   ]
 })
 export class AuthenticationModule { }
