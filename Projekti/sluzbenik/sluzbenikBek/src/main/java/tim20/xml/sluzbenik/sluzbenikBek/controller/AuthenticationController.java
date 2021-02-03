@@ -18,7 +18,7 @@ import tim20.xml.sluzbenik.sluzbenikBek.service.authentication.RegisterGradjanin
 import javax.xml.bind.JAXBException;
 
 @RestController
-@RequestMapping(value = "/api/auth", produces = MediaType.APPLICATION_XML_VALUE)
+@RequestMapping(value = "/api/auth", consumes = MediaType.APPLICATION_XML_VALUE,produces = MediaType.APPLICATION_XML_VALUE)
 public class AuthenticationController {
     private final LoginUseCase loginUseCase;
     private final RegisterGradjaninUseCase registerGradjaninUseCase;

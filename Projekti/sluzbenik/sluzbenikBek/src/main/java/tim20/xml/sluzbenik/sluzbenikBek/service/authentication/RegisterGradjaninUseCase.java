@@ -4,6 +4,7 @@ import org.xmldb.api.base.XMLDBException;
 import tim20.xml.sluzbenik.sluzbenikBek.core.exception.EmailTakenException;
 import tim20.xml.sluzbenik.sluzbenikBek.validation.SelfValidating;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.xml.bind.JAXBException;
 
@@ -17,6 +18,7 @@ public interface RegisterGradjaninUseCase {
         @NotBlank
         private String lastName;
 
+        @Email
         @NotBlank
         private String email;
 
