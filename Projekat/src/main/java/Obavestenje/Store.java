@@ -29,6 +29,7 @@ import javax.xml.validation.SchemaFactory;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
+
 public class Store {
 
     private static final String SCHEMA_URL = "./../Dokumenti/XML Seme/obavestenjecir.xsd";

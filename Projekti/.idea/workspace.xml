@@ -23,10 +23,137 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="776edfc3-2870-47a3-a26f-8946869230e1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Dokumenti/XML Dokumenti/Ulaz/Obavestenje1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dokumenti/XML Dokumenti/Ulaz/Obavestenje1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Dokumenti/XML Dokumenti/Ulaz/Resenje1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dokumenti/XML Dokumenti/Ulaz/Resenje1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dokumenti/XML Dokumenti/Ulaz/ZalbaNaCutanje1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dokumenti/XML Dokumenti/Ulaz/ZalbaNaCutanje1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dokumenti/XML Dokumenti/Ulaz/ZalbaNaOdluku1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Dokumenti/XML Dokumenti/Ulaz/ZalbaNaOdluku1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dokumenti/XML Seme/obavestenjecir.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/../Dokumenti/XML Seme/obavestenjecir.xsd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Dokumenti/XML Seme/resenje.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/../Dokumenti/XML Seme/resenje.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dokumenti/XML Seme/zahtevcir.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/../Dokumenti/XML Seme/zahtevcir.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dokumenti/XML Seme/zalbacutanjecir.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/../Dokumenti/XML Seme/zalbacutanjecir.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Dokumenti/XML Seme/zalbanaodlukucir.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/../Dokumenti/XML Seme/zalbanaodlukucir.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/Obavestenje.rdf" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/Obavestenje.rdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/Resenje.rdf" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/Resenje.rdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/ZalbaNaCutanje1.rdf" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/ZalbaNaCutanje1.rdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/ZalbaNaOdluku.rdf" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/ZalbaNaOdluku.rdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Obavestenje/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/src/main/java/Obavestenje/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Obavestenje/model/Adresa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Obavestenje/model/Obavestenje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Obavestenje/model/ObjectFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Obavestenje/model/Organ.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Obavestenje/model/TFizickoLice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Obavestenje/model/TLice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Obavestenje/model/TPravnoLice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Obavestenje/model/TrazenaInformacija.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Obavestenje/model/Troskovi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Obavestenje/model/Uplata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Obavestenje/model/Uvid.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Resenje/Retrieve.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/src/main/java/Resenje/Retrieve.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Resenje/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/src/main/java/Resenje/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Resenje/model/Adresa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Resenje/model/ObjectFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Resenje/model/Obrazlozenje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Resenje/model/OsnovaResenja.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Resenje/model/Poverenik.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Resenje/model/Resenje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Resenje/model/Uvod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Resenje/model/Zakon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Zahtev/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/src/main/java/Zahtev/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Zahtev/model/CTAdresa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Zahtev/model/CTIzbor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Zahtev/model/CTIzboriDostave.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Zahtev/model/CTIzboriZahteva.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Zahtev/model/CTLice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Zahtev/model/CTPodaciOZahtevu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Zahtev/model/CTSadrzaj.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Zahtev/model/CTSluzbeniGlasnik.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Zahtev/model/CTZakon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Zahtev/model/ObjectFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/Zahtev/model/Zahtev.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaCutanje/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaCutanje/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaCutanje/model/Adresa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaCutanje/model/ObjectFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaCutanje/model/TFizickoLice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaCutanje/model/TLice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaCutanje/model/TPravnoLice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaCutanje/model/Zalba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaOdluku/model/Adresa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaOdluku/model/ObjectFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaOdluku/model/Podnosilac.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaOdluku/model/Resenje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaOdluku/model/TFizickoLice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaOdluku/model/TLice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaOdluku/model/TPravnoLice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/src/main/java/ZalbaNaOdluku/model/Zalba.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/Store.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/Adresa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/Obavestenje.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/Obavestenje.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/ObjectFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/Organ.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/TFizickoLice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/TLice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/TPravnoLice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/TrazenaInformacija.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/TrazenaInformacija.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/Troskovi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/Troskovi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/Uplata.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/Uplata.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/Uvid.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Obavestenje/model/Uvid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/Retrieve.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/Retrieve.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/Store.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/Adresa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/ObjectFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/Obrazlozenje.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/Obrazlozenje.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/OsnovaResenja.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/OsnovaResenja.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/Poverenik.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/Resenje.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/Resenje.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/Uvod.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/Uvod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/Zakon.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/Resenje/model/Zakon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/Store.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/model/Adresa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/model/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/model/ObjectFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/model/TFizickoLice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/model/TLice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/model/TPravnoLice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/model/Zalba$PodnosilacZalbe.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/model/Zalba$PodnosilacZalbe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/model/Zalba$TrazeneInformacijeOZahtevu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/model/Zalba$TrazeneInformacijeOZahtevu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/model/Zalba.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaCutanje/model/Zalba.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/Adresa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/ObjectFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/Podnosilac.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/Podnosilac.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/Resenje.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/Resenje.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/TFizickoLice$Ime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/TFizickoLice$Prezime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/TFizickoLice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/TLice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/TPravnoLice$Naziv.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/TPravnoLice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/Zalba.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/ZalbaNaOdluku/model/Zalba.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/webapp/WEB-INF/logs/exist.log" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/webapp/WEB-INF/logs/exist.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/Store.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTAdresa.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTAdresa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTIzbor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTIzbor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTIzboriDostave.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTIzboriDostave.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTIzboriZahteva.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTIzboriZahteva.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTLice.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTLice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTPodaciOZahtevu.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTPodaciOZahtevu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTSadrzaj$Telo$Paragraf.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTSadrzaj$Telo$Paragraf.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTSadrzaj$Telo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTSadrzaj$Telo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTSadrzaj.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTSadrzaj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTSluzbeniGlasnik$Brojevi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTSluzbeniGlasnik$Brojevi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTSluzbeniGlasnik.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTSluzbeniGlasnik.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTZakon.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/CTZakon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/ObjectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/ObjectFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/Zahtev$Primalac$Organ.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/Zahtev$Primalac$Organ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/Zahtev$Primalac.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/Zahtev$Primalac.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/Zahtev.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Projekat/target/classes/zahtev/model/Zahtev.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poverenik/poverenikBek/src/main/java/tim20/xml/poverenik/poverenikBek/model/ZalbaNaOdluku/Adresa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poverenik/poverenikBek/src/main/java/tim20/xml/poverenik/poverenikBek/model/ZalbaNaOdluku/ObjectFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poverenik/poverenikBek/src/main/java/tim20/xml/poverenik/poverenikBek/model/ZalbaNaOdluku/Podnosilac.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poverenik/poverenikBek/src/main/java/tim20/xml/poverenik/poverenikBek/model/ZalbaNaOdluku/Resenje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poverenik/poverenikBek/src/main/java/tim20/xml/poverenik/poverenikBek/model/ZalbaNaOdluku/TFizickoLice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poverenik/poverenikBek/src/main/java/tim20/xml/poverenik/poverenikBek/model/ZalbaNaOdluku/TPravnoLice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poverenik/poverenikBek/src/main/java/tim20/xml/poverenik/poverenikBek/model/ZalbaNaOdluku/TZalilac.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poverenik/poverenikBek/src/main/java/tim20/xml/poverenik/poverenikBek/model/ZalbaNaOdluku/Zalba.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +184,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projekat" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/poverenik" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Faks\7. semestar\XML i veb servisi\XML_Web_Servisi\Projekti\poverenik\poverenikBek\src\main\java\tim20\xml\poverenik\poverenikBek\model\ZalbaNaOdluku" />
+      <recent name="E:\Faks\7. semestar\XML i veb servisi\XML_Web_Servisi\Projekti\poverenik\poverenikBek\src\main\java\tim20\xml\poverenik\poverenikBek\model\ZalbaNaCutanje" />
+      <recent name="E:\Faks\7. semestar\XML i veb servisi\XML_Web_Servisi\Projekti\poverenik\poverenikBek\src\main\java\tim20\xml\poverenik\poverenikBek\model\Zahtev" />
+      <recent name="E:\Faks\7. semestar\XML i veb servisi\XML_Web_Servisi\Projekti\poverenik\poverenikBek\src\main\java\tim20\xml\poverenik\poverenikBek\model\Tipovi" />
+      <recent name="E:\Faks\7. semestar\XML i veb servisi\XML_Web_Servisi\Projekti\poverenik\poverenikBek\src\main\java\tim20\xml\poverenik\poverenikBek\model\Resenje" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.PoverenikBekApplication">
     <configuration name="PoverenikBekApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -84,7 +227,9 @@
       <option name="presentableId" value="Default" />
       <updated>1612125088649</updated>
       <workItem from="1612125089849" duration="1331000" />
-      <workItem from="1612193503202" duration="2606000" />
+      <workItem from="1612193503202" duration="2633000" />
+      <workItem from="1612283424985" duration="882000" />
+      <workItem from="1612284406105" duration="129000" />
     </task>
     <servers />
   </component>
@@ -104,10 +249,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1612193513298">
+    <state x="505" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1612284435755">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1612193513298" />
+    <state x="505" y="202" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1612284435755" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1612284533155">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1612284533155" />
     <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1612126436948">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -156,5 +305,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1612126436949" />
+    <state x="349" y="155" key="IDE.errors.dialog" timestamp="1612283964387">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="349" y="155" key="IDE.errors.dialog/0.0.1536.824@0.0.1536.824" timestamp="1612283964387" />
   </component>
 </project>

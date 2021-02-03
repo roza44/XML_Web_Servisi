@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-    targetNamespace="http://www.ftn.uns.ac.rs/resenje" xmlns:r="http://www.ftn.uns.ac.rs/resenje">
+    targetNamespace="http://www.ftn.uns.ac.rs/resenje"
+    xmlns:tipovi="http://tipovi"
+    xmlns:r="http://www.ftn.uns.ac.rs/resenje">
    
-   
+   <xs:import namespace="http://tipovi" schemaLocation="../tipovi.xsd"/>
    
     <xs:simpleType name="BrResenjaType">
         <xs:restriction base="xs:string">
@@ -23,7 +25,7 @@
             <xs:pattern value="[1-9]\d*/\d*"/>
         </xs:restriction>
     </xs:simpleType>
-    <xs:complexType name="TAdresa">
+    <!-- <xs:complexType name="TAdresa">
             <xs:sequence>
                 <xs:element name="Mesto">
                     <xs:simpleType>
@@ -86,7 +88,7 @@
             </xs:choice>
             <xs:element name="Adresa" type="r:TAdresa"/>
         </xs:sequence>
-    </xs:complexType>
+    </xs:complexType> -->
 
 
 
@@ -124,26 +126,26 @@
                 <xs:element ref="r:Uvod"/>
                 <xs:element name="Ishod" type="xs:string"/>
                 <xs:element ref="r:Obrazlozenje"/>
-                <xs:element ref="r:Poverenik"/>
+                <xs:element name="Poverenik" type="tipovi:TImePrezime"/>
             </xs:sequence>
             <xs:attribute name="vocab" type="xs:string"/>
             <xs:attribute name="about" type="xs:string"/>
         </xs:complexType>
     </xs:element>
-    <xs:element name="Poverenik">
+    <!-- <xs:element name="Poverenik">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="Ime" type="xs:string"/>
                 <xs:element name="Prezime" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
-    </xs:element>
+    </xs:element> -->
     <xs:element name="Uvod">
         <xs:complexType>
             <xs:sequence>
-                <xs:element minOccurs="0" ref="r:Poverenik"/>
-                <xs:element name="Podnosilac_zalbe">
-                    <xs:complexType>
+                <xs:element minOccurs="0" name="Poverenik" type="tipovi:TImePrezime"/>
+                <xs:element name="Podnosilac_zalbe" type="tipovi:TImePrezime">
+                    <!-- <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Ime">
                                 <xs:complexType>
@@ -154,7 +156,6 @@
                                     </xs:simpleContent>
                                 </xs:complexType>
                             </xs:element>
-                            <!-- <xs:element name="Ime" type="xs:string"/> -->
                             <xs:element name="Prezime">
                                 <xs:complexType>
                                     <xs:simpleContent>
@@ -164,10 +165,9 @@
                                     </xs:simpleContent>
                                 </xs:complexType>
                             </xs:element>
-                            <!-- <xs:element name="Prezime" type="xs:string"/> -->
                         </xs:sequence>
                         <xs:attribute name="property" type="xs:string"/>
-                    </xs:complexType>
+                    </xs:complexType> -->
                 </xs:element>
                 
                 <xs:element name="Razlog">
@@ -276,5 +276,5 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="Adresa" type="r:TAdresa"/>
+    <xs:element name="Adresa" type="tipovi:TAdresa"/>
 </xs:schema>

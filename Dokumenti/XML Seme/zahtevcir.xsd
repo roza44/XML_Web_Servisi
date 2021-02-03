@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
-    targetNamespace="http://www.ftn.uns.ac.rs/zahtev" xmlns:za="http://www.ftn.uns.ac.rs/zahtev">
-    
-    <xs:simpleType name="NazivType">
+    targetNamespace="http://www.ftn.uns.ac.rs/zahtev"
+    xmlns:tipovi="http://tipovi"
+    xmlns:za="http://www.ftn.uns.ac.rs/zahtev">
+    <xs:import namespace="http://tipovi" schemaLocation="../tipovi.xsd"/>
+    <!-- <xs:simpleType name="NazivType">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
             <xs:maxLength value="100"/>
@@ -20,7 +22,7 @@
             <xs:minLength value="1"/>
             <xs:maxLength value="30"/>
         </xs:restriction>
-    </xs:simpleType>
+    </xs:simpleType> -->
     <xs:element name="Zahtev">
         <xs:complexType>
             <xs:sequence>
@@ -33,7 +35,7 @@
                                         <xs:element name="Naziv">
                                             <xs:complexType>
                                                 <xs:simpleContent>
-                                                    <xs:extension base="za:NazivType">
+                                                    <xs:extension base="tipovi:TNaziv">
                                                         <xs:attribute name="property" type="xs:string"> </xs:attribute>
                                                     </xs:extension>
                                                 </xs:simpleContent>
@@ -143,7 +145,7 @@
             <xs:element name="Mesto">
                 <xs:complexType>
                     <xs:simpleContent>
-                        <xs:extension base="za:MestoType">
+                        <xs:extension base="tipovi:TMesto">
                             <xs:attribute name="property" type="xs:string"> </xs:attribute>
                         </xs:extension>
                     </xs:simpleContent>
@@ -166,7 +168,7 @@
             <xs:element name="Ime">
                 <xs:complexType>
                     <xs:simpleContent>
-                        <xs:extension base="za:ImeType">
+                        <xs:extension base="tipovi:TIme">
                             <xs:attribute name="property" type="xs:string"> </xs:attribute>
                         </xs:extension>
                     </xs:simpleContent>
@@ -175,7 +177,7 @@
             <xs:element name="Prezime">
                 <xs:complexType>
                     <xs:simpleContent>
-                        <xs:extension base="za:ImeType">
+                        <xs:extension base="tipovi:TIme">
                             <xs:attribute name="property" type="xs:string"> </xs:attribute>
                         </xs:extension>
                     </xs:simpleContent>
