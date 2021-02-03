@@ -1,6 +1,5 @@
 package Resenje;
 
-import Obavestenje.model.Obavestenje;
 import Resenje.model.Resenje;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -22,7 +21,6 @@ import util.SparqlUtil;
 
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.TransformerException;

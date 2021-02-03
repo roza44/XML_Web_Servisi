@@ -21,18 +21,14 @@ import util.SparqlUtil;
 
 import javax.xml.XMLConstants;
 import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.TransformerException;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
-import javax.xml.validation.Validator;
-import javax.xml.validation.ValidatorHandler;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -94,9 +90,9 @@ public class Store {
             Unmarshaller um = context.createUnmarshaller();
 
             //Setup schema validator
-//            SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-//            Schema employeeSchema = sf.newSchema(new File(SCHEMA_URL));
-//            um.setSchema(employeeSchema);
+            SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Schema employeeSchema = sf.newSchema(new File(SCHEMA_URL));
+            um.setSchema(employeeSchema);
 
             Zalba zalba = (Zalba) um.unmarshal(new InputStreamReader(
                     new FileInputStream(IN_URL), StandardCharsets.UTF_8));

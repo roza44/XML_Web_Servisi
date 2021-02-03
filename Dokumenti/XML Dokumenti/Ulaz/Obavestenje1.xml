@@ -1,59 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Obavestenje xmlns="http://www.ftn.uns.ac.rs/obavestenje"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.ftn.uns.ac.rs/obavestenje file:/E:/Faks/7.%20semestar/XML%20i%20veb%20servisi/XML_Web_Servisi/Dokumenti/XML%20Seme/obavestenjecir.xsd"
- xmlns:pred="http://examples/predicate/"
- vocab="http://examples/predicate/"
- about="http://Obavestenje/1"
- >
-    <Organ>
-        <Naziv property="pred:nazivOrgana">Naziv organa</Naziv>
-        <Sediste>Vrsac</Sediste>
-    </Organ>
-    <Datum property="pred:datumObavestenja">2006-05-04</Datum>
-    <Broj_predmeta>26</Broj_predmeta>
-    <Podnosioc_zahteva xmlns:ob="http://www.ftn.uns.ac.rs/obavestenje" xsi:type="ob:TFizickoLice"
-    >
-        <Adresa>
-            <Mesto>Vrsac</Mesto>
-            <Postanski_broj>26300</Postanski_broj>
-            <Ulica>Blabla</Ulica>
-            <Broj>50</Broj>
-        </Adresa>
-        <Ime property="pred:imePodnosioca">Vukasin</Ime>
-        <Prezime property="pred:prezimePodnosioca">Jokic</Prezime>
-    </Podnosioc_zahteva>
-    <Trazena_informacija>
-        <Godina_zahteva>0</Godina_zahteva>
-        <Opis_informacije>Jako vazna informacija</Opis_informacije>
-    </Trazena_informacija>
-    <Uvid>
-        <Datum property="pred:datumUvida">2006-05-04</Datum>
-        <Satnica>01:01:01.001</Satnica>
-        <Satnica_od>01:01:01.001</Satnica_od>
-        <Satnica_do>02:01:01.001</Satnica_do>
-        <Broj_kancelarije>50</Broj_kancelarije>
-        <Adresa>
-            <Mesto>Vrsac</Mesto>
-            <Postanski_broj>26300</Postanski_broj>
-            <Ulica>Sterijina</Ulica>
-            <Broj>53</Broj>
-        </Adresa>
-    </Uvid>
-    <Troskovi>
-        <A4_Cena>3.0</A4_Cena>
-        <A3_Cena>6.0</A3_Cena>
-        <CD_Cena>35.0</CD_Cena>
-        <Disketa_Cena>20.0</Disketa_Cena>
-        <DVD_Cena>40.0</DVD_Cena>
-        <Audio_Kaseta_Cena>150.0</Audio_Kaseta_Cena>
-        <Video_Kaseta_Cena>300.0</Video_Kaseta_Cena>
-        <EDokumenta_Cena>30.0</EDokumenta_Cena>
-    </Troskovi>
-    <Uplata>
-        <Ukupni_troskovi>0</Ukupni_troskovi>
-        <Ziro_racun>123-0200000000400-10</Ziro_racun>
-        <Broj_modela>97</Broj_modela>
-    </Uplata>
-    <Dostavljeno>Imenovanom</Dostavljeno>
-</Obavestenje>
+<ob:Obavestenje xmlns="http://www.ftn.uns.ac.rs/obavestenje"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.ftn.uns.ac.rs/obavestenje file:/E:/Faks/7.%20semestar/XML%20i%20veb%20servisi/XML_Web_Servisi/Dokumenti/XML%20Seme/obavestenjecir.xsd"
+    xmlns:pred="http://examples/predicate/"
+    xmlns:ob="http://www.ftn.uns.ac.rs/obavestenje"
+    xmlns:tipovi="http://tipovi"
+    vocab="http://examples/predicate/"
+    about="http://Obavestenje/1">
+    <ob:Organ>
+        <tipovi:Adresa>
+            <tipovi:Mesto>Mesto0</tipovi:Mesto>
+            <tipovi:Postanski_broj>25500</tipovi:Postanski_broj>
+            <tipovi:Ulica>Ulica0</tipovi:Ulica>
+            <tipovi:Broj>50</tipovi:Broj>
+        </tipovi:Adresa>
+        <tipovi:Naziv>Naziv0</tipovi:Naziv>
+    </ob:Organ>
+    <ob:Datum property="pred:datumObavestenja">2006-05-04</ob:Datum>
+    <ob:Broj_predmeta>Broj_predmeta0</ob:Broj_predmeta>
+    <ob:Podnosioc_zahteva xsi:type="tipovi:TFizicko_lice">
+        <tipovi:Adresa>
+            <tipovi:Mesto>Mesto1</tipovi:Mesto>
+            <tipovi:Postanski_broj>25500</tipovi:Postanski_broj>
+            <tipovi:Ulica>Ulica1</tipovi:Ulica>
+            <tipovi:Broj>50</tipovi:Broj>
+        </tipovi:Adresa>
+        <tipovi:Ime  property="pred:imePodnosioca">Ime0</tipovi:Ime>
+        <tipovi:Prezime  property="pred:prezimePodnosioca">Prezime0</tipovi:Prezime>
+    </ob:Podnosioc_zahteva>
+    <ob:Trazena_informacija>
+        <ob:Godina_zahteva>0</ob:Godina_zahteva>
+        <ob:Opis_informacije>Opis_informacije0</ob:Opis_informacije>
+    </ob:Trazena_informacija>
+    <ob:Uvid>
+        <ob:Datum property="pred:datumUvida">2006-05-04</ob:Datum>
+        <ob:Satnica>01:01:01.001</ob:Satnica>
+        <ob:Satnica_od>01:01:01.001</ob:Satnica_od>
+        <ob:Satnica_do>01:01:01.001</ob:Satnica_do>
+        <ob:Broj_kancelarije>50</ob:Broj_kancelarije>
+        <ob:Adresa>
+            <tipovi:Mesto>Mesto2</tipovi:Mesto>
+            <tipovi:Postanski_broj>25500</tipovi:Postanski_broj>
+            <tipovi:Ulica>Ulica2</tipovi:Ulica>
+            <tipovi:Broj>50</tipovi:Broj>
+        </ob:Adresa>
+    </ob:Uvid>
+    <ob:Troskovi>
+        <ob:A4_Cena>3.0</ob:A4_Cena>
+        <ob:A3_Cena>6.0</ob:A3_Cena>
+        <ob:CD_Cena>35.0</ob:CD_Cena>
+        <ob:Disketa_Cena>20.0</ob:Disketa_Cena>
+        <ob:DVD_Cena>40.0</ob:DVD_Cena>
+        <ob:Audio_Kaseta_Cena>150.0</ob:Audio_Kaseta_Cena>
+        <ob:Video_Kaseta_Cena>300.0</ob:Video_Kaseta_Cena>
+        <ob:EDokumenta_Cena>30.0</ob:EDokumenta_Cena>
+    </ob:Troskovi>
+    <ob:Uplata>
+        <ob:Ukupni_troskovi>0</ob:Ukupni_troskovi>
+        <ob:Ziro_racun>000-0000000000000-00</ob:Ziro_racun>
+        <ob:Broj_modela>00</ob:Broj_modela>
+    </ob:Uplata>
+    <ob:Dostavljeno>Imenovanom</ob:Dostavljeno>
+</ob:Obavestenje>

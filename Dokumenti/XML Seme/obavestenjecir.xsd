@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
     targetNamespace="http://www.ftn.uns.ac.rs/obavestenje"
+    xmlns:tipovi="http://tipovi"
     xmlns:ob="http://www.ftn.uns.ac.rs/obavestenje">
-
-    <xs:simpleType name="SedisteType">
+    <xs:import namespace="http://tipovi" schemaLocation="../tipovi.xsd"/>
+    <!-- <xs:simpleType name="TSediste">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
             <xs:maxLength value="100"/>
         </xs:restriction>
-    </xs:simpleType>
-    <xs:simpleType name="NazivType">
+    </xs:simpleType> -->
+    <!-- <xs:simpleType name="NazivType">
         <xs:restriction base="xs:string">
             <xs:minLength value="1"/>
             <xs:maxLength value="100"/>
@@ -20,11 +21,11 @@
             <xs:minLength value="1"/>
             <xs:maxLength value="30"/>
         </xs:restriction>
-    </xs:simpleType>
+    </xs:simpleType> -->
     <xs:element name="Obavestenje">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="ob:Organ"/>
+                <xs:element name="Organ" type="tipovi:TPravno_lice"/>
                 <xs:element name="Datum">
                     <xs:complexType>
                         <xs:simpleContent>
@@ -35,7 +36,7 @@
                     </xs:complexType>
                 </xs:element>
                 <xs:element name="Broj_predmeta" type="xs:string"/>
-                <xs:element name="Podnosioc_zahteva" type="ob:TLice"/>
+                <xs:element name="Podnosioc_zahteva" type="tipovi:TLice"/>
                 <xs:element ref="ob:Trazena_informacija"/>
                 <xs:element ref="ob:Uvid"/>
                 <xs:element ref="ob:Troskovi"/>
@@ -53,13 +54,13 @@
             <xs:attribute name="about" type="xs:string"/>
         </xs:complexType>
     </xs:element>
-    <xs:element name="Organ">
+    <!-- <xs:element name="Organ">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="Naziv">
                     <xs:complexType>
                         <xs:simpleContent>
-                            <xs:extension base="ob:NazivType">
+                            <xs:extension base="tipovi:TNaziv">
                                 <xs:attribute name="property" type="xs:string"> </xs:attribute>
                             </xs:extension>
                         </xs:simpleContent>
@@ -68,7 +69,7 @@
                 <xs:element name="Sediste">
                     <xs:complexType>
                         <xs:simpleContent>
-                            <xs:extension base="ob:SedisteType">
+                            <xs:extension base="ob:TSediste">
                                 <xs:attribute name="property" type="xs:string"> </xs:attribute>
                             </xs:extension>
                         </xs:simpleContent>
@@ -76,7 +77,7 @@
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
-    </xs:element>
+    </xs:element> -->
     <xs:element name="Trazena_informacija">
         <xs:complexType>
             <xs:sequence>
@@ -121,7 +122,7 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
-                <xs:element ref="ob:Adresa"/>
+                <xs:element name="Adresa" type="tipovi:TAdresa"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -160,7 +161,7 @@
             </xs:sequence>
         </xs:complexType>
     </xs:element>
-    <xs:element name="Adresa">
+    <!-- <xs:element name="Adresa">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="Mesto">
@@ -243,5 +244,5 @@
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
-    </xs:complexType>
+    </xs:complexType> -->
 </xs:schema>

@@ -1,6 +1,5 @@
 package Resenje;
 
-import Obavestenje.model.Obavestenje;
 import Resenje.model.Resenje;
 import org.apache.jena.query.QueryExecution;
 import org.apache.jena.query.QueryExecutionFactory;
