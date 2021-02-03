@@ -1,11 +1,7 @@
 
 package tim20.xml.poverenik.poverenikBek.model.Tipovi;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -35,6 +31,7 @@ import javax.xml.bind.annotation.XmlType;
     TPravnoLice.class,
     TFizickoLice.class
 })
+@XmlTransient
 public abstract class TLice {
 
     @XmlElement(name = "Adresa", namespace = "http://tipovi", required = true)

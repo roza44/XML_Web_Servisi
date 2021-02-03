@@ -2,16 +2,11 @@
 package tim20.xml.poverenik.poverenikBek.model.ZalbaNaOdluku;
 
 import tim20.xml.poverenik.poverenikBek.model.Tipovi.TAdresa;
+import tim20.xml.poverenik.poverenikBek.model.Tipovi.TFizickoLice;
 import tim20.xml.poverenik.poverenikBek.model.Tipovi.TLice;
+import tim20.xml.poverenik.poverenikBek.model.Tipovi.TPravnoLice;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
+import javax.xml.bind.annotation.*;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 
@@ -90,7 +85,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 public class Zalba {
 
     @XmlElement(name = "Zalilac", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
-    protected TLice zalilac;
+    protected TPravnoLice zalilac;
     @XmlElement(name = "Resenje", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
     protected Resenje resenje;
     @XmlElement(name = "Datum_Zahteva", namespace = "http://www.ftn.uns.ac.rs/ZalbaNaOdluku", required = true)
@@ -118,7 +113,7 @@ public class Zalba {
      *     {@link TLice }
      *     
      */
-    public TLice getZalilac() {
+    public TPravnoLice getZalilac() {
         return zalilac;
     }
 
@@ -130,7 +125,7 @@ public class Zalba {
      *     {@link TLice }
      *     
      */
-    public void setZalilac(TLice value) {
+    public void setZalilac(TPravnoLice value) {
         this.zalilac = value;
     }
 

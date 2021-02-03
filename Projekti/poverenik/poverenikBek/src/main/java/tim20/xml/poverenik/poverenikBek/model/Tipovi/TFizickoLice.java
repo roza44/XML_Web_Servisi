@@ -1,12 +1,7 @@
 
 package tim20.xml.poverenik.poverenikBek.model.Tipovi;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.XmlValue;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -45,11 +40,13 @@ import javax.xml.bind.annotation.XmlValue;
  * 
  * 
  */
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TFizicko_lice", namespace = "http://tipovi", propOrder = {
+//@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType( namespace = "http://tipovi", propOrder = {
     "ime",
-    "prezime"
+    "prezime",
+        "adresa"
 })
+@XmlRootElement
 public class TFizickoLice
     extends TLice
 {
