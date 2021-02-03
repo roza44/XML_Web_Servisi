@@ -6,10 +6,10 @@
                     type="text"
                     autocomplete="off"
                     pInputText
-                    formControlName="username"
-                    placeholder="Username"
+                    formControlName="firstName"
+                    placeholder="First Name"
                     class="form-control "
-                    [ngClass]="{ 'is-invalid': submitted && f.username.errors}">
+                    [ngClass]="{ 'is-invalid': submitted && f.firstName.errors}">
             </tr>
             <tr></tr>
             <tr>
@@ -17,16 +17,51 @@
                     type="text"
                     autocomplete="off"
                     pInputText
+                    formControlName="lastName"
+                    placeholder="Last Name"
+                    class="form-control "
+                    [ngClass]="{ 'is-invalid': submitted && f.lastName.errors}">
+            </tr>
+            <tr></tr>
+            <tr>
+                <input 
+                    type="text"
+                    autocomplete="off"
+                    pInputText
+                    formControlName="email"
+                    placeholder="Email"
+                    class="form-control "
+                    [ngClass]="{ 'is-invalid': submitted && f.email.errors}">
+            </tr>
+            <tr></tr>
+            <tr>
+                <input 
+                    type="password"
+                    autocomplete="off"
+                    pInputText
                     formControlName="password"
                     placeholder="Password"
                     class="form-control "
-                    [ngClass]="{ 'is-invalid': submitted && f.username.errors}">
+                    [ngClass]="{ 'is-invalid': submitted && f.password.errors}">
+            </tr>
+            <tr></tr>
+            <tr>
+                <input 
+                    type="password"
+                    autocomplete="off"
+                    pInputText
+                    formControlName="confirmPassword"
+                    placeholder="Confirm Password"
+                    class="form-control "
+                    [ngClass]="{ 'is-invalid': submitted 
+                                    && f.confirmPassword.errors 
+                                    && f.confirmPassword.value !== f.password.value}">
             </tr>
             <tr></tr>
             <tr>
                 <button 
                     pButton 
-                    type="button" 
+                    type="submit" 
                     label="Register"
                     [disabled]="invalidFormInputs()">
                 </button>

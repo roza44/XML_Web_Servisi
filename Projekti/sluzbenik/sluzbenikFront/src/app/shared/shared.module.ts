@@ -14,7 +14,7 @@ import {RouterModule} from '@angular/router'
   imports: [
     CommonModule,
     MenubarModule,
-    ButtonModule ,
+    ButtonModule,
     RouterModule
   ],
   exports: [MenuBarComponent]

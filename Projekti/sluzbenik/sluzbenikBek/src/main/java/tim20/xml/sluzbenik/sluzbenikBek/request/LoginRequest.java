@@ -1,7 +1,18 @@
 package tim20.xml.sluzbenik.sluzbenikBek.request;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "loginRequest")
 public class LoginRequest {
+
+    @XmlElement(name = "email", required = true)
     private String email;
+    @XmlElement(name = "password", required = true)
     private String password;
 
     public LoginRequest() {
