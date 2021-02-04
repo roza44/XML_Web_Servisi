@@ -37,7 +37,7 @@ public interface LoginUseCase {
 
     class LoginDTO {
         private String token;
-        private List<String> roles;
+        private String roles;
         private long expiresIn;
 
         public LoginDTO(String token, Collection<Authority> authorities, long expiresIn) {
@@ -46,18 +46,15 @@ public interface LoginUseCase {
             this.expiresIn = expiresIn;
         }
 
-        private List<String> mapRoles(Collection<Authority> authorities) {
-            return authorities
-                    .stream()
-                    .map(Authority::getName)
-                    .collect(Collectors.toList());
+        private String mapRoles(Collection<Authority> authorities) {
+            return authorities.iterator().next().getName();
         }
 
         public String getToken() {
             return token;
         }
 
-        public List<String> getRoles() {
+        public String getRoles() {
             return roles;
         }
 

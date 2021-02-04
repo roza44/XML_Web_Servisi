@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { tap } from 'rxjs/operators';
 import { LoginDTO } from './model';
+import { Router } from '@angular/router';
 
 const headers = new HttpHeaders({'Content-Type': 'application/xml'});
 
@@ -14,9 +14,21 @@ export class AuthenticationService {
 
   url:String = `${environment.baseUrl}/auth`
 
+  private currentUserSubject: BehaviorSubject<LoginDTO>;
+  public currentUser: Observable<LoginDTO>;
+
   constructor(
       private http: HttpClient,
-    ) { }
+      private router: Router
+    ) { 
+      this.currentUserSubject = new BehaviorSubject<LoginDTO>(this.getUserInfo());
+      this.currentUser = this.currentUserSubject.asObservable();
+    }
+
+  changeCurrentUser(user:any) {
+    localStorage.setItem('currentUser', JSON.stringify(user));
+    this.currentUserSubject.next(this.getUserInfo());
+  }
 
   register(request: any): Observable<any> {
     const registerUrl = this.url + '/register';
@@ -48,5 +60,7 @@ export class AuthenticationService {
 
   logout() {
     localStorage.removeItem('currentUser');
+    this.currentUserSubject.next(null);
+    this.router.navigate(['']);
   }
 }
