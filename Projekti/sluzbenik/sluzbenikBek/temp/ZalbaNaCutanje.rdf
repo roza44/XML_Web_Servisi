@@ -1,0 +1,23 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:h="http://www.w3.org/1999/xhtml">
+<rdf:Description rdf:about="http://ZalbaNaCutanje/1">
+<pred:nazivOrgana xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Naziv_organa0</pred:nazivOrgana>
+</rdf:Description>
+<rdf:Description rdf:about="http://ZalbaNaCutanje/1">
+<pred:razlogZalbe xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Organ vlasti nije postupio u zakonskom roku</pred:razlogZalbe>
+</rdf:Description>
+<rdf:Description rdf:about="http://ZalbaNaCutanje/1">
+<pred:datumZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">2006-05-04</pred:datumZahteva>
+</rdf:Description>
+<rdf:Description rdf:about="http://ZalbaNaCutanje/1">
+<pred:tekstZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Podaci_o_zahtevu_i_informacijama0</pred:tekstZahteva>
+</rdf:Description>
+<rdf:Description rdf:about="http://ZalbaNaCutanje/1">
+<pred:datumZalbe xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">2006-05-04</pred:datumZalbe>
+</rdf:Description>
+<rdf:Description rdf:about="http://ZalbaNaCutanje/1">
+<pred:imeGradjanina xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Ime0</pred:imeGradjanina>
+</rdf:Description>
+<rdf:Description rdf:about="http://ZalbaNaCutanje/1">
+<pred:prezimeGradjanina xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Prezime0</pred:prezimeGradjanina>
+</rdf:Description>
+</rdf:RDF>

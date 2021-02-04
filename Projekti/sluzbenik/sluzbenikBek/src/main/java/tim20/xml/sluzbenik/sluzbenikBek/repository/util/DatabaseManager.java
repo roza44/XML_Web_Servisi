@@ -9,6 +9,8 @@ import org.apache.jena.update.UpdateRequest;
 import org.exist.xmldb.EXistResource;
 import org.springframework.stereotype.Repository;
 import org.xml.sax.SAXException;
+import org.exist.xmldb.EXistResource;
+import org.springframework.stereotype.Repository;
 import org.xmldb.api.base.Collection;
 import org.xmldb.api.base.Database;
 import org.xmldb.api.base.XMLDBException;
@@ -22,6 +24,8 @@ import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.TransformerException;
 import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStream;
 
 @Repository
 public class DatabaseManager {
@@ -125,7 +129,7 @@ public class DatabaseManager {
 
     }
 
-    public static <T> T retrieve(String collectionId, String documentId) throws XMLDBException, JAXBException {
+    public static <T> T retrieve(Class<T> classT, String collectionId, String documentId) throws XMLDBException, JAXBException {
 
         Collection col = null;
         XMLResource res = null;
@@ -148,7 +152,9 @@ public class DatabaseManager {
 
 
                 //This may not work
-                JAXBContext context = JAXBContext.newInstance(retValue.getClass());
+
+                JAXBContext context = JAXBContext.newInstance(classT);
+
 
                 Unmarshaller unmarshaller = context.createUnmarshaller();
 
@@ -164,6 +170,25 @@ public class DatabaseManager {
 
         return retValue;
 
+    }
+
+    public static long count(String collectionId) throws XMLDBException {
+        Collection col = null;
+        long retValue = 0;
+
+        try {
+            // get the collection
+            System.out.println("[INFO] Retrieving the collection: " + collectionId);
+            col = org.xmldb.api.DatabaseManager.getCollection(conn.uri + collectionId);
+            col.setProperty(OutputKeys.INDENT, "yes");
+
+            retValue = col.getResourceCount();
+
+        } finally {
+            cleanUp(col, null);
+        }
+
+        return retValue;
     }
 
     private static void cleanUp(Collection col, XMLResource res) {

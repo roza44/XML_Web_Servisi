@@ -6,7 +6,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
-import tim20.xml.sluzbenik.sluzbenikBek.model.User;
+import tim20.xml.sluzbenik.sluzbenikBek.model.user.User;
 import tim20.xml.sluzbenik.sluzbenikBek.security.api.AuthenticationService;
 
 @Component

@@ -3,6 +3,7 @@ package tim20.xml.sluzbenik.sluzbenikBek.model.Obavestenje;
 
 
 
+import tim20.xml.sluzbenik.sluzbenikBek.model.Tipovi.TFizickoLice;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Tipovi.TLice;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Tipovi.TPravnoLice;
 
@@ -76,7 +77,7 @@ public class Obavestenje {
     @XmlElement(name = "Broj_predmeta", namespace = "http://www.ftn.uns.ac.rs/obavestenje", required = true)
     protected String brojPredmeta;
     @XmlElement(name = "Podnosioc_zahteva", namespace = "http://www.ftn.uns.ac.rs/obavestenje", required = true)
-    protected TLice podnosiocZahteva;
+    protected TFizickoLice podnosiocZahteva;
     @XmlElement(name = "Trazena_informacija", namespace = "http://www.ftn.uns.ac.rs/obavestenje", required = true)
     protected TrazenaInformacija trazenaInformacija;
     @XmlElement(name = "Uvid", namespace = "http://www.ftn.uns.ac.rs/obavestenje", required = true)
@@ -184,7 +185,7 @@ public class Obavestenje {
      *     {@link TLice }
      *     
      */
-    public void setPodnosiocZahteva(TLice value) {
+    public void setPodnosiocZahteva(TFizickoLice value) {
         this.podnosiocZahteva = value;
     }
 

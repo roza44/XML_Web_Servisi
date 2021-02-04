@@ -13,7 +13,7 @@ import java.io.IOException;
 public class ZahtevRepository {
 
     private final String COLLECTION_ID ="/db/sample/Zahtev";
-    private final String rdfFilePath = "src/data/gen/Zahtev.rdf";
+    private final String rdfFilePath = "temp/Zahtev.rdf";
 
     public void store(Zahtev zahtev) throws XMLDBException, JAXBException, TransformerException, IOException, SAXException {
         DatabaseManager.<Zahtev>store(zahtev, COLLECTION_ID, "1.xml");

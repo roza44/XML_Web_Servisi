@@ -14,7 +14,7 @@ import java.io.IOException;
 public class ResenjeRepository {
 
     private final String COLLECTION_ID ="/db/sample/Resenje";
-    private final String rdfFilePath = "src/data/gen/Resenje.rdf";
+    private final String rdfFilePath = "temp/Resenje.rdf";
 
     public void store(Resenje resenje) throws XMLDBException, JAXBException, TransformerException, IOException, SAXException {
         DatabaseManager.<Resenje>store(resenje, COLLECTION_ID, "1.xml");

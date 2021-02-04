@@ -23,7 +23,7 @@ public class MetadataExtractor {
 
     private TransformerFactory transformerFactory;
 
-    private static final String XSLT_FILE = "src/main/java/tim20/xml/poverenik/poverenikBek/repository/util/grddl.xsl";
+    private static final String XSLT_FILE = "src/main/java/tim20/xml/sluzbenik/sluzbenikBek/repository/util/grddl.xsl";
 
     public MetadataExtractor() throws SAXException, IOException {
 
