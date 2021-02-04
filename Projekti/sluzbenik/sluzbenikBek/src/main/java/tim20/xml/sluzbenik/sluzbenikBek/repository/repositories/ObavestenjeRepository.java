@@ -9,6 +9,7 @@ import tim20.xml.sluzbenik.sluzbenikBek.repository.util.DatabaseManager;
 import javax.xml.bind.JAXBException;
 import javax.xml.transform.TransformerException;
 import java.io.IOException;
+import java.util.List;
 
 @Repository
 public class ObavestenjeRepository {
@@ -20,7 +21,11 @@ public class ObavestenjeRepository {
         DatabaseManager.<Obavestenje>storeRdf(obavestenje, rdfFilePath);
     }
 
-    public Obavestenje get(String id){
-        DatabaseManager.<Obavestenje>retrieve()
+    public Obavestenje get(String id) throws XMLDBException, JAXBException {
+        return DatabaseManager.<Obavestenje>retrieve(Obavestenje.class, COLLECTION_ID, "1.xml");
+    }
+
+    public List<Obavestenje> getAll() throws XMLDBException, JAXBException {
+        return DatabaseManager.<Obavestenje>getAll(Obavestenje.class, COLLECTION_ID);
     }
 }
