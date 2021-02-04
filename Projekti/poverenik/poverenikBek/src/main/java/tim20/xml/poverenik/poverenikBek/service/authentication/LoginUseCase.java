@@ -1,6 +1,6 @@
 package tim20.xml.poverenik.poverenikBek.service.authentication;
 
-import tim20.xml.poverenik.poverenikBek.model.Authority;
+import tim20.xml.poverenik.poverenikBek.model.user.Authority;
 import tim20.xml.poverenik.poverenikBek.validation.SelfValidating;
 
 import javax.validation.constraints.Email;

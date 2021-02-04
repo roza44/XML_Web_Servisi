@@ -1,6 +1,6 @@
 package tim20.xml.sluzbenik.sluzbenikBek.service.authentication;
 
-import tim20.xml.sluzbenik.sluzbenikBek.model.Authority;
+import tim20.xml.sluzbenik.sluzbenikBek.model.user.Authority;
 import tim20.xml.sluzbenik.sluzbenikBek.validation.SelfValidating;
 
 import javax.validation.constraints.Email;

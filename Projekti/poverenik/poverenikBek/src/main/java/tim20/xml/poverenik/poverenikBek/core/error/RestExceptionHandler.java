@@ -9,10 +9,12 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import org.xmldb.api.base.XMLDBException;
 import tim20.xml.poverenik.poverenikBek.core.exception.EmailTakenException;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
+import javax.xml.bind.JAXBException;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
@@ -49,8 +51,21 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return buildResponse(apiError);
     }
 
+    @ExceptionHandler(JAXBException.class)
+    protected ResponseEntity<Object> handleJAXB(JAXBException e) {
+        ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage(), e);
+        return buildResponse(apiError);
+    }
+
+    @ExceptionHandler(XMLDBException.class)
+    protected ResponseEntity<Object> handleXMLDB(XMLDBException e) {
+        ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage(), e);
+        return buildResponse(apiError);
+    }
+
     @ExceptionHandler(Exception.class)
     protected ResponseEntity<Object> handleException(Exception e) {
+        e.printStackTrace();
         ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage(), e);
         return buildResponse(apiError);
     }

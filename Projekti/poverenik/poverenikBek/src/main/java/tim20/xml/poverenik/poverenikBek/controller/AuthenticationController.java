@@ -5,12 +5,18 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.xmldb.api.base.XMLDBException;
 import tim20.xml.poverenik.poverenikBek.core.exception.EmailTakenException;
 import tim20.xml.poverenik.poverenikBek.request.LoginRequest;
 import tim20.xml.poverenik.poverenikBek.request.RegisterRequest;
 import tim20.xml.poverenik.poverenikBek.service.authentication.LoginUseCase;
 import tim20.xml.poverenik.poverenikBek.service.authentication.RegisterGradjaninUseCase;
+
+import javax.xml.bind.JAXBException;
 
 @RestController
 @RequestMapping(value = "/api/auth", consumes = MediaType.APPLICATION_XML_VALUE,produces = MediaType.APPLICATION_XML_VALUE)
@@ -30,20 +36,14 @@ public class AuthenticationController {
                 new LoginUseCase.LoginCommand(request.getEmail(), request.getPassword());
 
 
-        LoginUseCase.LoginDTO loginDTO = loginUseCase.login(command);
+        LoginUseCase.LoginDTO  loginDTO = loginUseCase.login(command);
         HttpHeaders responseHeaders = new HttpHeaders();
 
-//        responseHeaders.set("Access-Control-Allow-Origin", "*" );
-        responseHeaders.set("Authorization", "Bearer " + loginDTO.getToken());
-        responseHeaders.set("Expires-In", String.valueOf(loginDTO.getExpiresIn()));
-        responseHeaders.set("Access-Control-Expose-Headers", "Authorization, Expires-In");
-        responseHeaders.set("Access-Control-Allow-Headers", "Authorization, X-PINGOTHER, Origin, X-Requested-With, Content-Type, Accept, X-Custom-header");
-
-        return ResponseEntity.ok().headers(responseHeaders).body(loginDTO);
+        return ResponseEntity.ok(loginDTO);
     }
 
     @PostMapping("/register")
-    public ResponseEntity<Void> register(@RequestBody RegisterRequest request) throws EmailTakenException {
+    public ResponseEntity<Void> register(@RequestBody RegisterRequest request) throws EmailTakenException, XMLDBException, JAXBException {
         RegisterGradjaninUseCase.RegisterGradjaninCommand command =
                 new RegisterGradjaninUseCase.RegisterGradjaninCommand(
                         request.getFirstName(),

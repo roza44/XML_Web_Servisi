@@ -2,7 +2,7 @@ package tim20.xml.poverenik.poverenikBek.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import tim20.xml.poverenik.poverenikBek.model.User;
+import tim20.xml.poverenik.poverenikBek.model.user.User;
 import tim20.xml.poverenik.poverenikBek.security.api.TokenService;
 
 @Component
