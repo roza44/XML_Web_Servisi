@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddZalbaOComponent } from './pages/add-zalba-o.component';
+import { AddZalbaOComponent } from './pages/add-zalba-o/add-zalba-o.component';
 
 const routes: Routes = [
 

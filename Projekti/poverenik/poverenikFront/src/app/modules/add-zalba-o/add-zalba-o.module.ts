@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AddZalbaORoutingModule } from './add-zalba-o-routing.module';
-import { AddZalbaOComponent } from './pages/add-zalba-o.component';
+import { AddZalbaOComponent } from './pages/add-zalba-o/add-zalba-o.component';
 
 @NgModule({
   declarations: [ AddZalbaOComponent ],
