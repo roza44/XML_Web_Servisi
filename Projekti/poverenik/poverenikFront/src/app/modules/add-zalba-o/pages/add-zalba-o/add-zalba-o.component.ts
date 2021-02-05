@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { zalbaNaOdluku } from '../../../../shared/xml-models'
+import { zalbaNaOdluku, zalbaNaOdlukuSpec } from '../../../../shared/xml-models'
 
 declare const Xonomy: any;
 
@@ -15,7 +15,7 @@ export class AddZalbaOComponent implements OnInit {
   ngOnInit(): void {
     var editor = document.getElementById("editor");
     Xonomy.setMode("laic");
-    Xonomy.render(zalbaNaOdluku, editor, null);
+    Xonomy.render(zalbaNaOdluku, editor, zalbaNaOdlukuSpec);
   }
 
 }

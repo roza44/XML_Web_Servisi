@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {MenuItem} from 'primeng/api'; 
 import { AuthenticationService } from 'src/app/modules/authentication/authentication.service';
 import { LoginDTO } from 'src/app/modules/authentication/model';
@@ -10,7 +11,8 @@ import { LoginDTO } from 'src/app/modules/authentication/model';
 })
 export class MenuBarComponent {
 
-    constructor(private authenticationService: AuthenticationService) { }
+    constructor(private authenticationService: AuthenticationService,
+                private router: Router) { }
 
     items: MenuItem[];
     authenticated: boolean;
@@ -54,6 +56,7 @@ export class MenuBarComponent {
               this.items = [
                 ...this.userItems
               ];
+              this.router.navigate(['zalba-o/add']);
             }
           }
           else {
