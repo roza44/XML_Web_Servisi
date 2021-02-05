@@ -45,8 +45,8 @@ export class LogInComponent implements OnInit {
     let userInfo:LoginDTO = this.jsonxmlService.xml2json(response);
     this.authenticationService.changeCurrentUser(userInfo);
     this.messageService.add({ severity: 'success',
-              summary: 'Successful registration!',
-              detail: `User ${this.f.email.value} successfuly registrated!`});
+              summary: 'Successful log in!',
+              detail: `User ${this.f.email.value} successfuly logged in!`});
     this.resetForm();
   }
 
