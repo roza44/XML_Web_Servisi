@@ -14,7 +14,7 @@ import java.io.IOException;
 public class ZalbaNaOdlukuRepository {
 
     private final String COLLECTION_ID ="/db/sample/ZalbaNaOdluku";
-    private final String rdfFilePath = "ZalbaNaOdluku.rdf";
+    private final String rdfFilePath = "temp/ZalbaNaOdluku.rdf";
 
     public void store(Zalba zalba) throws XMLDBException, JAXBException, TransformerException, IOException, SAXException {
         DatabaseManager.<Zalba>store(zalba, COLLECTION_ID, "1.xml");

@@ -1,5 +1,14 @@
 package tim20.xml.sluzbenik.sluzbenikBek.repository.util;
 
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.update.UpdateExecutionFactory;
+import org.apache.jena.update.UpdateFactory;
+import org.apache.jena.update.UpdateProcessor;
+import org.apache.jena.update.UpdateRequest;
+import org.exist.xmldb.EXistResource;
+import org.springframework.stereotype.Repository;
+import org.xml.sax.SAXException;
 import org.exist.xmldb.EXistResource;
 import org.springframework.stereotype.Repository;
 import org.xmldb.api.base.Collection;
@@ -13,8 +22,12 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.transform.OutputKeys;
+import javax.xml.transform.TransformerException;
+import java.io.*;
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class DatabaseManager {
@@ -75,6 +88,49 @@ public class DatabaseManager {
 
     }
 
+    public static <T> void storeRdf(T entity, String rdfFilePath) throws IOException, TransformerException, SAXException, JAXBException {
+
+        final String SPARQL_NAMED_GRAPH_URI = "/metadata";
+
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        AuthenticationUtilities.FusekiProperties properties =
+                AuthenticationUtilities.loadFusekiProperties();
+
+        // Automatic extraction of RDF triples from XML file
+        MetadataExtractor metadataExtractor = new MetadataExtractor();
+        JAXBContext context = JAXBContext.newInstance(entity.getClass().getPackage().getName());
+        Marshaller m = context.createMarshaller();
+        m.setProperty("com.sun.xml.bind.namespacePrefixMapper", new NPMapper());
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        m.marshal(entity, os);
+
+        InputStream xmlContent = new ByteArrayInputStream(os.toByteArray());
+        System.out.println("[INFO] Extracting metadata from RDFa attributes...");
+        metadataExtractor.extractMetadata(
+                xmlContent,
+                new FileOutputStream(new File(rdfFilePath)));
+        xmlContent.close();
+        // Loading a default model with extracted metadata
+        Model model = ModelFactory.createDefaultModel();
+        model.read(rdfFilePath);
+
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+
+        model.write(out, SparqlUtil.NTRIPLES);
+
+        // Writing the named graph
+        System.out.println("[INFO] Populating named graph \"" + SPARQL_NAMED_GRAPH_URI + "\" with extracted metadata.");
+        String sparqlUpdate = SparqlUtil.insertData(properties.dataEndpoint + SPARQL_NAMED_GRAPH_URI, new String(out.toByteArray()));
+        System.out.println(sparqlUpdate);
+
+        // UpdateRequest represents a unit of execution
+        UpdateRequest update = UpdateFactory.create(sparqlUpdate);
+
+        UpdateProcessor processor = UpdateExecutionFactory.createRemote(update, properties.updateEndpoint);
+        processor.execute();
+
+    }
+
     public static <T> T retrieve(Class<T> classT, String collectionId, String documentId) throws XMLDBException, JAXBException {
 
         Collection col = null;
@@ -98,6 +154,7 @@ public class DatabaseManager {
 
 
                 //This may not work
+
                 JAXBContext context = JAXBContext.newInstance(classT);
 
 
@@ -114,6 +171,35 @@ public class DatabaseManager {
         }
 
         return retValue;
+
+    }
+
+    public static <T> List<T> getAll(Class<T> classT, String collectionId) throws XMLDBException, JAXBException {
+        Collection col = null;
+        XMLResource temp = null;
+        List<T> res = new ArrayList<T>();
+        try {
+            // get the collection
+            System.out.println("[INFO] Retrieving the collection: " + collectionId);
+            col = org.xmldb.api.DatabaseManager.getCollection(conn.uri + collectionId);
+            col.setProperty(OutputKeys.INDENT, "yes");
+
+            JAXBContext context = JAXBContext.newInstance(classT);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+
+            String[] documentNames = col.listResources();
+            for(String name: documentNames){
+                temp = (XMLResource) col.getResource(name);
+                if(temp != null) {
+                    res.add((T) unmarshaller.unmarshal(temp.getContentAsDOM()));
+                }
+            }
+
+
+        } finally {
+            cleanUp(col, null);
+        }
+        return res;
 
     }
 

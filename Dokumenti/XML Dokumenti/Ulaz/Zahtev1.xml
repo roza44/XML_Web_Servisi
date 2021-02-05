@@ -1,67 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Zahtev xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
- xmlns="http://www.ftn.uns.ac.rs/zahtev"
+<za:Zahtev xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+ xmlns:tipovi="http://tipovi"
+ xmlns:za="http://www.ftn.uns.ac.rs/zahtev"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.ftn.uns.ac.rs/zahtev file:/C:/Users/Nemanja/Desktop/2.%20XMLParsers%20(JAXB)/data/zahtevcir.xsd"
- xmlns:pred="http://examples/predicate/"
- vocab="http://examples/predicate/"
- about="http://Zahtev/1"
-    >
-    <Primalac>
-        <Organ>
-            <Naziv property="pred:nazivOrgana">Fakultet tehnickih nauka</Naziv>
-            <AdresaOrgana>
-                <Mesto>Novi Sad</Mesto>
-                <Ulica>Trg Dositeja Obradovica</Ulica>
-                <Broj>6</Broj>
-            </AdresaOrgana>
-        </Organ>
-    </Primalac>
-    <Sadrzaj>
-        <Naslov>Z A H T E V za pristup informaciji od javnog znacaja</Naslov>
-        <Telo>
-            <Paragraf>
-                <Zakon>
-                    <Clan>15</Clan>
-                    <Stav>1</Stav>
-                    <Naziv>Zakona o slobodnom pristupu informacijama od javnog znacaja</Naziv>
-                </Zakon>
-                <SluzbeniGlasnik>
-                    <Naziv>Sluzbeni glasnik RS</Naziv>
-                    <Brojevi>
-                        <Broj>120/04</Broj>
-                        <Broj>54/07</Broj>
-                        <Broj>104/09</Broj>
-                        <Broj>36/10</Broj>
-                    </Brojevi>
-                </SluzbeniGlasnik>
-            </Paragraf>
-            <IzboriZahteva>
-                <Izbor Broj="1" Odabran="true">obavestenje da li poseduje trazenu informaciju;</Izbor>
-                <Izbor Broj="2" Odabran="true">uvid u dokument koji sadrzi trazenu informaciju;</Izbor>
-                <Izbor Broj="3" Odabran="false">kopiju dokumenta koji sadrzi trazenu informaciju;</Izbor>
-                <IzboriDostave>
-                    <Izbor Broj="1" Odabran="false">postom</Izbor>
-                    <Izbor Broj="2" Odabran="true">elektronskom postom</Izbor>
-                    <Izbor Broj="3" Odabran="false">faksom</Izbor>
-                    <Izbor Broj="4" Odabran="false">na drugi nacin:___________</Izbor>
-                </IzboriDostave>
-            </IzboriZahteva>
-            <Informacije>Neke veoma bitne informacije</Informacije>
-            <PodaciOZahtevu>
-                <Mesto property="pred:mestoZahteva"  >Novi Sad</Mesto>
-                <Datum property="pred:datumZahteva" >2006-05-04</Datum>
-                <Trazioc>
-                    <Ime property="pred:imeTraziocaZahteva">Petar</Ime>
-                    <Prezime property="pred:prezimeTraziocaZahteva">Petrovic</Prezime>
-                    <Adresa>
-                        <Mesto>Novi Sad</Mesto>
-                        <Ulica>Sumadijska</Ulica>
-                        <Broj>6</Broj>
-                    </Adresa>
-                    <Kontakt>064123456</Kontakt>
-                </Trazioc>
-            </PodaciOZahtevu>
-        </Telo>
-    </Sadrzaj>
-</Zahtev>
+ xsi:schemaLocation="http://www.ftn.uns.ac.rs/zahtev file:/E:/Faks/7.%20semestar/XML%20i%20veb%20servisi/XML_Web_Servisi/Dokumenti/XML%20Seme/zahtevcir.xsd">
+    <za:Primalac>
+        <za:Organ>
+            <za:Naziv property="pred:nazivOrgana">Naziv0</za:Naziv>
+            <za:AdresaOrgana>
+                <za:Mesto>A </za:Mesto>
+                <za:Ulica>A </za:Ulica>
+                <za:Broj>50</za:Broj>
+            </za:AdresaOrgana>
+        </za:Organ>
+    </za:Primalac>
+    <za:Sadrzaj>
+        <za:Naslov>Z A H T E V za pristup informaciji od javnog znacaja</za:Naslov>
+        <za:Telo>
+            <za:Paragraf>
+                <za:Zakon>
+                    <za:Clan>50</za:Clan>
+                    <za:Stav>50</za:Stav>
+                    <za:Naziv>Naziv1</za:Naziv>
+                </za:Zakon>
+                <za:SluzbeniGlasnik>
+                    <za:Naziv>Naziv2</za:Naziv>
+                    <za:Brojevi>
+                    </za:Brojevi>
+                </za:SluzbeniGlasnik>
+            </za:Paragraf>
+            <za:IzboriZahteva>
+                <za:Izbor Broj="50" Odabran="false">Izbor0</za:Izbor>
+                <za:Izbor Broj="50" Odabran="false">Izbor1</za:Izbor>
+                <za:Izbor Broj="50" Odabran="false">Izbor2</za:Izbor>
+                <za:IzboriDostave>
+                    <za:Izbor Broj="50" Odabran="false">Izbor3</za:Izbor>
+                    <za:Izbor Broj="50" Odabran="false">Izbor4</za:Izbor>
+                    <za:Izbor Broj="50" Odabran="false">Izbor5</za:Izbor>
+                    <za:Izbor Broj="50" Odabran="false">Izbor6</za:Izbor>
+                </za:IzboriDostave>
+            </za:IzboriZahteva>
+            <za:Informacije>Informacije0</za:Informacije>
+            <za:PodaciOZahtevu>
+                <za:Mesto  property="pred:mestoZahteva">A </za:Mesto>
+                <za:Datum  property="pred:datumZahteva">2006-05-04</za:Datum>
+                <za:Trazioc>
+                    <za:Ime property="pred:imeTraziocaZahteva">Ime0</za:Ime>
+                    <za:Prezime property="pred:prezimeTraziocaZahteva">Prezime0</za:Prezime>
+                    <za:Adresa>
+                        <za:Mesto>A </za:Mesto>
+                        <za:Ulica>A </za:Ulica>
+                        <za:Broj>50</za:Broj>
+                    </za:Adresa>
+                    <za:Kontakt>00000</za:Kontakt>
+                </za:Trazioc>
+            </za:PodaciOZahtevu>
+        </za:Telo>
+    </za:Sadrzaj>
+</za:Zahtev>
