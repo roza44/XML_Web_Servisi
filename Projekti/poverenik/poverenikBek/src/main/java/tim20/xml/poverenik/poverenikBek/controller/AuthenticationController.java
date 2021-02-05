@@ -1,6 +1,7 @@
 package tim20.xml.poverenik.poverenikBek.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ import tim20.xml.poverenik.poverenikBek.service.authentication.RegisterGradjanin
 import javax.xml.bind.JAXBException;
 
 @RestController
-@RequestMapping(value = "/api/auth", produces = MediaType.APPLICATION_XML_VALUE)
+@RequestMapping(value = "/api/auth", consumes = MediaType.APPLICATION_XML_VALUE,produces = MediaType.APPLICATION_XML_VALUE)
 public class AuthenticationController {
     private final LoginUseCase loginUseCase;
     private final RegisterGradjaninUseCase registerGradjaninUseCase;
@@ -33,7 +34,12 @@ public class AuthenticationController {
     public ResponseEntity<LoginUseCase.LoginDTO> login(@RequestBody LoginRequest request) {
         LoginUseCase.LoginCommand command =
                 new LoginUseCase.LoginCommand(request.getEmail(), request.getPassword());
-        return ResponseEntity.ok(loginUseCase.login(command));
+
+
+        LoginUseCase.LoginDTO  loginDTO = loginUseCase.login(command);
+        HttpHeaders responseHeaders = new HttpHeaders();
+
+        return ResponseEntity.ok(loginDTO);
     }
 
     @PostMapping("/register")
