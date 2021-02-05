@@ -30,9 +30,9 @@ export class MenuBarComponent {
 
     userItems:MenuItem[] = [
         {
-            label:'Info Request',
+            label:'Zalba na odluku',
             icon: 'pi pi-file-o',
-            routerLink: ['']
+            routerLink: ['zalba-o/add']
         },
         {
             label: 'View Documents',
