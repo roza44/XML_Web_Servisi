@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ob:Obavestenje xmlns="http://www.ftn.uns.ac.rs/obavestenje"
+<ob:Obavestenje xmlns:tipovi="http://tipovi"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.ftn.uns.ac.rs/obavestenje file:/E:/Faks/7.%20semestar/XML%20i%20veb%20servisi/XML_Web_Servisi/Dokumenti/XML%20Seme/obavestenjecir.xsd"
     xmlns:pred="http://examples/predicate/"
     xmlns:ob="http://www.ftn.uns.ac.rs/obavestenje"
-    xmlns:tipovi="http://tipovi"
+    
     vocab="http://examples/predicate/"
     about="http://Obavestenje/1">
     <ob:Organ>
