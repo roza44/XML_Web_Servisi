@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.1" targetNamespace="http://www.ftn.uns.ac.rs/user"
+    xmlns:user="http://www.ftn.uns.ac.rs/user">
+    <xs:element name="User">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="firstName" type="xs:string"/>
+                <xs:element name="lastName" type="xs:string"/>
+                <xs:element name="email" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+                <xs:element name="userType" type="user:UserType"/>
+                <xs:element maxOccurs="unbounded" name="authorities" type="user:Authority"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="UserType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GRADJANIN"/>
+            <xs:enumeration value="POVERENIK"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="Authority">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

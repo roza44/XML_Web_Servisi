@@ -5,9 +5,11 @@ import tim20.xml.poverenik.poverenikBek.validation.SelfValidating;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public interface LoginUseCase {
     LoginDTO login(LoginCommand command);
@@ -35,10 +37,18 @@ public interface LoginUseCase {
         }
     }
 
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlRootElement(name = "LoginDTO")
     class LoginDTO {
+        @XmlElement(name = "token", required = true)
         private String token;
+        @XmlElement(name = "roles", required = true)
         private String roles;
+        @XmlElement(name = "expiresIn", required = true)
         private long expiresIn;
+
+        public LoginDTO() {
+        }
 
         public LoginDTO(String token, Collection<Authority> authorities, long expiresIn) {
             this.token = token;
