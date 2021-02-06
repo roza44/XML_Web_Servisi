@@ -8,6 +8,7 @@ const zahtev: string =
     xmlns:tipovi="http://tipovi"
     xmlns:za="http://www.ftn.uns.ac.rs/zahtev"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    vocab="http://examples/predicate/"
     xsi:schemaLocation="http://www.ftn.uns.ac.rs/zahtev file:./../../../Dokumenti/XML Seme/zahtevcir.xsd">
     <za:Primalac>
         <za:Organ>

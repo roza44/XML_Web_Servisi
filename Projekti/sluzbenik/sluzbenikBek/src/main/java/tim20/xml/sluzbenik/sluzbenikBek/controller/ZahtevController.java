@@ -25,7 +25,7 @@ public class ZahtevController {
 
     @Autowired
     private final StoreZahtevUseCase service;
-    private final GetZahtevUseCase getService;
+//    private final GetZahtevUseCase getService;
     private final GetAllZahtevUseCase getAllService;
 
     @PostMapping(consumes = MediaType.APPLICATION_XML_VALUE)
