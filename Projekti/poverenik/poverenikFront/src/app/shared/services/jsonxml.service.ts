@@ -38,7 +38,7 @@ export class JsonXmlService {
   }
 
 
-  generateList(xmlStr:string, elemnt: string, id: string): Array<XmlListItem> {
+  generateList(xmlStr:string, elemnt: string, id: string, baseName: string): Array<XmlListItem> {
 
    let retVal: Array<XmlListItem> = new Array<XmlListItem>();
 
@@ -49,7 +49,7 @@ export class JsonXmlService {
 
    elements.forEach(element => {
       let item: XmlListItem = new XmlListItem();
-      item.name = 'Zahtev: ' + element.querySelectorAll(id).item(0).innerHTML;
+      item.name = baseName + ': ' + element.querySelectorAll(id).item(0).innerHTML;
       item.xml = new XMLSerializer().serializeToString(element);
       retVal.push(item);
    });

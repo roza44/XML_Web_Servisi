@@ -43,6 +43,19 @@ export class MenuBarComponent {
         }
     ]
 
+    poverenikItems:MenuItem[] = [
+      {
+          label:'Zalbe na odluku',
+          icon: 'pi pi-file-o',
+          routerLink: ['zalba-o/pregled']
+      },
+      {
+          label: 'Pregled dokumenata',
+          icon: 'pi pi-list',
+          routerLink: ['register']
+      }
+  ]
+
     
 
     ngOnInit() {
@@ -57,6 +70,11 @@ export class MenuBarComponent {
                 ...this.userItems
               ];
               this.router.navigate(['zalba-o/add']);
+            } else if (this.checkRole(userInfo, "ROLE_POVERENIK")) {
+              this.items = [
+                ...this.poverenikItems
+              ];
+              this.router.navigate(['zalba-o/pregled']);
             }
           }
           else {

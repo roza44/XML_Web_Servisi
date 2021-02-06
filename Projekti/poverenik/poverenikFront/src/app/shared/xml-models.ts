@@ -85,7 +85,7 @@ const zalbaNaCutanje: string =
             <tipovi:Mesto>Unesite Mesto</tipovi:Mesto>
             <tipovi:Postanski_broj>Unesite postanski izmedju 11000 i 40000</tipovi:Postanski_broj>
             <tipovi:Ulica>Unesite naziv ulice</tipovi:Ulica>
-            <tipovi:Broj>Unesite broj zalbe</tipovi:Broj>
+            <tipovi:Broj>Unesite broj</tipovi:Broj>
         </tipovi:Adresa>
         <tipovi:Naziv>Unesite Naziv</tipovi:Naziv>
     </zlbc:Poverenik>

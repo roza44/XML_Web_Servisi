@@ -8,7 +8,8 @@ import { AddZalbaOService } from '../../add-zalba-o.service';
 @Component({
   selector: 'app-zalbe',
   templateUrl: './zalbe.component.html',
-  styleUrls: ['./zalbe.component.scss']
+  styleUrls: ['./zalbe.component.scss'],
+  providers: [DialogService]
 })
 export class ZalbeComponent implements OnInit {
 
@@ -23,7 +24,7 @@ export class ZalbeComponent implements OnInit {
   ngOnInit(): void {
     this.zahtevService.getZalbe()
     .subscribe((xmlStr) => {
-      this.zahtevi = this.jsonxml.generateList(xmlStr, 'Zahtev', 'Prezime');
+      this.zahtevi = this.jsonxml.generateList(xmlStr, 'Zalba', 'Prezime', "Zalba");
     });
   }
 
