@@ -33,4 +33,12 @@ export class ObavestenjeService {
     });
   }
 
+  getSluzbenikObavestenja(): Observable<any> {
+    const newUrl = this.url + '/sluzbenik';
+    return this.http.get(newUrl, {
+      headers: headers,
+      responseType: 'text'
+    });
+  }
+
 }

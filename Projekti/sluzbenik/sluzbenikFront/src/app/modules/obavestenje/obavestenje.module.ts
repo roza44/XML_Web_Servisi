@@ -9,10 +9,11 @@ import { UserObavestenjaComponent } from './components/user-obavestenja/user-oba
 import {CardModule} from 'primeng/card';
 
 import {TableModule} from 'primeng/table';
+import { SluzbenikObavestenjaComponent } from './components/sluzbenik-obavestenja/sluzbenik-obavestenja.component';
 
 
 @NgModule({
-  declarations: [ AddObavestenjeComponent, UserObavestenjaComponent, UserObavestenjaComponent ],
+  declarations: [ AddObavestenjeComponent, UserObavestenjaComponent, UserObavestenjaComponent, SluzbenikObavestenjaComponent ],
   imports: [
     CommonModule,
     ObavestenjeRoutingModule,

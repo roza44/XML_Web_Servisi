@@ -57,6 +57,11 @@ export class MenuBarComponent {
       icon: 'pi pi-list',
       routerLink: ['zahtev/pregled']
     },
+    {
+      label: 'Pregled Obavestenja',
+      icon: 'pi pi-list',
+      routerLink: ['obavestenje/sluzbenik-pregled']
+    },
   ]
 
   ngOnInit() {
