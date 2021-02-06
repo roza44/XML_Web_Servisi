@@ -14,6 +14,7 @@ Nakon toga, oba servera je neophodno pokrenuti pokretanjem fajla startup.bat unu
 
 ## 2. Spring Boot aplikacije
 Spring Boot aplikacija portala službenika radi na portu 8080. Može se bildovati preko Maven alata ili pokrenuti kroz razvojno okruženje.
+
 Spring Boot aplikacija portala poverenika radi na portu 8081. Može se bildovati preko Maven alata ili pokrenuti kroz razvojno okruženje.
 
 
