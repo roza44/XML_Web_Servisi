@@ -15,11 +15,10 @@ import java.util.List;
 public class ObavestenjeRepository {
     private final String COLLECTION_ID ="/db/sample/Obavestenje";
     private final String rdfFilePath = "temp/Obavestenje.rdf";
-    private int documentCounter = 0;
 
 
     public void store(Obavestenje obavestenje) throws JAXBException, TransformerException, IOException, SAXException, XMLDBException {
-        DatabaseManager.<Obavestenje>store(obavestenje, COLLECTION_ID, ++documentCounter + ".xml");
+        DatabaseManager.<Obavestenje>store(obavestenje, COLLECTION_ID, null);
         DatabaseManager.<Obavestenje>storeRdf(obavestenje, rdfFilePath);
     }
 

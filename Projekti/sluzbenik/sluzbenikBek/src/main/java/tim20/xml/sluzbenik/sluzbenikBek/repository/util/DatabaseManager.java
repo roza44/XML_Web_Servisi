@@ -65,6 +65,10 @@ public class DatabaseManager {
             System.out.println("[INFO] Retrieving the collection: " + collectionId);
             col = getOrCreateCollection(collectionId);
 
+            if(documentId == null) {
+                documentId = count(collectionId) + 1 + ".xml";
+            }
+
             System.out.println("[INFO] Inserting the document: " + documentId);
             res = (XMLResource) col.createResource(documentId, XMLResource.RESOURCE_TYPE);
 

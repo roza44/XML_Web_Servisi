@@ -7,28 +7,21 @@ const headers = new HttpHeaders({
   'Content-Type': 'application/xml'
 });
 
-
 @Injectable({
   providedIn: 'root'
 })
-export class ZahtevService {
+export class ObavestenjeService {
 
-  url: string = `${environment.baseUrl}/zahtev`;
+  url: string = `${environment.baseUrl}/obavestenje`;
 
   constructor(
     private http: HttpClient
   ) { }
 
-  addZahtev(xml: any): Observable<any> {
-    return this.http.post<any>(this.url, xml, {
+  addObavestenje(xmlStr: string):  Observable<any> {
+    return this.http.post<any>(this.url, xmlStr, {
       headers: headers
     });
   }
 
-  getZahtevi(): Observable<any> {
-    return this.http.get(this.url, {
-      headers: headers,
-      responseType: 'text'
-    });
-  }
 }

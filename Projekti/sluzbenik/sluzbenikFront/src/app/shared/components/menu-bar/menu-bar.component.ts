@@ -21,12 +21,12 @@ export class MenuBarComponent {
 
   unauthorizedUserItems: MenuItem[] = [
     {
-      label: 'Log In',
+      label: 'Prijava',
       icon: 'pi pi-sign-in',
       routerLink: ['']
     },
     {
-      label: 'Register',
+      label: 'Registracija',
       icon: 'pi pi-user-plus',
       routerLink: ['register']
     }
@@ -35,18 +35,24 @@ export class MenuBarComponent {
   userItems: MenuItem[] = [
 
     {
-      label: 'Add Zahtev',
+      label: 'Podnesi Zahtev',
       icon: 'pi pi-file-o',
       routerLink: ['zahtev/add']
     },
     {
-      label: 'View Documents',
+      label: 'Pregled Zahteva',
       icon: 'pi pi-list',
       routerLink: ['zahtev/add']
     }
   ]
 
-
+  sluzbenikItems: MenuItem[] = [
+    {
+      label: 'Pregled Zahteva',
+      icon: 'pi pi-list',
+      routerLink: ['zahtev/pregled']
+    },
+  ]
 
   ngOnInit() {
     this.authenticationService.currentUser.subscribe(user => this.update(user));
@@ -60,6 +66,11 @@ export class MenuBarComponent {
           ...this.userItems
         ];
         this.router.navigate(['zahtev/add']);
+      } else if(this.checkRole(userInfo, "ROLE_SLUZBENIK")) {
+        this.items = [
+          ...this.sluzbenikItems
+        ];
+        this.router.navigate(['zahtev/pregled']);
       }
     }
     else {
