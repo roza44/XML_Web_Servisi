@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-
 const headers = new HttpHeaders({
   'Content-Type': 'application/xml'
 });
@@ -11,22 +10,16 @@ const headers = new HttpHeaders({
 @Injectable({
   providedIn: 'root'
 })
-export class AddZalbaOService {
+export class ZalbaCService {
 
-  url: string = `${environment.baseUrl}/zalbaNaOdluku`;
+  url: string = `${environment.baseUrl}/zalbaNaCutanje`;
 
   constructor( private http: HttpClient) { }
 
-  addZalbaNaOdluku(xml:any): Observable<any> {
+  addZalbaNaCutanje(xml:any): Observable<any> {
     return this.http.post<any>(this.url, xml, {
       headers: headers
     });
   }
 
-  getZalbe(): Observable<any> {
-    return this.http.get(this.url, {
-      headers: headers,
-      responseType: 'text'
-    })
-  }
 }

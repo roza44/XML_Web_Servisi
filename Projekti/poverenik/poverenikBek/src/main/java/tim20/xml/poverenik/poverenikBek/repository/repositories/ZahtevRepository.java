@@ -18,7 +18,7 @@ public class ZahtevRepository {
     private final String rdfFilePath = "temp/Zahtev.rdf";
 
     public void store(Zahtev zahtev) throws XMLDBException, JAXBException, TransformerException, IOException, SAXException {
-        DatabaseManager.<Zahtev>store(zahtev, COLLECTION_ID, "1.xml");
+        DatabaseManager.<Zahtev>store(zahtev, COLLECTION_ID, null);
         DatabaseManager.<Zahtev>storeRdf(zahtev, rdfFilePath);
     }
 

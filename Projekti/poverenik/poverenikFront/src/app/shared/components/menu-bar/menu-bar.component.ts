@@ -37,7 +37,7 @@ export class MenuBarComponent {
             routerLink: ['zalba-o/add']
         },
         {
-            label: 'View Documents',
+            label: 'Pregled dokumenata',
             icon: 'pi pi-list',
             routerLink: ['register']
         }

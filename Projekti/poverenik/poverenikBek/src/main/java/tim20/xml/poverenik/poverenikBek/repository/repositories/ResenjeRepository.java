@@ -17,7 +17,7 @@ public class ResenjeRepository {
     private final String rdfFilePath = "temp/Resenje.rdf";
 
     public void store(Resenje resenje) throws XMLDBException, JAXBException, TransformerException, IOException, SAXException {
-        DatabaseManager.<Resenje>store(resenje, COLLECTION_ID, "1.xml");
+        DatabaseManager.<Resenje>store(resenje, COLLECTION_ID, null);
         DatabaseManager.<Resenje>storeRdf(resenje, rdfFilePath);
     }
 }

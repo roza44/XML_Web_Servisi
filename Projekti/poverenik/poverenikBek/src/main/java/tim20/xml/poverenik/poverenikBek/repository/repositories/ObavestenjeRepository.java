@@ -17,7 +17,7 @@ public class ObavestenjeRepository {
     private final String rdfFilePath = "temp/Obavestenje.rdf";
 
     public void store(Obavestenje obavestenje) throws XMLDBException, JAXBException, TransformerException, IOException, SAXException {
-        DatabaseManager.<Obavestenje>store(obavestenje, COLLECTION_ID, "1.xml");
+        DatabaseManager.<Obavestenje>store(obavestenje, COLLECTION_ID, null);
         DatabaseManager.<Obavestenje>storeRdf(obavestenje, rdfFilePath);
     }
 

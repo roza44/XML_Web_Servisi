@@ -70,9 +70,75 @@ const zalbaNaOdlukuSpec = {
 };
 
 
+const zalbaNaCutanje: string = 
+
+`<?xml version="1.0" encoding="UTF-8"?>
+<zlbc:Zalba xmlns:tipovi="http://tipovi"
+ xmlns:zlbc="http://www.ftn.uns.ac.rs/zalbacutanje"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.ftn.uns.ac.rs/zalbacutanje file:/E:/Faks/7.%20semestar/XML%20i%20veb%20servisi/XML_Web_Servisi/Dokumenti/XML%20Seme/zalbacutanjecir.xsd"
+ xmlns:pred="http://examples/predicate/"
+ vocab="http://examples/predicate/"
+ about="http://ZalbaNaCutanje/1">
+    <zlbc:Poverenik>
+        <tipovi:Adresa>
+            <tipovi:Mesto>Unesite Mesto</tipovi:Mesto>
+            <tipovi:Postanski_broj>Unesite postanski izmedju 11000 i 40000</tipovi:Postanski_broj>
+            <tipovi:Ulica>Unesite naziv ulice</tipovi:Ulica>
+            <tipovi:Broj>Unesite broj zalbe</tipovi:Broj>
+        </tipovi:Adresa>
+        <tipovi:Naziv>Unesite Naziv</tipovi:Naziv>
+    </zlbc:Poverenik>
+    <zlbc:Naziv_organa property="pred:nazivOrgana">Unesite Naziv organa vlasti</zlbc:Naziv_organa>
+    <zlbc:Razlog_zalbe property="pred:razlogZalbe">Organ vlasti nije postupio u zakonskom roku</zlbc:Razlog_zalbe>
+    <zlbc:Trazene_informacije_o_zahtevu>
+        <zlbc:Datum_podnosenja property="pred:datumZahteva">Unesite datum podnosenja zalbe YYYY-MM-DD</zlbc:Datum_podnosenja>
+        <zlbc:Podaci_o_zahtevu_i_informacijama property="pred:tekstZahteva" >Unesite podatke o zahtevu i informacijama</zlbc:Podaci_o_zahtevu_i_informacijama>
+    </zlbc:Trazene_informacije_o_zahtevu>
+    <zlbc:Datum_podnosenja_zalbe property="pred:datumZalbe">Unesite datum podnosenja zalbe YYYY-MM-DD</zlbc:Datum_podnosenja_zalbe>
+    <zlbc:Podnosilac_zalbe>
+        <tipovi:Adresa>
+            <tipovi:Mesto>Unesite Mesto</tipovi:Mesto>
+            <tipovi:Postanski_broj>Unesite postanski izmedju 11000 i 40000</tipovi:Postanski_broj>
+            <tipovi:Ulica>Unesite naziv ulice</tipovi:Ulica>
+            <tipovi:Broj>Unesite broj</tipovi:Broj>
+        </tipovi:Adresa>
+        <tipovi:Ime property="pred:imeGradjanina">Ime Gradjanina</tipovi:Ime>
+        <tipovi:Prezime property="pred:prezimeGradjanina">Prezime Gradjanina</tipovi:Prezime>
+        <zlbc:Ostali_kontakt_podaci>Dodatni kontakt podaci</zlbc:Ostali_kontakt_podaci>
+    </zlbc:Podnosilac_zalbe>
+</zlbc:Zalba>`;
+
+
+const zalbaNaCutanjeSpec = {
+
+    onchange: function(){
+        console.log("I been changed now!")
+    },
+    validate: function(obj){
+        console.log("I be validatin' now!")
+    },
+        
+    elements: {
+        "zlbc:Razlog_zalbe": {
+            menu: [
+                {
+                    asker: Xonomy.askPicklist,
+                    askerParameter: [
+                        {value: "Organ vlasti nije postupio u zakonskom roku"},
+                        {value: "Organ vlasti nije postupio u celosti u zakonskom roku"}
+                    ]
+                }
+            ]
+        },
+    }
+}; 
+
+
 export {
 
     zalbaNaOdluku,
-    zalbaNaOdlukuSpec
-
+    zalbaNaOdlukuSpec,
+    zalbaNaCutanje,
+    zalbaNaCutanjeSpec
 };
