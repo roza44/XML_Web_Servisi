@@ -10,6 +10,6 @@ import java.io.IOException;
 
 public interface StoreObavestenjeUseCase {
 
-    public void store(Obavestenje obavestenje) throws JAXBException, TransformerException, IOException, SAXException, XMLDBException;
+    public void store(Obavestenje obavestenje, String userEmail) throws JAXBException, TransformerException, IOException, SAXException, XMLDBException;
 
 }
