@@ -67,6 +67,10 @@ public class DatabaseManager {
             System.out.println("[INFO] Retrieving the collection: " + collectionId);
             col = getOrCreateCollection(collectionId);
 
+            if(documentId == null) {
+                documentId = count(collectionId) + 1 + ".xml";
+            }
+
             System.out.println("[INFO] Inserting the document: " + documentId);
             res = (XMLResource) col.createResource(documentId, XMLResource.RESOURCE_TYPE);
 
@@ -74,7 +78,7 @@ public class DatabaseManager {
             JAXBContext context = JAXBContext.newInstance(entity.getClass());
 
             Marshaller m = context.createMarshaller();
-
+            m.setProperty("com.sun.xml.bind.namespacePrefixMapper", new NPMapper());
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             m.marshal(entity, os);
 
@@ -162,7 +166,6 @@ public class DatabaseManager {
 
 
                 Unmarshaller unmarshaller = context.createUnmarshaller();
-
                 retValue= (T) unmarshaller.unmarshal(res.getContentAsDOM());
 
                 System.out.println("[INFO] Showing the document as JAXB instance: ");

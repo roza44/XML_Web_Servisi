@@ -18,12 +18,12 @@ public class ZalbaNaCutanjeRepository {
     private final String rdfFilePath = "temp/ZalbaNaCutanje.rdf";
 
     public void store(Zalba zalba) throws XMLDBException, JAXBException, TransformerException, IOException, SAXException {
-        DatabaseManager.<Zalba>store(zalba, COLLECTION_ID, "1.xml");
+        DatabaseManager.<Zalba>store(zalba, COLLECTION_ID, null);
         DatabaseManager.<Zalba>storeRdf(zalba, rdfFilePath);
     }
 
-    public Zalba get(String id) throws XMLDBException, JAXBException {
-        return DatabaseManager.<Zalba>retrieve(Zalba.class, COLLECTION_ID, "1.xml");
+    public List<Zalba> query(String pathQuery, String paramQuery) throws XMLDBException, JAXBException, IOException {
+        return DatabaseManager.<Zalba>query(Zalba.class, COLLECTION_ID, pathQuery, paramQuery);
     }
 
     public List<Zalba> getAll() throws XMLDBException, JAXBException {
