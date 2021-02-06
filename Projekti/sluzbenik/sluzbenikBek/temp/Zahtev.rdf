@@ -1,6 +1,6 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:h="http://www.w3.org/1999/xhtml">
 <rdf:Description rdf:about="">
-<pred:nazivOrgana xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Unesite naziv organa opa opa</pred:nazivOrgana>
+<pred:nazivOrgana xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Unesite naziv organa</pred:nazivOrgana>
 </rdf:Description>
 <rdf:Description rdf:about="">
 <pred:mestoZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Unesite mesto zahteva</pred:mestoZahteva>
@@ -12,6 +12,6 @@
 <pred:imeTraziocaZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Unesite vase ime</pred:imeTraziocaZahteva>
 </rdf:Description>
 <rdf:Description rdf:about="">
-<pred:prezimeTraziocaZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Bodroza</pred:prezimeTraziocaZahteva>
+<pred:prezimeTraziocaZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Unesite vase prezime</pred:prezimeTraziocaZahteva>
 </rdf:Description>
 </rdf:RDF>
