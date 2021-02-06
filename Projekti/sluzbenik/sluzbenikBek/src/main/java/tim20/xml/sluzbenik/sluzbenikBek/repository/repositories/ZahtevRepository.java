@@ -30,4 +30,12 @@ public class ZahtevRepository {
     public List<Zahtev> getAll() throws XMLDBException, JAXBException {
         return DatabaseManager.<Zahtev>getAll(Zahtev.class, COLLECTION_ID);
     }
+
+    public Zahtev retrieve(String documentId) throws XMLDBException, JAXBException {
+        return DatabaseManager.<Zahtev>retrieve(Zahtev.class, COLLECTION_ID, documentId);
+    }
+
+    public String retrieveRaw(String documentId) throws XMLDBException, JAXBException {
+        return DatabaseManager.<Zahtev>retrieveRaw(COLLECTION_ID, documentId);
+    }
 }
