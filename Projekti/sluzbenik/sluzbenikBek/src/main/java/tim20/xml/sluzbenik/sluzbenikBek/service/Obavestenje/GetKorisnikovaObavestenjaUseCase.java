@@ -4,8 +4,10 @@ import org.xmldb.api.base.XMLDBException;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Obavestenje.Obavestenje;
 
 import javax.xml.bind.JAXBException;
+import java.io.IOException;
+import java.util.List;
 
-public interface GetObavestenjeUseCase {
+public interface GetKorisnikovaObavestenjaUseCase {
 
-    public Obavestenje get(String id) throws XMLDBException, JAXBException;
+    public List<Obavestenje> get() throws XMLDBException, JAXBException, IOException;
 }
