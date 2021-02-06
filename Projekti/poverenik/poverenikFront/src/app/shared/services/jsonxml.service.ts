@@ -51,6 +51,7 @@ export class JsonXmlService {
       let item: XmlListItem = new XmlListItem();
       item.name = baseName + ': ' + element.querySelectorAll(id).item(0).innerHTML;
       item.xml = new XMLSerializer().serializeToString(element);
+      item.forWho = element.getAttribute('author');
       retVal.push(item);
    });
 

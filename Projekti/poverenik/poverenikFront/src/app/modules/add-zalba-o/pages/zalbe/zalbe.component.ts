@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DialogService } from 'primeng/dynamicdialog';
+import { AddResenjeComponent } from 'src/app/modules/resenje/components/add-resenje/add-resenje.component';
 import { XmlViewComponent } from 'src/app/shared/components/xml-view/xml-view.component';
 import { XmlListItem } from 'src/app/shared/model';
 import { JsonXmlService } from 'src/app/shared/services/jsonxml.service';
@@ -30,10 +31,10 @@ export class ZalbeComponent implements OnInit {
 
   resenje(zahtev:XmlListItem) {
     this.dialogService.open(
-      null,
+      AddResenjeComponent,
       {
         data: {
-            xmlStr: zahtev.xml
+            forWho: zahtev.forWho
         },
         header: zahtev.name,
         width: '40%',

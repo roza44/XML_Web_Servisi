@@ -156,9 +156,31 @@ const obavestenje:string =
     <ob:Dostavljeno>Imenovanom</ob:Dostavljeno>
 </ob:Obavestenje>`
 
+const obavestenjeSpec = {
+
+    onchange: function () {
+        console.log("I been changed now!")
+    },
+    validate: function (obj) {
+        console.log("I be validatin' now!")
+    },
+
+    elements: {
+        "tipovi:Mesto": {
+            menu: [
+                {
+                    asker: Xonomy.askString
+                }
+            ]
+        },
+    }
+}
+
+
 export {
     zahtev,
     zahtevSpec,
-    obavestenje
+    obavestenje,
+    obavestenjeSpec
 
 };

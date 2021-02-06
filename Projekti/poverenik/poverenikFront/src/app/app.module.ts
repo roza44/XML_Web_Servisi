@@ -12,11 +12,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InterceptorsModule } from './interceptors/interceptors.module'
 import { GuardModule } from './guards/guard.module';
 import { AddZalbaOModule } from './modules/add-zalba-o/add-zalba-o.module';
-import { ZalbaCModule } from './modules/zalba-c/zalba-c.module'
+import { ZalbaCModule } from './modules/zalba-c/zalba-c.module';
+import { AddResenjeComponent } from './modules/resenje/components/add-resenje/add-resenje.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddResenjeComponent
   ],
   imports: [
     BrowserModule,

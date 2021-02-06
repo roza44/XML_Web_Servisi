@@ -132,7 +132,80 @@ const zalbaNaCutanjeSpec = {
             ]
         },
     }
-}; 
+};
+
+
+const resenje:string = 
+
+`<?xml version="1.0" encoding="UTF-8"?>
+<r:Resenje xmlns:tipovi="http://tipovi"
+ xmlns:r="http://www.ftn.uns.ac.rs/resenje"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.ftn.uns.ac.rs/resenje file:/E:/Faks/7.%20semestar/XML%20i%20veb%20servisi/XML_Web_Servisi/Dokumenti/XML%20Seme/resenje.xsd"
+ xmlns:pred="http://examples/predicate/"
+ vocab="http://examples/predicate/"
+ about="http://Resenje/1">
+    <r:Odluka_resenja  property="pred:odlukaResenja">Odluka_resenja0</r:Odluka_resenja>
+    <r:Br_resenja property="pred:brojResenja">000-00-0000/0000-00</r:Br_resenja>
+    <r:Datum_resenja property="pred:datumResenja">2006-05-04</r:Datum_resenja>
+    <r:Uvod>
+        <r:Podnosilac_zalbe>
+            <tipovi:Ime property="pred:imePodnosilacaZalbe">Ime0</tipovi:Ime>
+            <tipovi:Prezime property="pred:prezimePodnosilacaZalbe">Prezime0</tipovi:Prezime>
+        </r:Podnosilac_zalbe>
+        <r:Razlog property="pred:razlogResenja">protiv resenja</r:Razlog>
+        <r:Organ_vlasti property="pred:organVlasti">Organ_vlasti0</r:Organ_vlasti>
+        <r:Datum_zahteva property="pred:datumZahteva">2006-05-04</r:Datum_zahteva>
+        <r:Osnova_resenja>
+            <r:Zakon>
+                <r:Clan>50</r:Clan>
+                <r:Stav>50</r:Stav>
+                <r:Tacka>50</r:Tacka>
+                <r:Naziv property="pred:osnovaResenja">Naziv0</r:Naziv>
+                <r:Broj_glasnika>1/</r:Broj_glasnika>
+            </r:Zakon>
+            <r:Zakon>
+                <r:Clan>50</r:Clan>
+                <r:Stav>50</r:Stav>
+                <r:Tacka>50</r:Tacka>
+                <r:Naziv>Naziv1</r:Naziv>
+                <r:Broj_glasnika>1/</r:Broj_glasnika>
+            </r:Zakon>
+        </r:Osnova_resenja>
+    </r:Uvod>
+    <r:Ishod>Ishod0</r:Ishod>
+    <r:Obrazlozenje>
+        <r:Datum_zalbe property="pred:datumZalbe">2006-05-04</r:Datum_zalbe>
+        <r:Datum_prosledjivanja_zalbe>2006-05-04</r:Datum_prosledjivanja_zalbe>
+        <r:Razlog>Razlog1</r:Razlog>
+        <r:Razlog>Razlog2</r:Razlog>
+    </r:Obrazlozenje>
+    <r:Poverenik>
+        <tipovi:Ime>Ime1</tipovi:Ime>
+        <tipovi:Prezime>Prezime1</tipovi:Prezime>
+    </r:Poverenik>
+</r:Resenje>`
+
+const resenjeeSpec = {
+
+    onchange: function(){
+        console.log("I been changed now!")
+    },
+    validate: function(obj){
+        console.log("I be validatin' now!")
+    },
+        
+    elements: {
+        "r:Odluka_resenja": {
+            menu: [
+                {
+                    asker: Xonomy.askString
+                }
+            ]
+        },
+    }
+};
+
 
 
 export {
@@ -140,5 +213,7 @@ export {
     zalbaNaOdluku,
     zalbaNaOdlukuSpec,
     zalbaNaCutanje,
-    zalbaNaCutanjeSpec
+    zalbaNaCutanjeSpec,
+    resenje,
+    resenjeeSpec
 };

@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
-import { obavestenje, obavestenjeSpec } from 'src/app/shared/xml-models';
-import { ObavestenjeService } from '../../obavestenje.service';
+import { DialogService, DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { resenje, resenjeeSpec } from 'src/app/shared/xml-models';
+import { ResenjeService } from '../../resenje.service';
 
 declare const Xonomy: any;
 
 @Component({
-  selector: 'app-add-obavestenje',
-  templateUrl: './add-obavestenje.component.html',
-  styleUrls: ['./add-obavestenje.component.scss']
+  selector: 'app-add-resenje',
+  templateUrl: './add-resenje.component.html',
+  styleUrls: ['./add-resenje.component.scss'],
+  providers: [DialogService]
 })
-export class AddObavestenjeComponent implements OnInit {
+export class AddResenjeComponent implements OnInit {
+
   submitted: boolean;
   forWho: string;
 
   constructor(
     public ref: DynamicDialogRef,
     public config: DynamicDialogConfig,
-    private obavestenjeService: ObavestenjeService,
+    private resenjeService: ResenjeService,
     private messageService : MessageService
   ) { 
     this.forWho = this.config.data.forWho;
@@ -27,7 +29,7 @@ export class AddObavestenjeComponent implements OnInit {
 
   ngOnInit(): void {
     var editor = document.getElementById("editor");
-    Xonomy.render(obavestenje, editor, obavestenjeSpec);
+    Xonomy.render(resenje, editor, resenjeeSpec);
     this.ref.onClose.subscribe(() => {
         if(!this.submitted) { Xonomy.harvest() }
       }
@@ -37,14 +39,15 @@ export class AddObavestenjeComponent implements OnInit {
   submit() {
     this.submitted = true;
 
-    this.obavestenjeService.addObavestenje(Xonomy.harvest(), this.forWho)
+    this.resenjeService.addResenje(Xonomy.harvest(), this.forWho)
     .subscribe(() => {
       this.messageService.add({
         severity: 'success',
-        summary: 'Successful added: "Obavestenje"!',
-        detail: `Your "Obavestenje" has been successfuly added!`
+        summary: 'Successful added: "Resenje"!',
+        detail: `Your "Resenje" has been successfuly added!`
       });
       this.ref.close();
     });
   }
+
 }
