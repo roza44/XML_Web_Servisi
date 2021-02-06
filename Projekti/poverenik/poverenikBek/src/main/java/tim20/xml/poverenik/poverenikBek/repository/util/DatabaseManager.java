@@ -9,11 +9,10 @@ import org.apache.jena.update.UpdateRequest;
 import org.exist.xmldb.EXistResource;
 import org.springframework.stereotype.Repository;
 import org.xml.sax.SAXException;
-import org.xmldb.api.base.Collection;
-import org.xmldb.api.base.Database;
-import org.xmldb.api.base.XMLDBException;
+import org.xmldb.api.base.*;
 import org.xmldb.api.modules.CollectionManagementService;
 import org.xmldb.api.modules.XMLResource;
+import org.xmldb.api.modules.XQueryService;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -28,6 +27,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,7 +78,7 @@ public class DatabaseManager {
             JAXBContext context = JAXBContext.newInstance(entity.getClass());
 
             Marshaller m = context.createMarshaller();
-
+            m.setProperty("com.sun.xml.bind.namespacePrefixMapper", new NPMapper());
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             m.marshal(entity, os);
 
@@ -164,7 +166,6 @@ public class DatabaseManager {
 
 
                 Unmarshaller unmarshaller = context.createUnmarshaller();
-
                 retValue= (T) unmarshaller.unmarshal(res.getContentAsDOM());
 
                 System.out.println("[INFO] Showing the document as JAXB instance: ");
@@ -195,6 +196,43 @@ public class DatabaseManager {
             String[] documentNames = col.listResources();
             for(String name: documentNames){
                 temp = (XMLResource) col.getResource(name);
+                if(temp != null) {
+                    res.add((T) unmarshaller.unmarshal(temp.getContentAsDOM()));
+                }
+            }
+
+
+        } finally {
+            cleanUp(col, null);
+        }
+        return res;
+
+    }
+
+    public static <T> List<T> query(Class<T> classT, String collectionId, String pathQuery, String paramQuery) throws XMLDBException, JAXBException, IOException {
+        Collection col = null;
+        List<T> res = new ArrayList<T>();
+        try {
+            // get the collection
+            System.out.println("[INFO] Retrieving the collection: " + collectionId);
+            col = org.xmldb.api.DatabaseManager.getCollection(conn.uri + collectionId);
+            col.setProperty(OutputKeys.INDENT, "yes");
+
+            XQueryService xqueryService = (XQueryService) col.getService("XQueryService", "1.0");
+            xqueryService.setProperty("indent", "yes");
+
+            byte[] encoded = Files.readAllBytes(Paths.get(pathQuery));
+            String xqueryExpression = new String(encoded, StandardCharsets.UTF_8);
+            xqueryExpression = String.format(xqueryExpression, paramQuery);
+            CompiledExpression compiledXquery = xqueryService.compile(xqueryExpression);
+            ResourceSet result = xqueryService.execute(compiledXquery);
+
+            XMLResource temp = null;
+
+            for (ResourceIterator i = result.getIterator(); i.hasMoreResources(); ) {
+                JAXBContext context = JAXBContext.newInstance(classT);
+                Unmarshaller unmarshaller = context.createUnmarshaller();
+                temp = (XMLResource) i.nextResource();
                 if(temp != null) {
                     res.add((T) unmarshaller.unmarshal(temp.getContentAsDOM()));
                 }

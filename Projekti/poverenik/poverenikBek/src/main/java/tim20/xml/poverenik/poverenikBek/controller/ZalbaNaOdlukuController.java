@@ -10,6 +10,7 @@ import org.xmldb.api.base.XMLDBException;
 import tim20.xml.poverenik.poverenikBek.dto.ZalbaNaOdlukuList;
 import tim20.xml.poverenik.poverenikBek.model.ZalbaNaOdluku.Zalba;
 import tim20.xml.poverenik.poverenikBek.service.ZalbaNaOdluku.GetAllZalbaNaOdlukuUseCase;
+import tim20.xml.poverenik.poverenikBek.service.ZalbaNaOdluku.GetKorisnikoveZalbeNaOdlukuUseCase;
 import tim20.xml.poverenik.poverenikBek.service.ZalbaNaOdluku.StoreZalbaNaOdlukuUseCase;
 
 import javax.xml.bind.JAXBException;
@@ -23,7 +24,7 @@ public class ZalbaNaOdlukuController {
 
     @Autowired
     private final StoreZalbaNaOdlukuUseCase service;
-//    private final GetZalbaNaOdlukuUseCase getService;
+    private final GetKorisnikoveZalbeNaOdlukuUseCase getService;
     private final GetAllZalbaNaOdlukuUseCase getAllService;
 
     @PostMapping(consumes = MediaType.APPLICATION_XML_VALUE)
@@ -31,10 +32,12 @@ public class ZalbaNaOdlukuController {
         service.store(zalba);
     }
 
-//    @GetMapping("/{id}")
-//    public Zalba get(@PathVariable("id") String id) throws XMLDBException, JAXBException {
-//        return getService.get(id);
-//    }
+    @GetMapping("/user")
+    public ZalbaNaOdlukuList get() throws XMLDBException, JAXBException, IOException {
+        ZalbaNaOdlukuList zalbe = new ZalbaNaOdlukuList();
+        zalbe.setZalba(getService.get());
+        return zalbe;
+    }
 
     @GetMapping
     public ZalbaNaOdlukuList getAll() throws XMLDBException, JAXBException {

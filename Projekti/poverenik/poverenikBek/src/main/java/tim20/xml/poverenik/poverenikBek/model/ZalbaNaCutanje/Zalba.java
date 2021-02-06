@@ -143,6 +143,8 @@ public class Zalba {
     protected String vocab;
     @XmlAttribute(name = "about")
     protected String about;
+    @XmlAttribute(name = "author")
+    protected String author;
 
     /**
      * Gets the value of the poverenik property.
@@ -382,6 +384,14 @@ public class Zalba {
      */
     public void setAbout(String value) {
         this.about = value;
+    }
+
+    public String getAuthor(){
+        return author;
+    }
+
+    public void setAuthor(String value){
+        this.author = value;
     }
 
 

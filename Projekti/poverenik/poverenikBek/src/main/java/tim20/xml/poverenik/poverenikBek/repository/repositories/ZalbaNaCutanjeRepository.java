@@ -22,8 +22,8 @@ public class ZalbaNaCutanjeRepository {
         DatabaseManager.<Zalba>storeRdf(zalba, rdfFilePath);
     }
 
-    public Zalba get(String id) throws XMLDBException, JAXBException {
-        return DatabaseManager.<Zalba>retrieve(Zalba.class, COLLECTION_ID, "1.xml");
+    public List<Zalba> query(String pathQuery, String paramQuery) throws XMLDBException, JAXBException, IOException {
+        return DatabaseManager.<Zalba>query(Zalba.class, COLLECTION_ID, pathQuery, paramQuery);
     }
 
     public List<Zalba> getAll() throws XMLDBException, JAXBException {
