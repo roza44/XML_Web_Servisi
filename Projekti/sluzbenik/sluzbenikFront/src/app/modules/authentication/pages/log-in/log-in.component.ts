@@ -12,7 +12,7 @@ import { LoginDTO } from '../../model';
 })
 export class LogInComponent implements OnInit {
 
-  addForm:FormGroup;
+  addForm: FormGroup;
   submitted: boolean;
 
   constructor(
@@ -35,28 +35,30 @@ export class LogInComponent implements OnInit {
     let xml = this.jsonxmlService.json2xml('loginRequest', this.addForm.getRawValue());
 
     this.authenticationService.login(xml)
-    .subscribe((response) => {
-      this.login(response);
-    });   
+      .subscribe((response) => {
+        this.login(response);
+      });
   }
 
   login(response: string) {
     this.submitted = false;
-    let userInfo:LoginDTO = this.jsonxmlService.xml2json(response);
+    let userInfo: LoginDTO = this.jsonxmlService.xml2json(response);
     this.authenticationService.changeCurrentUser(userInfo);
-    this.messageService.add({ severity: 'success',
-              summary: 'Successful registration!',
-              detail: `User ${this.f.email.value} successfuly registrated!`});
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Successful log in!',
+      detail: `User ${this.f.email.value} successfuly logged in!`
+    });
     this.resetForm();
   }
 
   get f() { return this.addForm.controls; }
 
   invalidFormInputs(): boolean {
-    if(this.f.email.value === null || this.f.email.value === '') {
+    if (this.f.email.value === null || this.f.email.value === '') {
       return true;
     }
-    if(this.f.password.value === null || this.f.password.value === '') {
+    if (this.f.password.value === null || this.f.password.value === '') {
       return true;
     }
     return false;
