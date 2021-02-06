@@ -71,7 +71,8 @@ public class Zahtev {
     protected String vocab;
     @XmlAttribute(name = "about")
     protected String about;
-
+    @XmlAttribute(name = "author")
+    protected String author;
     /**
      * Gets the value of the primalac property.
      *
@@ -166,6 +167,14 @@ public class Zahtev {
      */
     public void setAbout(String value) {
         this.about = value;
+    }
+
+    public String getAuthor(){
+        return author;
+    }
+
+    public void setAuthor(String value){
+        this.author = value;
     }
 
 
