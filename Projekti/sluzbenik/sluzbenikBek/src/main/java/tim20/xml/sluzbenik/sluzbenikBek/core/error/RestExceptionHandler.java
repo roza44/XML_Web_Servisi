@@ -9,12 +9,15 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import org.xml.sax.SAXException;
 import org.xmldb.api.base.XMLDBException;
 import tim20.xml.sluzbenik.sluzbenikBek.core.exception.EmailTakenException;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.xml.bind.JAXBException;
+import javax.xml.transform.TransformerException;
+import java.io.IOException;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
@@ -65,6 +68,23 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return buildResponse(apiError);
     }
 
+    @ExceptionHandler(SAXException.class)
+    protected ResponseEntity<Object> handleSAX(SAXException e) {
+        ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage(), e);
+        return buildResponse(apiError);
+    }
+
+    @ExceptionHandler(TransformerException.class)
+    protected ResponseEntity<Object> handleTransformer(TransformerException e) {
+        ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage(), e);
+        return buildResponse(apiError);
+    }
+
+    @ExceptionHandler(IOException.class)
+    protected ResponseEntity<Object> handleIO(IOException e) {
+        ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage(), e);
+        return buildResponse(apiError);
+    }
 
     @ExceptionHandler(Exception.class)
     protected ResponseEntity<Object> handleException(Exception e) {

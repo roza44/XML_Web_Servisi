@@ -174,6 +174,35 @@ public class DatabaseManager {
 
     }
 
+    public static String retrieveRaw(String collectionId, String documentId) throws XMLDBException, JAXBException {
+
+        Collection col = null;
+        XMLResource res = null;
+        String retValue = null;
+
+        try {
+            // get the collection
+            System.out.println("[INFO] Retrieving the collection: " + collectionId);
+            col = org.xmldb.api.DatabaseManager.getCollection(conn.uri + collectionId);
+            col.setProperty(OutputKeys.INDENT, "yes");
+
+            System.out.println("[INFO] Retrieving the document: " + documentId);
+            res = (XMLResource)col.getResource(documentId);
+
+            if(res == null) {
+                System.out.println("[WARNING] Document '" + documentId + "' can not be found!");
+                retValue = null;
+            } else {
+                retValue = res.getContent().toString();
+            }
+        } finally {
+            cleanUp(col, res);
+        }
+
+        return retValue;
+
+    }
+
     public static <T> List<T> getAll(Class<T> classT, String collectionId) throws XMLDBException, JAXBException {
         Collection col = null;
         XMLResource temp = null;

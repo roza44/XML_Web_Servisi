@@ -20,4 +20,12 @@ public class ZahtevRepository {
         DatabaseManager.<Zahtev>store(zahtev, COLLECTION_ID, "1.xml");
         DatabaseManager.<Zahtev>storeRdf(zahtev, rdfFilePath);
     }
+
+    public Zahtev retrieve(String documentId) throws XMLDBException, JAXBException {
+        return DatabaseManager.<Zahtev>retrieve(Zahtev.class, COLLECTION_ID, documentId);
+    }
+
+    public String retrieveRaw(String documentId) throws XMLDBException, JAXBException {
+        return DatabaseManager.<Zahtev>retrieveRaw(COLLECTION_ID, documentId);
+    }
 }

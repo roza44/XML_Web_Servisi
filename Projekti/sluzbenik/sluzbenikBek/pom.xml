@@ -147,6 +147,38 @@
 
 		</dependency>
 
+
+
+
+
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+
+
+
+
+
+		<dependency>
+			<groupId>net.sf.saxon</groupId>
+			<artifactId>Saxon-HE</artifactId>
+			<version>10.3</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>fop</artifactId>
+			<version>2.6</version>
+		</dependency>
+
+
+
+
 	</dependencies>
 
 	<build>
