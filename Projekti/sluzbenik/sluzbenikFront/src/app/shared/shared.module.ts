@@ -4,12 +4,15 @@ import { CommonModule } from '@angular/common';
 import {MenubarModule} from 'primeng/menubar';
 import {MenuBarComponent} from './components/menu-bar/menu-bar.component'
 import {ButtonModule} from 'primeng/button';
-import {RouterModule} from '@angular/router'
+import {RouterModule} from '@angular/router';
+import { XmlViewComponent } from './components/xml-view/xml-view.component';
 
 
 @NgModule({
   declarations: [
-    MenuBarComponent
+    MenuBarComponent,
+    XmlViewComponent,
+    XmlViewComponent
   ],
   imports: [
     CommonModule,

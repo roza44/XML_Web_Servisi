@@ -11,6 +11,7 @@ import {ToastModule} from 'primeng/toast';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InterceptorsModule } from './interceptors/interceptors.module'
 import { GuardModule } from './guards/guard.module';
+import { ObavestenjeModule } from './modules/obavestenje/obavestenje.module'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { GuardModule } from './guards/guard.module';
     ToastModule,
     BrowserAnimationsModule,
     InterceptorsModule,
-    GuardModule
+    GuardModule,
+    ObavestenjeModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
