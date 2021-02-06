@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 import org.xml.sax.SAXException;
 import org.xmldb.api.base.XMLDBException;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Obavestenje.Obavestenje;
+import tim20.xml.sluzbenik.sluzbenikBek.model.Zahtev.Zahtev;
 import tim20.xml.sluzbenik.sluzbenikBek.repository.util.DatabaseManager;
 
 import javax.xml.bind.JAXBException;
@@ -22,8 +23,8 @@ public class ObavestenjeRepository {
         DatabaseManager.<Obavestenje>storeRdf(obavestenje, rdfFilePath);
     }
 
-    public Obavestenje get(String id) throws XMLDBException, JAXBException {
-        return DatabaseManager.<Obavestenje>retrieve(Obavestenje.class, COLLECTION_ID, "1.xml");
+    public List<Obavestenje> get(String pathQuery, String paramQuery) throws XMLDBException, JAXBException, IOException {
+        return DatabaseManager.<Obavestenje>query(Obavestenje.class, COLLECTION_ID, pathQuery, paramQuery);
     }
 
     public List<Obavestenje> getAll() throws XMLDBException, JAXBException {
