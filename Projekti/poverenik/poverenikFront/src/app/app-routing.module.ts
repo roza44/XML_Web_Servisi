@@ -10,8 +10,9 @@ const routes: Routes = [
     {
       path: 'zalba-o',
       loadChildren: () => import('./modules/add-zalba-o/add-zalba-o.module').then(m => m.AddZalbaOModule)
-    }
+    },
 
+    { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
