@@ -1,17 +1,17 @@
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:h="http://www.w3.org/1999/xhtml">
 <rdf:Description rdf:about="">
-<pred:nazivOrgana xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Unesite naziv organa</pred:nazivOrgana>
+<pred:nazivOrgana xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Ovo je naziv organa</pred:nazivOrgana>
 </rdf:Description>
 <rdf:Description rdf:about="">
-<pred:mestoZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Unesite mesto zahteva</pred:mestoZahteva>
+<pred:mestoZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Ruma</pred:mestoZahteva>
 </rdf:Description>
 <rdf:Description rdf:about="">
-<pred:datumZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral"/>
+<pred:datumZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">2021-02-02</pred:datumZahteva>
 </rdf:Description>
 <rdf:Description rdf:about="">
-<pred:imeTraziocaZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Unesite vase ime</pred:imeTraziocaZahteva>
+<pred:imeTraziocaZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Petar</pred:imeTraziocaZahteva>
 </rdf:Description>
 <rdf:Description rdf:about="">
-<pred:prezimeTraziocaZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Unesite vase prezime</pred:prezimeTraziocaZahteva>
+<pred:prezimeTraziocaZahteva xmlns:pred="http://examples/predicate/" rdf:datatype="http://www.w3.org/1999/02/22-rdf-syntax-ns#XMLLiteral">Petrovic</pred:prezimeTraziocaZahteva>
 </rdf:Description>
 </rdf:RDF>
