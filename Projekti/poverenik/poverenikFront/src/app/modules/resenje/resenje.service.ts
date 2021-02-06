@@ -25,4 +25,12 @@ export class ResenjeService {
       headers: headers
     });
   }
+
+  getPoverenikResenja(): Observable<any> {
+    const newUrl = this.url;
+    return this.http.get(newUrl, {
+      headers: headers,
+      responseType: 'text'
+    });
+  }
 }

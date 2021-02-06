@@ -40,6 +40,11 @@ export class MenuBarComponent {
             label: 'Pregled dokumenata',
             icon: 'pi pi-list',
             routerLink: ['register']
+        },
+        {
+            label: 'Zalba na cutanje',
+            icon: 'pi pi-file-o',
+            routerLink: ['zalba-c/add']
         }
     ]
 
@@ -50,9 +55,9 @@ export class MenuBarComponent {
           routerLink: ['zalba-o/pregled']
       },
       {
-          label: 'Pregled dokumenata',
+          label: 'Pregled resenja',
           icon: 'pi pi-list',
-          routerLink: ['register']
+          routerLink: ['resenje/poverenik-pregled']
       }
   ]
 

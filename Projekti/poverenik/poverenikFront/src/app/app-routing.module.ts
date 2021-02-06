@@ -17,6 +17,11 @@ const routes: Routes = [
       loadChildren: () => import('./modules/zalba-c/zalba-c.module').then(m => m.ZalbaCModule)
     },
 
+    {
+      path: 'resenje',
+      loadChildren: () => import('./modules/resenje/resenje.module').then(m => m.ResenjeModule)
+    },
+
     { path: '**', redirectTo: '' }
 ];
 

@@ -13,12 +13,11 @@ import { InterceptorsModule } from './interceptors/interceptors.module'
 import { GuardModule } from './guards/guard.module';
 import { AddZalbaOModule } from './modules/add-zalba-o/add-zalba-o.module';
 import { ZalbaCModule } from './modules/zalba-c/zalba-c.module';
-import { AddResenjeComponent } from './modules/resenje/components/add-resenje/add-resenje.component'
+import { ResenjeModule } from './modules/resenje/resenje.module'
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AddResenjeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +29,8 @@ import { AddResenjeComponent } from './modules/resenje/components/add-resenje/ad
     InterceptorsModule,
     GuardModule,
     AddZalbaOModule,
-    ZalbaCModule
+    ZalbaCModule,
+    ResenjeModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
