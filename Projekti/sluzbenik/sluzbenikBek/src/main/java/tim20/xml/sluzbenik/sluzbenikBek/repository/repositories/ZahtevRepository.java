@@ -24,8 +24,8 @@ public class ZahtevRepository {
         DatabaseManager.<Zahtev>storeRdf(zahtev, rdfFilePath);
     }
 
-    public Zahtev get(String id) throws XMLDBException, JAXBException {
-        return DatabaseManager.<Zahtev>retrieve(Zahtev.class, COLLECTION_ID, "1.xml");
+    public List<Zahtev> query(String pathQuery, String paramQuery) throws XMLDBException, JAXBException, IOException {
+        return DatabaseManager.<Zahtev>query(Zahtev.class, COLLECTION_ID, pathQuery, paramQuery);
     }
 
     public List<Zahtev> getAll() throws XMLDBException, JAXBException {

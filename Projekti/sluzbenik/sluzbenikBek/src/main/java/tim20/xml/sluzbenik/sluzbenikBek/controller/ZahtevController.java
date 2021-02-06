@@ -11,7 +11,7 @@ import tim20.xml.sluzbenik.sluzbenikBek.dto.ZahtevList;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Obavestenje.Obavestenje;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Zahtev.Zahtev;
 import tim20.xml.sluzbenik.sluzbenikBek.service.Zahtev.GetAllZahtevUseCase;
-import tim20.xml.sluzbenik.sluzbenikBek.service.Zahtev.GetZahtevUseCase;
+import tim20.xml.sluzbenik.sluzbenikBek.service.Zahtev.GetKorisnikoviZahteviUseCase;
 import tim20.xml.sluzbenik.sluzbenikBek.service.Zahtev.StoreZahtevUseCase;
 
 import javax.xml.bind.JAXBException;
@@ -25,7 +25,7 @@ public class ZahtevController {
 
     @Autowired
     private final StoreZahtevUseCase service;
-//    private final GetZahtevUseCase getService;
+    private final GetKorisnikoviZahteviUseCase getService;
     private final GetAllZahtevUseCase getAllService;
 
     @PostMapping(consumes = MediaType.APPLICATION_XML_VALUE)
@@ -33,10 +33,12 @@ public class ZahtevController {
         service.store(zahtev);
     }
 
-//    @GetMapping("/{id}")
-//    public Zahtev get(@PathVariable("id") String id) throws XMLDBException, JAXBException {
-//        return getService.get(id);
-//    }
+    @GetMapping("/user")
+    public ZahtevList getKorisnikoviZahtevi() throws XMLDBException, JAXBException, IOException {
+        ZahtevList zahtevi = new ZahtevList();
+        zahtevi.setZahtev(getService.get());
+        return zahtevi;
+    }
 
     @GetMapping
     public ZahtevList getAll() throws XMLDBException, JAXBException {
