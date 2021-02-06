@@ -1,0 +1,9 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:h="http://www.w3.org/1999/xhtml">
+<!--Could not produce the triple for: http://ZalbaNaCutanje/1 - pred:nazivOrgana - Unesite Naziv organa vlasti-->
+<!--Could not produce the triple for: http://ZalbaNaCutanje/1 - pred:razlogZalbe - Organ vlasti nije postupio u zakonskom roku-->
+<!--Could not produce the triple for: http://ZalbaNaCutanje/1 - pred:datumZahteva - -->
+<!--Could not produce the triple for: http://ZalbaNaCutanje/1 - pred:tekstZahteva - Unesite podatke o zahtevu i informacijama-->
+<!--Could not produce the triple for: http://ZalbaNaCutanje/1 - pred:datumZalbe - -->
+<!--Could not produce the triple for: http://ZalbaNaCutanje/1 - pred:imeGradjanina - Ime Gradjanina-->
+<!--Could not produce the triple for: http://ZalbaNaCutanje/1 - pred:prezimeGradjanina - Prezime Gradjanina-->
+</rdf:RDF>
