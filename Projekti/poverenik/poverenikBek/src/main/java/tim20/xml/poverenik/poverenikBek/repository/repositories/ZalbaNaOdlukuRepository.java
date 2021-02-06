@@ -18,7 +18,7 @@ public class ZalbaNaOdlukuRepository {
     private final String rdfFilePath = "temp/ZalbaNaOdluku.rdf";
 
     public void store(Zalba zalba) throws XMLDBException, JAXBException, TransformerException, IOException, SAXException {
-        DatabaseManager.<Zalba>store(zalba, COLLECTION_ID, "1.xml");
+        DatabaseManager.<Zalba>store(zalba, COLLECTION_ID, null);
         DatabaseManager.<Zalba>storeRdf(zalba, rdfFilePath);
     }
 

@@ -6,11 +6,10 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.xml.sax.SAXException;
 import org.xmldb.api.base.XMLDBException;
-import tim20.xml.poverenik.poverenikBek.dto.ZahtevList;
 import tim20.xml.poverenik.poverenikBek.dto.ZalbaNaCutanjeList;
 import tim20.xml.poverenik.poverenikBek.model.ZalbaNaCutanje.Zalba;
 import tim20.xml.poverenik.poverenikBek.service.ZalbaNaCutanje.GetAllZalbaNaCutanjeUseCase;
-import tim20.xml.poverenik.poverenikBek.service.ZalbaNaCutanje.GetZalbaNaCutanjeUseCase;
+import tim20.xml.poverenik.poverenikBek.service.ZalbaNaCutanje.GetKorisnikoveZalbeNaCutanjeUseCase;
 import tim20.xml.poverenik.poverenikBek.service.ZalbaNaCutanje.StoreZalbaNaCutanjeUseCase;
 
 import javax.xml.bind.JAXBException;
@@ -24,7 +23,7 @@ public class ZalbaNaCutanjeController {
 
     @Autowired
     private final StoreZalbaNaCutanjeUseCase service;
-//    private final GetZalbaNaCutanjeUseCase getService;
+    private final GetKorisnikoveZalbeNaCutanjeUseCase getService;
     private final GetAllZalbaNaCutanjeUseCase getAllService;
 
     @PostMapping(consumes = MediaType.APPLICATION_XML_VALUE)
@@ -32,10 +31,12 @@ public class ZalbaNaCutanjeController {
         service.store(zalba);
     }
 
-//    @GetMapping("/{id}")
-//    public Zalba get(@PathVariable("id") String id) throws XMLDBException, JAXBException {
-//        return getService.get(id);
-//    }
+    @GetMapping("/user")
+    public ZalbaNaCutanjeList get() throws XMLDBException, JAXBException, IOException {
+        ZalbaNaCutanjeList zalbe = new ZalbaNaCutanjeList();
+        zalbe.setZalba(getService.get());
+        return zalbe;
+    }
 
     @GetMapping
     public ZalbaNaCutanjeList getAll() throws XMLDBException, JAXBException {
