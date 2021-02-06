@@ -22,4 +22,11 @@ export class AddZalbaOService {
       headers: headers
     });
   }
+
+  getZalbe(): Observable<any> {
+    return this.http.get(this.url, {
+      headers: headers,
+      responseType: 'text'
+    })
+  }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LoginDTO } from 'src/app/modules/authentication/model';
+import { XmlListItem } from '../model';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,27 @@ export class JsonXmlService {
         return firstProp;
       }
     }
+  }
+
+
+  generateList(xmlStr:string, elemnt: string, id: string, baseName: string): Array<XmlListItem> {
+
+   let retVal: Array<XmlListItem> = new Array<XmlListItem>();
+
+   let dom = this.parseXml(xmlStr);
+   let elements = dom.querySelectorAll(elemnt);
+
+   console.log(dom);
+
+   elements.forEach(element => {
+      let item: XmlListItem = new XmlListItem();
+      item.name = baseName + ': ' + element.querySelectorAll(id).item(0).innerHTML;
+      item.xml = new XMLSerializer().serializeToString(element);
+      retVal.push(item);
+   });
+
+   return retVal;
+
   }
 
   parseXml(xml) {

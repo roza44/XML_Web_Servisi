@@ -9,6 +9,8 @@ import tim20.xml.poverenik.poverenikBek.repository.util.DatabaseManager;
 import javax.xml.bind.JAXBException;
 import javax.xml.transform.TransformerException;
 import java.io.IOException;
+import java.util.List;
+
 @Repository
 public class ZalbaNaCutanjeRepository {
 
@@ -16,7 +18,15 @@ public class ZalbaNaCutanjeRepository {
     private final String rdfFilePath = "temp/ZalbaNaCutanje.rdf";
 
     public void store(Zalba zalba) throws XMLDBException, JAXBException, TransformerException, IOException, SAXException {
-        DatabaseManager.<Zalba>store(zalba, COLLECTION_ID, "1.xml");
+        DatabaseManager.<Zalba>store(zalba, COLLECTION_ID, null);
         DatabaseManager.<Zalba>storeRdf(zalba, rdfFilePath);
+    }
+
+    public List<Zalba> query(String pathQuery, String paramQuery) throws XMLDBException, JAXBException, IOException {
+        return DatabaseManager.<Zalba>query(Zalba.class, COLLECTION_ID, pathQuery, paramQuery);
+    }
+
+    public List<Zalba> getAll() throws XMLDBException, JAXBException {
+        return DatabaseManager.<Zalba>getAll(Zalba.class, COLLECTION_ID);
     }
 }

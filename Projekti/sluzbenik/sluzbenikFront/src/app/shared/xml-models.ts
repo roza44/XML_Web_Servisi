@@ -8,7 +8,8 @@ const zahtev: string =
     xmlns:tipovi="http://tipovi"
     xmlns:za="http://www.ftn.uns.ac.rs/zahtev"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.ftn.uns.ac.rs/zahtev file:/./../../../Dokumenti/XML Seme/zahtevcir.xsd">
+    vocab="http://examples/predicate/"
+    xsi:schemaLocation="http://www.ftn.uns.ac.rs/zahtev file:./../../../Dokumenti/XML Seme/zahtevcir.xsd">
     <za:Primalac>
         <za:Organ>
             <za:Naziv property="pred:nazivOrgana">Unesite naziv organa</za:Naziv>
@@ -88,8 +89,76 @@ const zahtevSpec = {
     }
 }
 
+const obavestenje:string = 
+
+`<?xml version="1.0" encoding="UTF-8"?>
+<ob:Obavestenje xmlns:tipovi="http://tipovi"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.ftn.uns.ac.rs/obavestenje file:/E:/Faks/7.%20semestar/XML%20i%20veb%20servisi/XML_Web_Servisi/Dokumenti/XML%20Seme/obavestenjecir.xsd"
+    xmlns:pred="http://examples/predicate/"
+    xmlns:ob="http://www.ftn.uns.ac.rs/obavestenje"
+    
+    vocab="http://examples/predicate/"
+    about="http://Obavestenje/1">
+    <ob:Organ>
+        <tipovi:Adresa>
+            <tipovi:Mesto>Unesite mesto</tipovi:Mesto>
+            <tipovi:Postanski_broj>Unesite postanski broj izmedju 11000 i 40000</tipovi:Postanski_broj>
+            <tipovi:Ulica>Unesirte naziv ulice</tipovi:Ulica>
+            <tipovi:Broj>Unesite broj</tipovi:Broj>
+        </tipovi:Adresa>
+        <tipovi:Naziv>Unesite naziv organa vlasti</tipovi:Naziv>
+    </ob:Organ>
+    <ob:Datum property="pred:datumObavestenja">Unesite datum u formatu YYYY-MM-DD</ob:Datum>
+    <ob:Broj_predmeta>Unesite broj predmeta</ob:Broj_predmeta>
+    <ob:Podnosioc_zahteva xsi:type="tipovi:TFizicko_lice">
+        <tipovi:Adresa>
+            <tipovi:Mesto>Unesite naziv mesta</tipovi:Mesto>
+            <tipovi:Postanski_broj>Unesite postanski broj izmedju 11000 i 40000</tipovi:Postanski_broj>
+            <tipovi:Ulica>Unesirte naziv ulice</tipovi:Ulica>
+            <tipovi:Broj>Unesite broj</tipovi:Broj>
+        </tipovi:Adresa>
+        <tipovi:Ime  property="pred:imePodnosioca">Ime Podnosioca</tipovi:Ime>
+        <tipovi:Prezime  property="pred:prezimePodnosioca">Prezime Podnosioca</tipovi:Prezime>
+    </ob:Podnosioc_zahteva>
+    <ob:Trazena_informacija>
+        <ob:Godina_zahteva>Unesite godinu zahteva</ob:Godina_zahteva>
+        <ob:Opis_informacije>Unesite opis informacije</ob:Opis_informacije>
+    </ob:Trazena_informacija>
+    <ob:Uvid>
+        <ob:Datum property="pred:datumUvida">Unesite datum u formatu YYYY-MM-DD</ob:Datum>
+        <ob:Satnica>01:01:01.001</ob:Satnica>
+        <ob:Satnica_od>01:01:01.001</ob:Satnica_od>
+        <ob:Satnica_do>01:01:01.001</ob:Satnica_do>
+        <ob:Broj_kancelarije>Unesite broj kancelarije</ob:Broj_kancelarije>
+        <ob:Adresa>
+            <tipovi:Mesto>Mesto2</tipovi:Mesto>
+            <tipovi:Postanski_broj>Unesite postanski broj izmedju 11000 i 40000</tipovi:Postanski_broj>
+            <tipovi:Ulica>Unesite naziv ulice</tipovi:Ulica>
+            <tipovi:Broj>Unesite broj</tipovi:Broj>
+        </ob:Adresa>
+    </ob:Uvid>
+    <ob:Troskovi>
+        <ob:A4_Cena>3.0</ob:A4_Cena>
+        <ob:A3_Cena>6.0</ob:A3_Cena>
+        <ob:CD_Cena>35.0</ob:CD_Cena>
+        <ob:Disketa_Cena>20.0</ob:Disketa_Cena>
+        <ob:DVD_Cena>40.0</ob:DVD_Cena>
+        <ob:Audio_Kaseta_Cena>150.0</ob:Audio_Kaseta_Cena>
+        <ob:Video_Kaseta_Cena>300.0</ob:Video_Kaseta_Cena>
+        <ob:EDokumenta_Cena>30.0</ob:EDokumenta_Cena>
+    </ob:Troskovi>
+    <ob:Uplata>
+        <ob:Ukupni_troskovi>0</ob:Ukupni_troskovi>
+        <ob:Ziro_racun>000-0000000000000-00</ob:Ziro_racun>
+        <ob:Broj_modela>00</ob:Broj_modela>
+    </ob:Uplata>
+    <ob:Dostavljeno>Imenovanom</ob:Dostavljeno>
+</ob:Obavestenje>`
+
 export {
     zahtev,
-    zahtevSpec
+    zahtevSpec,
+    obavestenje
 
 };

@@ -92,6 +92,10 @@ public class Obavestenje {
     protected String vocab;
     @XmlAttribute(name = "about")
     protected String about;
+    @XmlAttribute(name = "author")
+    protected String author;
+    @XmlAttribute(name = "for-who")
+    protected String forWho;
 
     /**
      * Gets the value of the organ property.
@@ -357,7 +361,21 @@ public class Obavestenje {
         this.about = value;
     }
 
+    public String getAuthor(){
+        return author;
+    }
 
+    public void setAuthor(String value){
+        this.author = value;
+    }
+
+    public String getForWho(){
+        return forWho;
+    }
+
+    public void setForWho(String value){
+        this.forWho = value;
+    }
     /**
      * <p>Java class for anonymous complex type.
      * 

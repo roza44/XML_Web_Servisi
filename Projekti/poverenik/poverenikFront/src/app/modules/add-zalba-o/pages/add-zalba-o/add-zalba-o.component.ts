@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { zalbaNaOdluku, zalbaNaOdlukuSpec } from '../../../../shared/xml-models'
 import { AddZalbaOService } from '../../add-zalba-o.service';
@@ -15,7 +16,9 @@ export class AddZalbaOComponent implements OnInit {
   constructor(
     private service : AddZalbaOService,
     private messageService : MessageService
-  ) { }
+  ) { 
+
+  }
 
   ngOnInit(): void {
     var editor = document.getElementById("editor");
