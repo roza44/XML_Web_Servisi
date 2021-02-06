@@ -37,8 +37,8 @@ public class ZahtevController {
 
     @GetMapping
     public ZahtevList getAll() throws XMLDBException, JAXBException {
-        ZahtevList obavestenja = new ZahtevList();
-        obavestenja.setZahtev(getAllService.getAll());
-        return obavestenja;
+        ZahtevList zahtevi = new ZahtevList();
+        zahtevi.setZahtev(getAllService.getAll());
+        return zahtevi;
     }
 }
