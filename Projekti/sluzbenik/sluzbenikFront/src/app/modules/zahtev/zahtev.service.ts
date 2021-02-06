@@ -31,4 +31,11 @@ export class ZahtevService {
       responseType: 'text'
     });
   }
+
+  getUserZahtevi(): Observable<any> {
+    return this.http.get(this.url + '/user', {
+      headers: headers,
+      responseType: 'text'
+    });
+  }
 }

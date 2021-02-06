@@ -42,8 +42,13 @@ export class MenuBarComponent {
     {
       label: 'Pregled Zahteva',
       icon: 'pi pi-list',
-      routerLink: ['zahtev/add']
-    }
+      routerLink: ['zahtev/user-pregled']
+    },
+    {
+      label: 'Pregled Obavestenja',
+      icon: 'pi pi-list',
+      routerLink: ['obavestenje/user-pregled']
+    },
   ]
 
   sluzbenikItems: MenuItem[] = [

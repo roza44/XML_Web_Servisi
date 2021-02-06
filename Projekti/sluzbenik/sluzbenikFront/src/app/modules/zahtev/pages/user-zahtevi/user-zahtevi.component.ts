@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { DialogService } from 'primeng/dynamicdialog';
+import { XmlViewComponent } from 'src/app/shared/components/xml-view/xml-view.component';
 import { XmlListItem } from 'src/app/shared/model';
 import { JsonXmlService } from 'src/app/shared/services/jsonxml.service';
 import { ZahtevService } from '../../zahtev.service';
-import { DialogService } from 'primeng/dynamicdialog';
-import { XmlViewComponent } from 'src/app/shared/components/xml-view/xml-view.component';
-import { AddObavestenjeComponent } from 'src/app/modules/obavestenje/components/add-obavestenje/add-obavestenje.component';
 
 @Component({
-  selector: 'app-zahtevi',
-  templateUrl: './zahtevi.component.html',
-  styleUrls: ['./zahtevi.component.scss'],
+  selector: 'app-user-zahtevi',
+  templateUrl: './user-zahtevi.component.html',
+  styleUrls: ['./user-zahtevi.component.scss'],
   providers: [DialogService]
 })
-export class ZahteviComponent implements OnInit {
+export class UserZahteviComponent implements OnInit {
 
   zahtevi: Array<XmlListItem>;
 
@@ -23,26 +22,10 @@ export class ZahteviComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.zahtevService.getZahtevi()
+    this.zahtevService.getUserZahtevi()
     .subscribe((xmlStr) => {
       this.zahtevi = this.jsonxml.generateList(xmlStr, 'Zahtev', 'Prezime', 'Zahtev');
     });
-  }
-
-  obavestenje(zahtev:XmlListItem) {
-    this.dialogService.open(
-      AddObavestenjeComponent,
-      {
-        data: {
-            xmlStr: zahtev.xml,
-            forWho: zahtev.creator
-        },
-        header: zahtev.name,
-        width: '40%',
-        dismissableMask: true
-      }
-    );
-
   }
 
   pregled(zahtev:XmlListItem) {
@@ -52,11 +35,10 @@ export class ZahteviComponent implements OnInit {
           data: {
               xmlStr: zahtev.xml
           },
-          header: 'Unesite obavestenje',
+          header: zahtev.name,
           width: '40%',
           dismissableMask: true
       }
     );
   }
-
 }

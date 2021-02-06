@@ -18,9 +18,18 @@ export class ObavestenjeService {
     private http: HttpClient
   ) { }
 
-  addObavestenje(xmlStr: string):  Observable<any> {
-    return this.http.post<any>(this.url, xmlStr, {
+  addObavestenje(xmlStr: string, forWho: string):  Observable<any> {
+    const newUrl = this.url + `/${forWho}`;
+    return this.http.post(newUrl, xmlStr, {
       headers: headers
+    });
+  }
+
+  getUserObavestenja(): Observable<any> {
+    const newUrl = this.url + '/user';
+    return this.http.get(newUrl, {
+      headers: headers,
+      responseType: 'text'
     });
   }
 

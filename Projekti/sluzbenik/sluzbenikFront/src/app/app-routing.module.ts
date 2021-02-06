@@ -10,6 +10,11 @@ const routes: Routes = [
   {
     path: 'zahtev',
     loadChildren: () => import('./modules/zahtev/zahtev.module').then(m => m.ZahtevModule)
+  },
+
+  {
+    path: 'obavestenje',
+    loadChildren: () => import('./modules/obavestenje/obavestenje.module').then(m => m.ObavestenjeModule)
   }
 
 ];

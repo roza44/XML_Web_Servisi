@@ -7,10 +7,11 @@ import { ZahteviComponent } from './pages/zahtevi/zahtevi.component';
 import {CardModule} from 'primeng/card';
 
 import {TableModule} from 'primeng/table';
+import { UserZahteviComponent } from './pages/user-zahtevi/user-zahtevi.component';
 
 
 @NgModule({
-  declarations: [AddZahtevComponent, ZahteviComponent],
+  declarations: [AddZahtevComponent, ZahteviComponent, UserZahteviComponent, UserZahteviComponent],
   imports: [
     CommonModule,
     ZahtevRoutingModule,

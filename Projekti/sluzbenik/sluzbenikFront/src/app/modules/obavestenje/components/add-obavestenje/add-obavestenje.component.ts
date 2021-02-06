@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { obavestenje } from 'src/app/shared/xml-models';
 import { ObavestenjeService } from '../../obavestenje.service';
 
 declare const Xonomy: any;
@@ -11,9 +12,8 @@ declare const Xonomy: any;
   styleUrls: ['./add-obavestenje.component.scss']
 })
 export class AddObavestenjeComponent implements OnInit {
-
-  xmlStr: string;
   submitted: boolean;
+  forWho: string;
 
   constructor(
     public ref: DynamicDialogRef,
@@ -21,13 +21,13 @@ export class AddObavestenjeComponent implements OnInit {
     private obavestenjeService: ObavestenjeService,
     private messageService : MessageService
   ) { 
-    this.xmlStr = this.config.data.xmlStr;
+    this.forWho = this.config.data.forWho;
     this.submitted = false;
   }
 
   ngOnInit(): void {
     var editor = document.getElementById("editor");
-    Xonomy.render(this.xmlStr, editor, null);
+    Xonomy.render(obavestenje, editor, null);
     this.ref.onClose.subscribe(() => {
         if(!this.submitted) { Xonomy.harvest() }
       }
@@ -37,13 +37,14 @@ export class AddObavestenjeComponent implements OnInit {
   submit() {
     this.submitted = true;
 
-    this.obavestenjeService.addObavestenje(Xonomy.harvest())
+    this.obavestenjeService.addObavestenje(Xonomy.harvest(), this.forWho)
     .subscribe(() => {
       this.messageService.add({
         severity: 'success',
         summary: 'Successful added: "Obavestenje"!',
         detail: `Your "Obavestenje" has been successfuly added!`
       });
+      this.ref.close();
     });
   }
 }
