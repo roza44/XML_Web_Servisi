@@ -39,6 +39,8 @@ public class ObavestenjeController {
         return getService.get(id);
     }
 
+
+
     @GetMapping
     public ObavestenjeList getAll() throws XMLDBException, JAXBException {
         ObavestenjeList obavestenja = new ObavestenjeList();

@@ -15,6 +15,7 @@ import tim20.xml.sluzbenik.sluzbenikBek.dto.ObavestenjeList;
 import tim20.xml.sluzbenik.sluzbenikBek.model.Obavestenje.Obavestenje;
 import tim20.xml.sluzbenik.sluzbenikBek.service.Obavestenje.GetAllObavestenjaUseCase;
 import tim20.xml.sluzbenik.sluzbenikBek.service.Obavestenje.GetKorisnikovaObavestenjaUseCase;
+import tim20.xml.sluzbenik.sluzbenikBek.service.Obavestenje.GetSluzbenikovaObavestenjaUseCase;
 import tim20.xml.sluzbenik.sluzbenikBek.service.Obavestenje.StoreObavestenjeUseCase;
 
 import javax.xml.bind.JAXBException;
@@ -32,6 +33,7 @@ public class ObavestenjeController {
     @Autowired
     private final GetKorisnikovaObavestenjaUseCase getKorisnikovaObavestenjaService;
     private final GetAllObavestenjaUseCase getAllService;
+    private final GetSluzbenikovaObavestenjaUseCase getSluzbenikovaObavestenjaService;
 
     @PostMapping(path = "/{userEmail}", consumes = MediaType.APPLICATION_XML_VALUE)
     public void store(@RequestBody Obavestenje obavestenje, @PathVariable("userEmail") String userEmail) throws JAXBException, TransformerException, IOException, SAXException, XMLDBException {
@@ -39,9 +41,16 @@ public class ObavestenjeController {
     }
 
     @GetMapping("/user")
-    public ObavestenjeList get() throws XMLDBException, JAXBException, IOException {
+    public ObavestenjeList getKorisnikObavestenja() throws XMLDBException, JAXBException, IOException {
         ObavestenjeList obavestenja = new ObavestenjeList();
         obavestenja.setObavestenje(getKorisnikovaObavestenjaService.get());
+        return obavestenja;
+    }
+
+    @GetMapping("/sluzbenik")
+    public ObavestenjeList getSluzbenikObavestenja() throws XMLDBException, JAXBException, IOException {
+        ObavestenjeList obavestenja = new ObavestenjeList();
+        obavestenja.setObavestenje(getSluzbenikovaObavestenjaService.get());
         return obavestenja;
     }
 
