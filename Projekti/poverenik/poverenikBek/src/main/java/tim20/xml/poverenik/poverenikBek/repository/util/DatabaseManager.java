@@ -28,6 +28,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class DatabaseManager {
@@ -170,6 +172,35 @@ public class DatabaseManager {
         }
 
         return retValue;
+
+    }
+
+    public static <T> List<T> getAll(Class<T> classT, String collectionId) throws XMLDBException, JAXBException {
+        Collection col = null;
+        XMLResource temp = null;
+        List<T> res = new ArrayList<T>();
+        try {
+            // get the collection
+            System.out.println("[INFO] Retrieving the collection: " + collectionId);
+            col = org.xmldb.api.DatabaseManager.getCollection(conn.uri + collectionId);
+            col.setProperty(OutputKeys.INDENT, "yes");
+
+            JAXBContext context = JAXBContext.newInstance(classT);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+
+            String[] documentNames = col.listResources();
+            for(String name: documentNames){
+                temp = (XMLResource) col.getResource(name);
+                if(temp != null) {
+                    res.add((T) unmarshaller.unmarshal(temp.getContentAsDOM()));
+                }
+            }
+
+
+        } finally {
+            cleanUp(col, null);
+        }
+        return res;
 
     }
 
